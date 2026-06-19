@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - NovaEra Code</title>
+    <link rel="stylesheet" href="../css/login.css">
+</head>
+
+<body>
+
+    <div class="login-page">
+
+        <!-- Lado esquerdo -->
+        <div class="login-banner">
+
+            <img src="../img/logonova.png" alt="NovaEra Code" class="banner-logo">
+
+            <h1>NovaEra Code</h1>
+
+            <p>
+                Desenvolvendo experiências digitais modernas,
+                rápidas e escaláveis.
+            </p>
+
+            <div class="banner-info">
+
+                <div>
+                    <strong>+50</strong>
+                    <span>Projetos</span>
+                </div>
+
+                <div>
+                    <strong>100%</strong>
+                    <span>Personalizados</span>
+                </div>
+
+                <div>
+                    <strong>24/7</strong>
+                    <span>Suporte</span>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Formulário -->
+        <div class="login-container">
+
+            <div class="form-header">
+
+                <h2>Bem-vindo de volta</h2>
+
+                <p>
+                    Entre para acessar sua área exclusiva
+                </p>
+
+            </div>
+
+            <form action="../php/login.php" method="POST">
+
+                <div class="input-group">
+
+                    <label>E-mail</label>
+
+                    <input type="email" name="email" placeholder="seuemail@exemplo.com" required>
+
+                </div>
+
+                <div class="input-group">
+
+                    <label>Senha</label>
+
+                    <div class="password-box">
+
+                        <input type="password" id="password" name="password" placeholder="Digite sua senha" required>
+
+                        <button type="button" id="togglePassword">
+                            👁
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <div class="login-options">
+
+                    <label>
+                        <input type="checkbox">
+                        Lembrar-me
+                    </label>
+
+                    <a href="#">
+                        Esqueceu a senha?
+                    </a>
+
+                </div>
+
+                <button type="submit" class="btn-login">
+                    Entrar
+                </button>
+
+            </form>
+
+            <div class="register-link">
+
+                Não possui conta?
+
+                <a href="cadastro.html">
+                    Criar conta
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="../js/script.js"></script>
+
+</body>

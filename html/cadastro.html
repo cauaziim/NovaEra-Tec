@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <link rel="stylesheet" href="../css/cadastro.css">
+    <div class="register-page">
+
+        <div class="register-banner">
+
+            <img src="../img/logonova.png" alt="NovaEra Code">
+
+            <h1>NovaEra Code</h1>
+
+            <p>
+                Transformando ideias em soluções digitais.
+            </p>
+
+        </div>
+
+        <div class="register-container">
+
+            <div class="form-header">
+                <h2>Criar Conta</h2>
+                <p>Preencha os dados para começar</p>
+            </div>
+
+            <form action="../php/cadastro.php" method="POST">
+
+                <div class="input-group">
+                    <label>Nome Completo</label>
+                    <input type="text" name="nome" placeholder="Seu nome completo" required>
+                </div>
+
+                <div class="input-group">
+                    <label>E-mail</label>
+                    <input type="email" name="email" placeholder="seuemail@exemplo.com" required>
+                </div>
+
+                <div class="input-group">
+                    <label>Senha</label>
+
+                    <div class="password-wrapper">
+
+                        <input type="password" name="senha" id="senha" placeholder="Crie uma senha segura" required>
+
+                        <button type="button" id="togglePassword">
+                            👁
+                        </button>
+
+                    </div>
+
+                    <div class="password-strength">
+                        <span id="strength-text">
+                            Segurança da senha
+                        </span>
+                    </div>
+
+                </div>
+
+                <button type="submit" class="btn-register">
+                    Criar Conta
+                </button>
+
+            </form>
+
+            <div class="login-link">
+                Já possui uma conta?
+                <a href="login.html">
+                    Entrar
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="../js/script.js"></script>
+
+</body>
+
+</html>

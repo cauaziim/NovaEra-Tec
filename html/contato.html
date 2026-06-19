@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato | NovaEra Code</title>
+
+    <link rel="stylesheet" href="../css/contato.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="../img/logonova.png">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="nav-container">
+
+            <div class="logo-menu">
+                <a href="../index.php">
+                    <img src="../img/logonova.png" alt="NovaEra Code" class="logo-img">
+                    <span class="logo-menu-text">NovaEra Code</span>
+                </a>
+            </div>
+
+            <ul class="nav-menu">
+                <li><a href="../index.php">Início</a></li>
+                <li><a href="sobre.html">Sobre &amp; Equipe</a></li>
+                <li><a href="projetos.html">Projetos</a></li>
+                <li><a href="contato.html" class="active">Contato</a></li>
+            </ul>
+
+        </div>
+    </nav>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main>
+
+        <div class="container">
+
+            <div class="titulo">
+                <h1>Fale com a gente</h1>
+                <p>Tem um projeto em mente? Conta pra nós — respondemos em até 2 horas.</p>
+            </div>
+
+            <div class="contact-layout">
+
+                <!-- FORMULÁRIO -->
+                <form action="#" method="POST">
+
+                    <div class="input-row">
+                        <div class="input-group">
+                            <label for="nome">Nome</label>
+                            <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="email">E-mail</label>
+                            <input type="email" id="email" name="email" placeholder="seu@email.com" required>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="assunto">Assunto</label>
+                        <input type="text" id="assunto" name="assunto" placeholder="Ex: Orçamento para sistema web">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="mensagem">Mensagem</label>
+                        <textarea id="mensagem" name="mensagem"
+                            placeholder="Descreva seu projeto ou dúvida..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn">
+                        <i class="fas fa-paper-plane"></i>
+                        Enviar Mensagem
+                    </button>
+
+                </form>
+
+                <!-- SIDEBAR DE INFORMAÇÕES -->
+                <aside class="sidebar">
+
+                    <div class="status-card">
+                        <div class="status-dot">Disponível para projetos</div>
+                        <p>Nossa equipe está aceitando novos clientes. Orçamento sempre gratuito e sem compromisso.</p>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="info-icon"><i class="fas fa-envelope"></i></div>
+                        <div class="info-text">
+                            <strong>E-mail</strong>
+                            <span>contato@novaeracode.com</span>
+                        </div>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="info-icon"><i class="fab fa-whatsapp"></i></div>
+                        <div class="info-text">
+                            <strong>WhatsApp</strong>
+                            <span>(19) 99999-9999</span>
+                        </div>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="info-icon"><i class="fas fa-clock"></i></div>
+                        <div class="info-text">
+                            <strong>Horário</strong>
+                            <span>Seg – Sex, 9h às 18h</span>
+                        </div>
+                    </div>
+
+                    <div class="info-card" style="flex-direction: column; gap: 14px;">
+                        <div style="display:flex; align-items:center; gap:18px;">
+                            <div class="info-icon"><i class="fas fa-share-alt"></i></div>
+                            <div class="info-text">
+                                <strong>Redes Sociais</strong>
+                            </div>
+                        </div>
+                        <div class="social-row">
+                            <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" class="social-link" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                            <a href="https://wa.me/5519999999999" target="_blank" rel="noopener noreferrer"
+                                class="social-link" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+
+                </aside>
+
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- RODAPÉ -->
+    <footer class="footer">
+        <div class="footer-content">
+            <img src="../img/logonova.png" alt="NovaEra Code">
+            <h3>NovaEra Code</h3>
+            <p>Transformando ideias em soluções digitais inovadoras.</p>
+            <p class="copyright">© 2026 NovaEra Code — Todos os direitos reservados.</p>
+        </div>
+    </footer>
+    <script src="../js/script.js"></script>
+</body>
+
+</html>
