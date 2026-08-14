@@ -1,10 +1,10 @@
 <?php
 
-$host = "10.140.170.119";
+$host = "10.140.169.9";
 $user = "root";
 $pass = "123456";
-$db   = "novaera";
-$port = "3307";
+$db   = "novaeracode";
+$port = 3306;
 
 // CONEXAO
 $conn = new mysqli($host, $user, $pass, $db, $port);

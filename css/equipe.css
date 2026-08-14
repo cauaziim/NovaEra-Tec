@@ -97,10 +97,12 @@ body::after {
 }
 
 .logo-text {
-    font-size: 1.2rem;
+    font-size: 2rem;
     font-weight: 700;
-    color: #60a5fa;
-    letter-spacing: -.3px;
+    color: #0066ff;
+    letter-spacing: -.5px;
+    padding-bottom: 4px; /* Espaço entre o texto e a linha */
+    border-bottom: 3px solid #4c1d95; /* Linha roxa na parte inferior */
 }
 
 .nav-menu {

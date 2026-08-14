@@ -1,20 +1,5 @@
 <?php
-
-$host = "10.140.169.11";
-$user = "root";
-$pass = "123456";
-$db   = "novaeracode";
-$port = "3306";
-
-// CONEXAO
-$conn = new mysqli($host, $user, $pass, $db, $port);
-
-// TESTA CONEXAO
-if ($conn->connect_error) {
-    die("Erro na conexao: " . $conn->connect_error);
-}
-
-$conn->set_charset("utf8");
+include_once("conexao.php");
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
@@ -43,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $sql->bind_param("sss", $nome, $email, $senha);
 
         if ($sql->execute()) {
-            echo "Cadastro realizado!";
+        header("Location: ../html/login.html");
         } else {
             echo "Erro!";
         }
