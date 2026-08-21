@@ -1,0 +1,183 @@
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Roboto',sans-serif;
+    min-height:100vh;
+
+    background:
+    linear-gradient(
+        135deg,
+        #0f172a,
+        #1e293b
+    );
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    padding:20px;
+}
+
+.register-page{
+    width:100%;
+    max-width:1100px;
+
+    display:grid;
+    grid-template-columns:1fr 1fr;
+
+    overflow:hidden;
+
+    border-radius:24px;
+
+    background:rgba(255,255,255,.05);
+
+    backdrop-filter:blur(15px);
+
+    box-shadow:
+    0 20px 60px rgba(0,0,0,.3);
+}
+
+.register-banner{
+    background:
+    linear-gradient(
+        135deg,
+        #2563eb,
+        #1d4ed8
+    );
+
+    color:white;
+
+    padding:60px;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+}
+
+.register-banner img{
+    width:120px;
+    margin-bottom:20px;
+}
+
+.register-banner h1{
+    font-size:2.5rem;
+    margin-bottom:10px;
+}
+
+.register-container{
+    background:white;
+    padding:50px;
+}
+
+.form-header h2{
+    font-size:2rem;
+    margin-bottom:10px;
+}
+
+.form-header p{
+    color:#64748b;
+    margin-bottom:30px;
+}
+
+.input-group{
+    margin-bottom:20px;
+}
+
+.input-group label{
+    display:block;
+    margin-bottom:8px;
+    font-weight:600;
+}
+
+.input-group input{
+    width:100%;
+    padding:15px;
+
+    border:1px solid #dbeafe;
+
+    border-radius:12px;
+
+    font-size:15px;
+
+    transition:.3s;
+}
+
+.input-group input:focus{
+    border-color:#2563eb;
+    outline:none;
+
+    box-shadow:
+    0 0 0 4px rgba(37,99,235,.15);
+}
+
+.password-wrapper{
+    position:relative;
+}
+
+.password-wrapper button{
+    position:absolute;
+    right:12px;
+    top:50%;
+    transform:translateY(-50%);
+
+    background:none;
+    border:none;
+
+    cursor:pointer;
+}
+
+.btn-register{
+    width:100%;
+
+    padding:16px;
+
+    border:none;
+    border-radius:12px;
+
+    background:#2563eb;
+    color:white;
+
+    font-size:16px;
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.btn-register:hover{
+    transform:translateY(-2px);
+
+    background:#1d4ed8;
+}
+
+.login-link{
+    text-align:center;
+    margin-top:20px;
+}
+
+.login-link a{
+    color:#2563eb;
+    text-decoration:none;
+    font-weight:600;
+}
+
+@media(max-width:900px){
+
+    .register-page{
+        grid-template-columns:1fr;
+    }
+
+    .register-banner{
+        display:none;
+    }
+
+}
+
