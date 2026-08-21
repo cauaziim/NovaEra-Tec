@@ -13,9 +13,9 @@ html{
 }
 
 body{
-    font-family:'Roboto',sans-serif;
+    font-family:'Inter',sans-serif;
     background:#f5f7fb;
-    color:#1a1a1a;
+    color:#111827;
     overflow-x:hidden;
 }
 
@@ -98,7 +98,7 @@ img{
 .nav-link{
     text-decoration:none;
 
-    color:#6B7C8C;
+    color:#64748b;
 
     font-weight:500;
 
@@ -150,7 +150,7 @@ img{
     overflow:hidden;
 
     background:
-    linear-gradient(135deg,#fafafa 0%,rgb(240, 241, 241) 100%);
+    linear-gradient(135deg,#0f172a 0%,#111827 100%);
 }
 
 .hero-overlay{
@@ -159,7 +159,7 @@ img{
 
     background:
     radial-gradient(circle at top right,
-    rgba(231, 232, 235, 0.974),
+    rgba(0,123,255,.15),
     transparent 35%);
 }
 
@@ -292,7 +292,7 @@ img{
 
 .btn-secondary:hover{
     background:white;
-    color:#1a1a1a;
+    color:#111827;
 }
 
 /* =========================================
@@ -345,7 +345,7 @@ img{
 }
 
 .about-text p{
-    color:#6B7C8C;
+    color:#64748b;
 
     line-height:1.9;
 
@@ -415,7 +415,7 @@ img{
 }
 
 .stat-card p{
-    color:#6B7C8C;
+    color:#64748b;
 }
 
 /* =========================================
@@ -481,7 +481,7 @@ img{
 }
 
 .service-content p{
-    color:#6B7C8C;
+    color:#64748b;
 
     line-height:1.8;
 }
@@ -528,7 +528,7 @@ img{
 }
 
 .team-info p{
-    color:#6B7C8C;
+    color:#64748b;
 
     line-height:1.9;
 
@@ -751,6 +751,30 @@ img{
         transform:translateY(-35px);
     }
 
+}
+
+/* =========================================
+   GLASS NAVBAR
+========================================= */
+
+.navbar{
+
+    background:
+    rgba(15,23,42,.65);
+
+    backdrop-filter:blur(18px);
+
+    border-bottom:
+    1px solid rgba(255,255,255,.08);
+}
+
+.nav-link{
+    color:#cbd5e1;
+}
+
+.nav-link:hover,
+.nav-link.active{
+    color:#60a5fa;
 }
 
 /* =========================================
@@ -1330,45 +1354,4 @@ body.dark-mode .showcase-item{
 
 body.dark-mode .showcase-item span{
     color:#cbd5e1;
-}
-/* =========================================
-   CORREÇÕES MODO ESCURO - SOBRE
-========================================= */
-
-/* Hero */
-body.dark-mode .about-content h1 {
-    color: #ffffff;
-}
-
-body.dark-mode .about-content p {
-    color: #cbd5e1;
-}
-
-body.dark-mode .hero-badge {
-    color: #60a5fa;
-    background: rgba(255, 255, 255, 0.08);
-    border-color: rgba(255, 255, 255, 0.1);
-}
-
-/* Footer */
-body.dark-mode .footer h3 {
-    color: #ffffff !important;
-}
-
-body.dark-mode .footer p {
-    color: #cbd5e1 !important;
-}
-
-body.dark-mode .social-icons a {
-    background: rgba(255, 255, 255, 0.08);
-    color: #ffffff;
-}
-
-body.dark-mode .social-icons a:hover {
-    background: #007BFF;
-    color: #ffffff;
-}
-
-body.dark-mode .copyright {
-    color: #94a3b8 !important;
 }
