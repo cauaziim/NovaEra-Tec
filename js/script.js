@@ -486,99 +486,85 @@ const usuariosValidos = [
     { email: "dev@novaera.com", senha: "admin" }
 ];
 
-document.getElementById('loginForm').addEventListener('submit', function(event) {
-    event.preventDefault(); // Impede a página de recarregar
+const loginForm = document.getElementById('loginForm');
 
-    // Pega os valores digitados pelo usuário
-    const emailInput = document.getElementById('email').value.trim();
-    const passInput = document.getElementById('password').value.trim();
-    const errorMessage = document.getElementById('errorMessage');
 
-    // Esconde a mensagem de erro antes de testar novamente
-    errorMessage.style.display = 'none';
+if(loginForm){
 
-    // 2. Validação: Verifica se o e-mail e a senha batem com algum do nosso "banco"
-    const usuarioEncontrado = usuariosValidos.find(
-        (user) => user.email === emailInput && user.senha === passInput
-    );
+    loginForm.addEventListener('submit', function(event) {
 
-    if (usuarioEncontrado) {
-        // --- LOGIN APROVADO ---
-        
-        // Cria os dados da sessão
-        const userSession = {
-            email: usuarioEncontrado.email,
-            isLogged: true,
-            loginTime: new Date().toISOString()
-        };
+        event.preventDefault();
 
-        // Salva em formato JSON no LocalStorage
-        localStorage.setItem('novaEra_session', JSON.stringify(userSession));
 
-        // Redireciona para a página principal
-        window.location.href = 'html/index.php';
+        const emailInput =
+        document.getElementById('email').value.trim();
 
-    } else {
-        // --- LOGIN RECUSADO ---
-        
-        // Muda o texto e exibe a mensagem de erro
-        errorMessage.innerText = "E-mail ou senha incorretos. Tente novamente!";
-        errorMessage.style.display = 'block';
-        
-        // Opcional: Limpa o campo de senha para o usuário tentar de novo
-        document.getElementById('password').value = '';
-    }
-});
-const password =
-    document.getElementById("password");
 
-const toggle =
-    document.getElementById("togglePassword");
+        const passInput =
+        document.getElementById('password').value.trim();
 
-toggle.addEventListener("click", () => {
 
-    password.type =
-        password.type === "password"
-            ? "text"
-            : "password";
+        const errorMessage =
+        document.getElementById('errorMessage');
 
-});
 
-// login //
+        errorMessage.style.display = 'none';
 
-// sobre //
 
-document.addEventListener("DOMContentLoaded", function () {
+        const usuarioEncontrado =
+        usuariosValidos.find(
+            (user)=>
+            user.email === emailInput &&
+            user.senha === passInput
+        );
 
-    const themeToggle = document.getElementById("theme-toggle");
 
-    if (!themeToggle) return;
+        if(usuarioEncontrado){
 
-    const icon = themeToggle.querySelector("i");
+            localStorage.setItem(
+                'novaEra_session',
+                JSON.stringify({
+                    email:usuarioEncontrado.email,
+                    isLogged:true,
+                    loginTime:new Date().toISOString()
+                })
+            );
 
-    // Carrega tema salvo
-    if (localStorage.getItem("theme") === "dark") {
-        document.body.classList.add("dark-mode");
-        icon.classList.remove("fa-moon");
-        icon.classList.add("fa-sun");
-    }
 
-    themeToggle.addEventListener("click", function () {
+            window.location.href="index.php";
 
-        document.body.classList.toggle("dark-mode");
 
-        if (document.body.classList.contains("dark-mode")) {
-            localStorage.setItem("theme", "dark");
-            icon.classList.remove("fa-moon");
-            icon.classList.add("fa-sun");
-        } else {
-            localStorage.setItem("theme", "light");
-            icon.classList.remove("fa-sun");
-            icon.classList.add("fa-moon");
+        }else{
+
+            errorMessage.innerText =
+            "E-mail ou senha incorretos. Tente novamente!";
+
+
+            errorMessage.style.display="block";
+
         }
 
     });
 
-});
+}
+const password =
+document.getElementById("password");
 
-// sobre //
+const toggle =
+document.getElementById("togglePassword");
+
+
+if(password && toggle){
+
+    toggle.addEventListener("click",()=>{
+
+        password.type =
+        password.type === "password"
+        ? "text"
+        : "password";
+
+    });
+
+}
+
+// login //

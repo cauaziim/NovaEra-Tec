@@ -10,40 +10,54 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="icon" type="image/png" href="img/logonova.png">
+    <link rel="icon" type="image/png" href="img/logonova.png" style="border-radius: 50px;">
 
 </head>
 
 <body>
+
+
 
     <!-- ===================== NAVBAR ===================== -->
     <nav class="navbar">
         <div class="nav-container">
 
             <div class="logo">
-                <img src="img/logonova.png" alt="NovaEra Code" class="logo-img">
+                <img src="img/logonova.png" alt="NovaEra Code" class="logo-img" >
                 <span class="logo-text">NovaEra Code</span>
             </div>
 
-            <ul class="nav-menu">
-                <li class="nav-item">
-                    <a href="index.php" class="nav-link active">Início</a>
-                </li>
+           <ul class="nav-menu">
 
-                <!-- "Sobre" e "Quem Somos" unificados -->
                 <li class="nav-item">
-                    <a href="html/sobre.html" class="nav-link">Sobre & Equipe</a>
+                    <a href="index.php" class="nav-link active">
+                        Início
+                    </a>
                 </li>
 
                 <li class="nav-item">
-                    <a href="html/projetos.html" class="nav-link">Projetos</a>
+                    <a href="html/sobre.html" class="nav-link">
+                        Sobre
+                    </a>
                 </li>
 
-                <!-- Nova página de contato -->
                 <li class="nav-item">
-                    <a href="html/contato.html" class="nav-link">Contato</a>
+                    <a href="html/equipe.html" class="nav-link">
+                        Equipe
+                    </a>
                 </li>
-            </ul>
+
+                <li class="nav-item">
+                    <a href="html/projetos.html" class="nav-link">
+                        Projetos
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="html/contato.html" class="nav-link">
+                        Contato
+                    </a>
+                </li>
             <button id="theme-toggle" class="theme-toggle">
                 <i class="fas fa-moon"></i>
             </button>
@@ -450,7 +464,7 @@
 
 
     <!-- ===================== PACOTES ===================== -->
-    <section class="pricing-section">
+    <section>
         <div class="container">
 
             <div class="section-title">
@@ -544,13 +558,13 @@
                 <div class="project-card">
 
                     <div class="project-image">
-                        <img src="https://fazendaprata.com.br/wp-content/uploads/2018/09/Logotipo-Fazenda-Prata-FINAL-2-1-e1536088429495.png">
+                        <img src="">
                     </div>
 
                     <div class="project-content">
                         <span class="project-category">Sistema Web</span>
 
-                        <h3>Fazenda Prata</h3>
+                        <h3>Sistema Web</h3>
                         </h3>
 
                         <p>
@@ -712,7 +726,7 @@
     </section>
 
     <!-- ===================== SERVIÇOS + CTA (ATUALIZADO) ===================== -->
-    <section class="servicos">
+    <section>
         <div class="container">
 
             <h2 class="section-title">Vamos criar algo incrível?</h2>
@@ -788,7 +802,7 @@
         </div>
     </footer>
 
-    <!-- <script src="js/script.js"></script> -->
+    <script src="js/script.js"></script>
 
 </body>
 
