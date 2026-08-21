@@ -1,0 +1,502 @@
+/* =========================================
+   RESET & BASE
+========================================= */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: #060d1a;
+    color: #e2e8f0;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* =========================================
+   FUNDO COM GRADE (grid estilo dev)
+========================================= */
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(0,123,255,.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,123,255,.06) 1px, transparent 1px);
+    background-size: 48px 48px;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Brilho azul no canto superior direito */
+body::after {
+    content: '';
+    position: fixed;
+    top: -200px;
+    right: -200px;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(0,123,255,.18) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* =========================================
+   NAVBAR
+========================================= */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    background: rgba(6, 13, 26, .85);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(0,123,255,.15);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 28px;
+    height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo-menu {
+    display: flex;
+    align-items: center;
+}
+
+.logo-menu a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+}
+
+.logo-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid rgba(0,123,255,.4);
+}
+
+.logo-menu-text {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #60a5fa;
+    letter-spacing: -.3px;
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    gap: 36px;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: #94a3b8;
+    font-size: .9rem;
+    font-weight: 500;
+    letter-spacing: .4px;
+    transition: color .2s;
+    position: relative;
+}
+
+.nav-menu a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0;
+    height: 2px;
+    background: #3b82f6;
+    border-radius: 2px;
+    transition: width .25s;
+}
+
+.nav-menu a:hover,
+.nav-menu a.active {
+    color: #e2e8f0;
+}
+
+.nav-menu a:hover::after,
+.nav-menu a.active::after {
+    width: 100%;
+}
+
+/* =========================================
+   MAIN LAYOUT
+========================================= */
+main {
+    position: relative;
+    z-index: 1;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 120px 24px 80px;
+}
+
+/* Logo central (removida — já está na navbar) */
+.logo {
+    display: none;
+}
+
+/* =========================================
+   CONTAINER DO FORMULÁRIO
+========================================= */
+.container {
+    width: 100%;
+    max-width: 860px;
+}
+
+/* =========================================
+   CABEÇALHO
+========================================= */
+.titulo {
+    margin-bottom: 48px;
+}
+
+.titulo h1 {
+    font-size: clamp(2.4rem, 5vw, 3.8rem);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -1px;
+    color: #f1f5f9;
+}
+
+/* Linha colorida abaixo do título */
+.titulo h1::after {
+    content: '';
+    display: block;
+    width: 56px;
+    height: 4px;
+    background: linear-gradient(90deg, #3b82f6, #7c3aed);
+    border-radius: 4px;
+    margin-top: 14px;
+}
+
+.titulo p {
+    margin-top: 18px;
+    color: #64748b;
+    font-size: 1.05rem;
+    font-weight: 400;
+}
+
+/* =========================================
+   LAYOUT EM DUAS COLUNAS
+========================================= */
+.contact-layout {
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    gap: 32px;
+    align-items: start;
+}
+
+/* =========================================
+   FORMULÁRIO
+========================================= */
+form {
+    background: rgba(14, 22, 42, .7);
+    border: 1px solid rgba(59,130,246,.2);
+    border-radius: 20px;
+    padding: 40px;
+    backdrop-filter: blur(8px);
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.input-group label {
+    font-size: .78rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: #94a3b8;
+}
+
+.input-group input,
+.input-group textarea {
+    background: rgba(255,255,255,.04);
+    border: 1px solid rgba(255,255,255,.1);
+    border-radius: 10px;
+    padding: 14px 18px;
+    color: #e2e8f0;
+    font-family: 'Montserrat', sans-serif;
+    font-size: .95rem;
+    transition: border-color .2s, box-shadow .2s, background .2s;
+    outline: none;
+    resize: none;
+}
+
+.input-group input::placeholder,
+.input-group textarea::placeholder {
+    color: #475569;
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+    border-color: #3b82f6;
+    background: rgba(59,130,246,.06);
+    box-shadow: 0 0 0 3px rgba(59,130,246,.12);
+}
+
+.input-group textarea {
+    min-height: 140px;
+}
+
+/* Linha com dois inputs lado a lado */
+.input-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+/* Botão de envio */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 15px 32px;
+    background: linear-gradient(135deg, #2563eb, #7c3aed);
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: .95rem;
+    font-weight: 700;
+    letter-spacing: .4px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform .2s, box-shadow .2s, opacity .2s;
+    width: 100%;
+    margin-top: 6px;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 32px rgba(37,99,235,.4);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+/* =========================================
+   SIDEBAR DE INFORMAÇÕES
+========================================= */
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.info-card {
+    background: rgba(14, 22, 42, .7);
+    border: 1px solid rgba(59,130,246,.2);
+    border-radius: 16px;
+    padding: 24px;
+    backdrop-filter: blur(8px);
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+    transition: border-color .25s, transform .25s;
+}
+
+.info-card:hover {
+    border-color: rgba(59,130,246,.5);
+    transform: translateX(4px);
+}
+
+.info-icon {
+    width: 44px;
+    height: 44px;
+    flex-shrink: 0;
+    background: linear-gradient(135deg, rgba(37,99,235,.25), rgba(124,58,237,.25));
+    border: 1px solid rgba(59,130,246,.3);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    color: #60a5fa;
+}
+
+.info-text strong {
+    display: block;
+    font-size: .8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #64748b;
+    margin-bottom: 4px;
+}
+
+.info-text span {
+    color: #e2e8f0;
+    font-size: .95rem;
+    font-weight: 500;
+}
+
+/* Card de disponibilidade */
+.status-card {
+    background: rgba(14, 22, 42, .7);
+    border: 1px solid rgba(59,130,246,.2);
+    border-radius: 16px;
+    padding: 24px;
+    backdrop-filter: blur(8px);
+}
+
+.status-dot {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: .8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #22c55e;
+    margin-bottom: 10px;
+}
+
+.status-dot::before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #22c55e;
+    box-shadow: 0 0 0 3px rgba(34,197,94,.2);
+    animation: pulse-green 2s infinite;
+}
+
+@keyframes pulse-green {
+    0%, 100% { box-shadow: 0 0 0 3px rgba(34,197,94,.2); }
+    50%       { box-shadow: 0 0 0 6px rgba(34,197,94,.08); }
+}
+
+.status-card p {
+    color: #94a3b8;
+    font-size: .9rem;
+    line-height: 1.6;
+}
+
+/* Redes sociais */
+.social-row {
+    display: flex;
+    gap: 12px;
+    margin-top: 4px;
+}
+
+.social-link {
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+    background: rgba(255,255,255,.05);
+    border: 1px solid rgba(255,255,255,.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #94a3b8;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: background .2s, color .2s, border-color .2s, transform .2s;
+}
+
+.social-link:hover {
+    background: #2563eb;
+    color: #fff;
+    border-color: #2563eb;
+    transform: translateY(-3px);
+}
+
+/* =========================================
+   FOOTER
+========================================= */
+.footer {
+    position: relative;
+    z-index: 1;
+    background: rgba(6,13,26,.95);
+    border-top: 1px solid rgba(59,130,246,.1);
+    padding: 40px 24px;
+    text-align: center;
+}
+
+.footer-content {
+    max-width: 400px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.footer-content img {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 2px solid rgba(59,130,246,.4);
+}
+
+.footer-content h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #e2e8f0;
+}
+
+.footer-content p {
+    color: #475569;
+    font-size: .88rem;
+}
+
+.copyright {
+    color: #334155 !important;
+    font-size: .8rem !important;
+    margin-top: 4px;
+}
+
+/* =========================================
+   RESPONSIVO
+========================================= */
+@media (max-width: 860px) {
+    .contact-layout {
+        grid-template-columns: 1fr;
+    }
+    .sidebar {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .info-card, .status-card {
+        flex: 1 1 220px;
+    }
+}
+
+@media (max-width: 600px) {
+    .input-row {
+        grid-template-columns: 1fr;
+    }
+    form {
+        padding: 28px 20px;
+    }
+    .nav-menu {
+        display: none;
+    }
+    .sidebar {
+        flex-direction: column;
+    }
+}

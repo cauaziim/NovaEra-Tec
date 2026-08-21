@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TEMPIC · TCC 2026</title>
+    <link rel="stylesheet" href="../css/Tempic.css">
+</head>
+<body>
+    <!-- HEADER FIXO -->
+    <header class="header" id="header">
+        <div class="container header__container">
+            <a href="#" class="logo">TEMPIC</a>
+            <nav class="nav" id="nav">
+                <ul class="nav__list">
+                    <li><a href="#hero" class="nav__link active">Início</a></li>
+                    <li><a href="#sobre" class="nav__link">Sobre</a></li>
+                    <li><a href="#funciona" class="nav__link">Como funciona</a></li>
+                    <li><a href="#recursos" class="nav__link">Recursos</a></li>
+                    <li><a href="#projeto" class="nav__link">Projeto</a></li>
+                </ul>
+            </nav>
+            <a href="#cta" class="btn btn--primary header__btn">Conheça o projeto</a>
+            <button class="hamburger" id="hamburger" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- HERO -->
+        <section class="hero" id="hero">
+            <div class="container hero__container">
+                <div class="hero__content">
+                    <h1 class="hero__title">Tecnologia inteligente para <br><span>monitoramento de temperatura em tempo real</span></h1>
+                    <p class="hero__desc">O TEMPIC é um sistema de baixo custo que utiliza sensores e microcontroladores para coletar, processar e exibir dados térmicos — ideal para ambientes controlados e aplicações acadêmicas.</p>
+                    <div class="hero__actions">
+                        <a href="#cta" class="btn btn--primary">Conheça o projeto</a>
+                        <a href="#funciona" class="btn btn--outline">Como funciona</a>
+                    </div>
+                </div>
+                <div class="hero__visual">
+                    <div class="hero__card">
+                        <div class="hero__card__inner">
+                            <span class="temp-icon">🌡️</span>
+                            <div class="temp-data">
+                                <span class="temp-value">26.4 °C</span>
+                                <span class="temp-status">estável</span>
+                            </div>
+                            <div class="temp-bar">
+                                <span style="width: 62%;"></span>
+                            </div>
+                            <div class="temp-meta">
+                                <span>⏱️ atual: 12:47</span>
+                                <span>📡 sensor: LM35</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROBLEMA -->
+        <section class="problema" id="sobre">
+            <div class="container">
+                <h2 class="section-title">O problema que o TEMPIC resolve</h2>
+                <div class="problema__grid">
+                    <div class="problema__card">
+                        <span class="problema__icon">⚠️</span>
+                        <h3>Problema</h3>
+                        <p>Em muitos laboratórios e pequenas indústrias, o monitoramento de temperatura ainda é feito de forma manual ou com equipamentos caros, dificultando a detecção de variações críticas.</p>
+                    </div>
+                    <div class="problema__card">
+                        <span class="problema__icon">📉</span>
+                        <h3>Consequência</h3>
+                        <p>Falhas na detecção precoce podem levar a perda de materiais, resultados de experimentos comprometidos e até riscos à segurança.</p>
+                    </div>
+                    <div class="problema__card">
+                        <span class="problema__icon">💡</span>
+                        <h3>Necessidade</h3>
+                        <p>Uma solução acessível, de código aberto e fácil de replicar, que permita monitoramento contínuo e alertas em tempo real.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SOLUÇÃO -->
+        <section class="solucao" id="projeto">
+            <div class="container">
+                <h2 class="section-title">A solução: <span>TEMPIC</span></h2>
+                <div class="solucao__flow">
+                    <div class="flow-item">
+                        <span class="flow-label">Problema</span>
+                        <span class="flow-icon">⚠️</span>
+                        <p>Falta de monitoramento contínuo e acessível</p>
+                    </div>
+                    <div class="flow-arrow">→</div>
+                    <div class="flow-item highlight">
+                        <span class="flow-label">TEMPIC</span>
+                        <span class="flow-icon">⚙️</span>
+                        <p>Sensor + microcontrolador + dashboard</p>
+                    </div>
+                    <div class="flow-arrow">→</div>
+                    <div class="flow-item">
+                        <span class="flow-label">Resultado</span>
+                        <span class="flow-icon">📊</span>
+                        <p>Dados em tempo real, alertas e histórico</p>
+                    </div>
+                </div>
+                <p class="solucao__desc">O TEMPIC atua como um sistema de aquisição de dados térmicos, processando as informações localmente e exibindo em um painel simples, permitindo ações corretivas rápidas.</p>
+            </div>
+        </section>
+
+        <!-- COMO FUNCIONA -->
+        <section class="funciona" id="funciona">
+            <div class="container">
+                <h2 class="section-title">Como o TEMPIC funciona?</h2>
+                <div class="funciona__steps">
+                    <div class="step">
+                        <span class="step__num">01</span>
+                        <h3>Coleta</h3>
+                        <p>Sensor LM35 conectado ao microcontrolador Arduino captura a temperatura do ambiente a cada segundo.</p>
+                    </div>
+                    <div class="step">
+                        <span class="step__num">02</span>
+                        <h3>Processamento</h3>
+                        <p>O Arduino converte o sinal analógico em valor digital, aplica um filtro simples e armazena em buffer.</p>
+                    </div>
+                    <div class="step">
+                        <span class="step__num">03</span>
+                        <h3>Transmissão</h3>
+                        <p>Os dados são enviados via comunicação serial (USB) para o computador, onde o dashboard os interpreta.</p>
+                    </div>
+                    <div class="step">
+                        <span class="step__num">04</span>
+                        <h3>Monitoramento</h3>
+                        <p>O dashboard exibe gráficos, indicadores e alertas visuais sempre que a temperatura ultrapassa limites configurados.</p>
+                    </div>
+                    <div class="step">
+                        <span class="step__num">05</span>
+                        <h3>Análise</h3>
+                        <p>O usuário pode exportar os dados para planilhas e analisar tendências ao longo do tempo.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FUNCIONALIDADES (RECURSOS) -->
+        <section class="recursos" id="recursos">
+            <div class="container">
+                <h2 class="section-title">Funcionalidades</h2>
+                <div class="recursos__grid">
+                    <div class="recurso-card">
+                        <span class="recurso-icon">🌡️</span>
+                        <h3>Leitura contínua</h3>
+                        <p>Coleta automática de temperatura a cada segundo com precisão de ±0,5°C.</p>
+                    </div>
+                    <div class="recurso-card">
+                        <span class="recurso-icon">📈</span>
+                        <h3>Dashboard ao vivo</h3>
+                        <p>Painel visual com medidor, gráfico de tendência e último valor registrado.</p>
+                    </div>
+                    <div class="recurso-card">
+                        <span class="recurso-icon">🔔</span>
+                        <h3>Alertas configuráveis</h3>
+                        <p>Defina limites mínimo e máximo para receber notificações visuais no dashboard.</p>
+                    </div>
+                    <div class="recurso-card">
+                        <span class="recurso-icon">💾</span>
+                        <h3>Exportação de dados</h3>
+                        <p>Salve o histórico em formato CSV para análise em ferramentas externas.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TECNOLOGIA -->
+        <section class="tecnologia" id="projeto">
+            <div class="container">
+                <h2 class="section-title">Tecnologia</h2>
+                <div class="tecnologia__flow">
+                    <div class="tec-item">
+                        <span class="tec-icon">📟</span>
+                        <span class="tec-label">Entrada</span>
+                        <span>Sensor LM35</span>
+                    </div>
+                    <div class="tec-arrow">→</div>
+                    <div class="tec-item">
+                        <span class="tec-icon">🖥️</span>
+                        <span class="tec-label">Processamento</span>
+                        <span>Arduino Uno / Nano</span>
+                    </div>
+                    <div class="tec-arrow">→</div>
+                    <div class="tec-item">
+                        <span class="tec-icon">📊</span>
+                        <span class="tec-label">Sistema</span>
+                        <span>Dashboard em HTML/CSS/JS</span>
+                    </div>
+                    <div class="tec-arrow">→</div>
+                    <div class="tec-item">
+                        <span class="tec-icon">📋</span>
+                        <span class="tec-label">Resultado</span>
+                        <span>Dados & alertas</span>
+                    </div>
+                </div>
+                <p class="tecnologia__obs">* Comunicação via serial (USB) — sem uso de Wi-Fi ou Bluetooth no protótipo atual.</p>
+            </div>
+        </section>
+
+        <!-- DASHBOARD (representação visual) -->
+        <section class="dashboard">
+            <div class="container">
+                <h2 class="section-title">Dashboard — demonstração visual</h2>
+                <div class="dashboard__mock">
+                    <div class="mock__header">
+                        <span>TEMPIC · Monitor</span>
+                        <span>🌡️ 26.4 °C</span>
+                    </div>
+                    <div class="mock__body">
+                        <div class="mock__gauge">
+                            <div class="gauge__bar" style="width: 62%;"></div>
+                            <span>26.4 °C</span>
+                        </div>
+                        <div class="mock__info">
+                            <span>⏱️ 12:47:22</span>
+                            <span>🔴 alerta: normal</span>
+                            <span>📊 120 amostras</span>
+                        </div>
+                        <div class="mock__chart">
+                            <span>▂▃▅▇▆▄▃▂▁▂▃▅▇▆▄▃</span>
+                        </div>
+                    </div>
+                    <div class="mock__footer">
+                        <span>Limite: 18°C – 30°C</span>
+                        <span>✔️ sistema ativo</span>
+                    </div>
+                </div>
+                <p class="dashboard__note">Interface conceitual — dados ilustrativos, não representam resultados reais do TCC.</p>
+            </div>
+        </section>
+
+        <!-- BENEFÍCIOS -->
+        <section class="beneficios">
+            <div class="container">
+                <h2 class="section-title">Por que o TEMPIC é importante?</h2>
+                <div class="beneficios__grid">
+                    <div class="beneficio-card">
+                        <span class="beneficio-icon">💰</span>
+                        <h3>Baixo custo</h3>
+                        <p>Componentes acessíveis e código aberto, ideal para laboratórios com orçamento reduzido.</p>
+                    </div>
+                    <div class="beneficio-card">
+                        <span class="beneficio-icon">🧪</span>
+                        <h3>Educacional</h3>
+                        <p>Ferramenta de aprendizado para disciplinas de eletrônica, instrumentação e IoT.</p>
+                    </div>
+                    <div class="beneficio-card">
+                        <span class="beneficio-icon">⚡</span>
+                        <h3>Resposta rápida</h3>
+                        <p>Alertas imediatos ajudam a evitar danos a equipamentos e experimentos.</p>
+                    </div>
+                    <div class="beneficio-card">
+                        <span class="beneficio-icon">📈</span>
+                        <h3>Escalável</h3>
+                        <p>Possibilidade de adicionar múltiplos sensores para monitorar vários pontos.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- IMPACTO -->
+        <section class="impacto">
+            <div class="container">
+                <h2 class="section-title">Tecnologia aplicada a um problema real.</h2>
+                <p class="impacto__text">O TEMPIC contribui para a automatização do monitoramento térmico em ambientes educacionais e de pesquisa, oferecendo uma alternativa viável e replicável. O projeto demonstra como a integração de hardware e software pode gerar soluções práticas com impacto direto na rotina de laboratórios.</p>
+                <div class="impacto__indicators">
+                    <span>🔬 100% replicável</span>
+                    <span>📉 redução de custos estimada</span>
+                    <span>🎓 aplicado ao TCC</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="cta" id="cta">
+            <div class="container">
+                <h2 class="cta__title">Conheça o TEMPIC.</h2>
+                <p class="cta__desc">Um sistema de monitoramento térmico inteligente, desenvolvido para o TCC de 2026. Explore o projeto e veja como a tecnologia pode resolver problemas do dia a dia.</p>
+                <a href="#" class="btn btn--primary btn--large">Explorar o projeto</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container footer__container">
+            <div class="footer__col">
+                <span class="logo">TEMPIC</span>
+                <p class="footer__desc">Sistema de monitoramento de temperatura de baixo custo para laboratórios e projetos acadêmicos.</p>
+            </div>
+            <div class="footer__col">
+                <h4>Links</h4>
+                <ul>
+                    <li><a href="#hero">Início</a></li>
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#funciona">Funcionamento</a></li>
+                    <li><a href="#recursos">Recursos</a></li>
+                    <li><a href="#projeto">Tecnologia</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer__bar">
+            <p>Projeto desenvolvido para TCC — 2026</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
