@@ -1,0 +1,959 @@
+/* =========================================
+   RESET & BASE
+========================================= */
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #060d1a;
+    color: #e2e8f0;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+
+/* =========================================
+   FUNDO COM GRADE
+========================================= */
+
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+
+    background-image:
+        linear-gradient(rgba(0, 123, 255, .06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 123, 255, .06) 1px, transparent 1px);
+
+    background-size: 48px 48px;
+
+    pointer-events: none;
+    z-index: 0;
+}
+
+
+/* =========================================
+   BRILHO AZUL
+========================================= */
+
+body::after {
+    content: '';
+
+    position: fixed;
+    top: -200px;
+    right: -200px;
+
+    width: 600px;
+    height: 600px;
+
+    background: radial-gradient(circle,
+            rgba(0, 123, 255, .18) 0%,
+            transparent 70%);
+
+    pointer-events: none;
+    z-index: 0;
+}
+
+
+/* =========================================
+   IMPORTANTE:
+   A NAVBAR É CONTROLADA PELO style.css
+========================================= */
+
+/*
+   Não colocar .navbar
+   .nav-container
+   .logo
+   .nav-menu
+   .theme-toggle
+
+   aqui.
+
+   Assim a navbar do Contato fica
+   exatamente igual à página Equipe.
+*/
+
+
+/* =========================================
+   MAIN
+========================================= */
+
+main {
+    position: relative;
+    z-index: 1;
+
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 120px 24px 80px;
+}
+
+
+/* =========================================
+   CONTAINER
+========================================= */
+
+.container {
+    width: 100%;
+    max-width: 860px;
+}
+
+
+/* =========================================
+   TÍTULO
+========================================= */
+
+.titulo {
+    margin-bottom: 48px;
+}
+
+.titulo h1 {
+    font-size: clamp(2.4rem, 5vw, 3.8rem);
+    font-weight: 700;
+
+    line-height: 1.1;
+    letter-spacing: -1px;
+
+    color: #f1f5f9;
+}
+
+
+/* Linha abaixo do título */
+
+.titulo h1::after {
+    content: '';
+
+    display: block;
+
+    width: 56px;
+    height: 4px;
+
+    background: linear-gradient(90deg,
+            #3b82f6,
+            #7c3aed);
+
+    border-radius: 4px;
+
+    margin-top: 14px;
+}
+
+.titulo p {
+    margin-top: 18px;
+
+    color: #64748b;
+
+    font-size: 1.05rem;
+    font-weight: 400;
+}
+
+
+/* =========================================
+   LAYOUT DO CONTATO
+========================================= */
+
+.contact-layout {
+    display: grid;
+
+    grid-template-columns: 1fr 340px;
+
+    gap: 32px;
+
+    align-items: start;
+}
+
+
+/* =========================================
+   FORMULÁRIO
+========================================= */
+
+form {
+    background: rgba(14, 22, 42, .7);
+
+    border: 1px solid rgba(59, 130, 246, .2);
+
+    border-radius: 20px;
+
+    padding: 40px;
+
+    backdrop-filter: blur(8px);
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 22px;
+}
+
+
+/* =========================================
+   INPUTS
+========================================= */
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+.input-group label {
+    font-size: .78rem;
+
+    font-weight: 600;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1.2px;
+
+    color: #94a3b8;
+}
+
+.input-group input,
+.input-group textarea {
+    background: rgba(255, 255, 255, .04);
+
+    border: 1px solid rgba(255, 255, 255, .1);
+
+    border-radius: 10px;
+
+    padding: 14px 18px;
+
+    color: #e2e8f0;
+
+    font-family: 'Montserrat', sans-serif;
+
+    font-size: .95rem;
+
+    transition:
+        border-color .2s,
+        box-shadow .2s,
+        background .2s;
+
+    outline: none;
+
+    resize: none;
+}
+
+.input-group input::placeholder,
+.input-group textarea::placeholder {
+    color: #475569;
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+    border-color: #3b82f6;
+
+    background: rgba(59, 130, 246, .06);
+
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, .12);
+}
+
+.input-group textarea {
+    min-height: 140px;
+}
+
+
+/* =========================================
+   INPUTS LADO A LADO
+========================================= */
+
+.input-row {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 16px;
+}
+
+
+/* =========================================
+   BOTÃO ENVIAR
+========================================= */
+
+.btn {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    padding: 15px 32px;
+
+    background: linear-gradient(135deg,
+            #2563eb,
+            #7c3aed);
+
+    color: #fff;
+
+    font-family: 'Montserrat', sans-serif;
+
+    font-size: .95rem;
+
+    font-weight: 700;
+
+    letter-spacing: .4px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    transition:
+        transform .2s,
+        box-shadow .2s,
+        opacity .2s;
+
+    width: 100%;
+
+    margin-top: 6px;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 12px 32px rgba(37, 99, 235, .4);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+
+/* =========================================
+   SIDEBAR
+========================================= */
+
+.sidebar {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 20px;
+}
+
+
+/* =========================================
+   CARDS DE INFORMAÇÃO
+========================================= */
+
+.info-card {
+    background: rgba(14, 22, 42, .7);
+
+    border: 1px solid rgba(59, 130, 246, .2);
+
+    border-radius: 16px;
+
+    padding: 24px;
+
+    backdrop-filter: blur(8px);
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 18px;
+
+    transition:
+        border-color .25s,
+        transform .25s;
+}
+
+.info-card:hover {
+    border-color: rgba(59, 130, 246, .5);
+
+    transform: translateX(4px);
+}
+
+
+/* =========================================
+   ÍCONE
+========================================= */
+
+.info-icon {
+    width: 44px;
+    height: 44px;
+
+    flex-shrink: 0;
+
+    background: linear-gradient(135deg,
+            rgba(37, 99, 235, .25),
+            rgba(124, 58, 237, .25));
+
+    border: 1px solid rgba(59, 130, 246, .3);
+
+    border-radius: 12px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 1.1rem;
+
+    color: #60a5fa;
+}
+
+
+/* =========================================
+   TEXTO DOS CARDS
+========================================= */
+
+.info-text strong {
+    display: block;
+
+    font-size: .8rem;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+
+    color: #64748b;
+
+    margin-bottom: 4px;
+}
+
+.info-text span {
+    color: #e2e8f0;
+
+    font-size: .95rem;
+
+    font-weight: 500;
+}
+
+
+/* =========================================
+   STATUS
+========================================= */
+
+.status-card {
+    background: rgba(14, 22, 42, .7);
+
+    border: 1px solid rgba(59, 130, 246, .2);
+
+    border-radius: 16px;
+
+    padding: 24px;
+
+    backdrop-filter: blur(8px);
+}
+
+.status-dot {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    font-size: .8rem;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+
+    color: #22c55e;
+
+    margin-bottom: 10px;
+}
+
+.status-dot::before {
+    content: '';
+
+    width: 8px;
+    height: 8px;
+
+    border-radius: 50%;
+
+    background: #22c55e;
+
+    box-shadow:
+        0 0 0 3px rgba(34, 197, 94, .2);
+
+    animation: pulse-green 2s infinite;
+}
+
+@keyframes pulse-green {
+
+    0%,
+    100% {
+        box-shadow:
+            0 0 0 3px rgba(34, 197, 94, .2);
+    }
+
+    50% {
+        box-shadow:
+            0 0 0 6px rgba(34, 197, 94, .08);
+    }
+}
+
+.status-card p {
+    color: #94a3b8;
+
+    font-size: .9rem;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================
+   REDES SOCIAIS
+========================================= */
+
+.social-row {
+    display: flex;
+
+    gap: 12px;
+
+    margin-top: 4px;
+}
+
+.social-link {
+    width: 42px;
+    height: 42px;
+
+    border-radius: 10px;
+
+    background: rgba(255, 255, 255, .05);
+
+    border: 1px solid rgba(255, 255, 255, .1);
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    color: #94a3b8;
+
+    text-decoration: none;
+
+    font-size: 1rem;
+
+    transition:
+        background .2s,
+        color .2s,
+        border-color .2s,
+        transform .2s;
+}
+
+.social-link:hover {
+    background: #2563eb;
+
+    color: #fff;
+
+    border-color: #2563eb;
+
+    transform: translateY(-3px);
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.footer {
+    position: relative;
+
+    z-index: 1;
+
+    background: rgba(6, 13, 26, .95);
+
+    border-top: 1px solid rgba(59, 130, 246, .1);
+
+    padding: 40px 24px;
+
+    text-align: center;
+}
+
+.footer-container {
+    max-width: 400px;
+
+    margin: auto;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 12px;
+}
+
+.footer-container h3 {
+    font-size: 1.1rem;
+
+    font-weight: 700;
+
+    color: #e2e8f0;
+}
+
+.footer-container p {
+    color: #475569;
+
+    font-size: .88rem;
+}
+
+.copyright {
+    color: #334155 !important;
+
+    font-size: .8rem !important;
+
+    margin-top: 4px;
+}
+
+
+/* =========================================
+   TEMA CLARO
+========================================= */
+
+body.light-theme {
+    background: #f5f7fb;
+
+    color: #1e293b;
+}
+
+body.light-theme::before {
+    background-image:
+        linear-gradient(rgba(37, 99, 235, .05) 1px,
+            transparent 1px),
+        linear-gradient(90deg,
+            rgba(37, 99, 235, .05) 1px,
+            transparent 1px);
+}
+
+body.light-theme::after {
+    background: radial-gradient(circle,
+            rgba(37, 99, 235, .12) 0%,
+            transparent 70%);
+}
+
+/* =========================================
+   TEMA CLARO - CONTATO
+   ========================================= */
+
+/* Fundo geral */
+body:not(.dark-mode) {
+    background: #f5f7fb;
+    color: #1e293b;
+}
+
+body:not(.dark-mode)::before {
+    background-image:
+        linear-gradient(rgba(37, 99, 235, .05) 1px,
+            transparent 1px),
+        linear-gradient(90deg,
+            rgba(37, 99, 235, .05) 1px,
+            transparent 1px);
+}
+
+body:not(.dark-mode)::after {
+    background: radial-gradient(circle,
+            rgba(37, 99, 235, .12) 0%,
+            transparent 70%);
+}
+
+/* Título */
+body:not(.dark-mode) .titulo h1 {
+    color: #0f172a;
+}
+
+body:not(.dark-mode) .titulo p {
+    color: #64748b;
+}
+
+/* =========================================
+   FORMULÁRIO - CLARO
+   ========================================= */
+
+body:not(.dark-mode) form {
+    background: rgba(255, 255, 255, .9);
+    border-color: rgba(37, 99, 235, .15);
+    box-shadow: 0 15px 40px rgba(15, 23, 42, .08);
+}
+
+body:not(.dark-mode) .input-group label {
+    color: #475569;
+}
+
+body:not(.dark-mode) .input-group input,
+body:not(.dark-mode) .input-group textarea {
+    background: #f8fafc;
+    border-color: #cbd5e1;
+    color: #1e293b;
+}
+
+body:not(.dark-mode) .input-group input::placeholder,
+body:not(.dark-mode) .input-group textarea::placeholder {
+    color: #94a3b8;
+}
+
+body:not(.dark-mode) .input-group input:focus,
+body:not(.dark-mode) .input-group textarea:focus {
+    background: #ffffff;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, .12);
+}
+
+/* =========================================
+   CARDS - CLARO
+   ========================================= */
+
+body:not(.dark-mode) .info-card,
+body:not(.dark-mode) .status-card {
+    background: rgba(255, 255, 255, .9);
+    border-color: rgba(37, 99, 235, .15);
+    box-shadow: 0 10px 30px rgba(15, 23, 42, .06);
+}
+
+body:not(.dark-mode) .info-card:hover {
+    border-color: rgba(37, 99, 235, .4);
+}
+
+/* Textos */
+body:not(.dark-mode) .info-text strong {
+    color: #64748b;
+}
+
+body:not(.dark-mode) .info-text span {
+    color: #1e293b;
+}
+
+body:not(.dark-mode) .status-card p {
+    color: #64748b;
+}
+
+/* =========================================
+   REDES SOCIAIS - CLARO
+   ========================================= */
+
+body:not(.dark-mode) .social-link {
+    background: #f1f5f9;
+    border-color: #e2e8f0;
+    color: #64748b;
+}
+
+body:not(.dark-mode) .social-link:hover {
+    background: #2563eb;
+    color: #fff;
+    border-color: #2563eb;
+}
+
+/* =========================================
+   FOOTER - CLARO
+   ========================================= */
+
+body:not(.dark-mode) .footer {
+    background: #ffffff;
+    color: #1e293b;
+    border-top-color: #e2e8f0;
+}
+
+body:not(.dark-mode) .footer-container h3 {
+    color: #1e293b;
+}
+
+body:not(.dark-mode) .footer-container p {
+    color: #64748b;
+}
+
+body:not(.dark-mode) .copyright {
+    color: #94a3b8 !important;
+}
+
+
+/* =========================================
+   TEMA ESCURO - CONTATO
+   ========================================= */
+
+body.dark-mode {
+    background: #060d1a;
+    color: #e2e8f0;
+}
+
+/* Fundo com grade */
+body.dark-mode::before {
+    background-image:
+        linear-gradient(rgba(0, 123, 255, .06) 1px,
+            transparent 1px),
+        linear-gradient(90deg,
+            rgba(0, 123, 255, .06) 1px,
+            transparent 1px);
+}
+
+/* Brilho azul */
+body.dark-mode::after {
+    background: radial-gradient(circle,
+            rgba(0, 123, 255, .18) 0%,
+            transparent 70%);
+}
+
+/* =========================================
+   TÍTULO - ESCURO
+   ========================================= */
+
+body.dark-mode .titulo h1 {
+    color: #f1f5f9;
+}
+
+body.dark-mode .titulo p {
+    color: #64748b;
+}
+
+/* =========================================
+   FORMULÁRIO - ESCURO
+   ========================================= */
+
+body.dark-mode form {
+    background: rgba(14, 22, 42, .7);
+    border-color: rgba(59, 130, 246, .2);
+    box-shadow: none;
+}
+
+body.dark-mode .input-group label {
+    color: #94a3b8;
+}
+
+body.dark-mode .input-group input,
+body.dark-mode .input-group textarea {
+    background: rgba(255, 255, 255, .04);
+    border-color: rgba(255, 255, 255, .1);
+    color: #e2e8f0;
+}
+
+body.dark-mode .input-group input::placeholder,
+body.dark-mode .input-group textarea::placeholder {
+    color: #475569;
+}
+
+body.dark-mode .input-group input:focus,
+body.dark-mode .input-group textarea:focus {
+    background: rgba(59, 130, 246, .06);
+    border-color: #3b82f6;
+}
+
+/* =========================================
+   CARDS - ESCURO
+   ========================================= */
+
+body.dark-mode .info-card,
+body.dark-mode .status-card {
+    background: rgba(14, 22, 42, .7);
+    border-color: rgba(59, 130, 246, .2);
+    box-shadow: none;
+}
+
+body.dark-mode .info-card:hover {
+    border-color: rgba(59, 130, 246, .5);
+}
+
+/* Textos */
+body.dark-mode .info-text strong {
+    color: #64748b;
+}
+
+body.dark-mode .info-text span {
+    color: #e2e8f0;
+}
+
+body.dark-mode .status-card p {
+    color: #94a3b8;
+}
+
+/* =========================================
+   REDES SOCIAIS - ESCURO
+   ========================================= */
+
+body.dark-mode .social-link {
+    background: rgba(255, 255, 255, .05);
+    border-color: rgba(255, 255, 255, .1);
+    color: #94a3b8;
+}
+
+body.dark-mode .social-link:hover {
+    background: #2563eb;
+    color: #fff;
+    border-color: #2563eb;
+}
+
+/* =========================================
+   FOOTER - ESCURO
+   ========================================= */
+
+body.dark-mode .footer {
+    background: #020617;
+    color: #e2e8f0;
+    border-top-color: rgba(59, 130, 246, .1);
+}
+
+body.dark-mode .footer-container h3 {
+    color: #e2e8f0;
+}
+
+body.dark-mode .footer-container p {
+    color: #cbd5e1;
+}
+
+body.dark-mode .copyright {
+    color: #64748b !important;
+}
+
+
+/* =========================================
+   RESPONSIVO
+========================================= */
+
+@media (max-width: 860px) {
+
+    .contact-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        flex-direction: row;
+
+        flex-wrap: wrap;
+    }
+
+    .info-card,
+    .status-card {
+        flex: 1 1 220px;
+    }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .input-row {
+        grid-template-columns: 1fr;
+    }
+
+    form {
+        padding: 28px 20px;
+    }
+
+    .sidebar {
+        flex-direction: column;
+    }
+
+}

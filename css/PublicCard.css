@@ -1,0 +1,208 @@
+/* =====================================================
+   PUBLIC CARDS
+   Estilos exclusivos da página
+   ===================================================== */
+
+/* Hero da página Public Cards */
+.public-card-hero {
+    padding: 140px 20px 80px;
+    text-align: center;
+}
+
+.public-card-hero-content {
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+.public-card-hero .tag {
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.public-card-hero h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.public-card-hero p {
+    max-width: 750px;
+    margin: 0 auto;
+    line-height: 1.7;
+    font-size: 1.1rem;
+}
+
+
+/* =====================================================
+   CONTEÚDO
+   ===================================================== */
+
+.public-card-section {
+    padding: 60px 20px;
+}
+
+.public-card-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.public-card-section h2 {
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    margin-bottom: 35px;
+    font-size: 2rem;
+}
+
+
+/* =====================================================
+   GRID
+   ===================================================== */
+
+.public-card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+
+/* =====================================================
+   CARDS
+   ===================================================== */
+
+.public-card-box {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease;
+}
+
+.public-card-box:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 45px rgba(0, 123, 255, 0.15);
+}
+
+.public-card-box h3 {
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 12px;
+}
+
+.public-card-box p {
+    line-height: 1.7;
+}
+
+.public-card-box ul {
+    padding-left: 20px;
+    margin: 0;
+}
+
+.public-card-box li {
+    margin-bottom: 12px;
+    line-height: 1.6;
+}
+
+
+/* =====================================================
+   CARD GRANDE
+   ===================================================== */
+
+.public-card-description {
+    max-width: 950px;
+    margin: 0 auto;
+}
+
+.public-card-description p {
+    line-height: 1.8;
+}
+
+
+/* =====================================================
+   TEMA ESCURO
+   ===================================================== */
+
+body.dark-mode .public-card-hero {
+    background: transparent;
+}
+
+body.dark-mode .public-card-hero h1 {
+    color: #ffffff;
+}
+
+body.dark-mode .public-card-hero p {
+    color: #cbd5e1;
+}
+
+body.dark-mode .public-card-section {
+    background: transparent;
+}
+
+body.dark-mode .public-card-section h2 {
+    color: #ffffff;
+}
+
+body.dark-mode .public-card-box {
+    background: #1e293b;
+    border: 1px solid #334155;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.20);
+}
+
+body.dark-mode .public-card-box h3 {
+    color: #ffffff;
+}
+
+body.dark-mode .public-card-box p,
+body.dark-mode .public-card-box li {
+    color: #cbd5e1;
+}
+
+body.dark-mode .public-card-box:hover {
+    box-shadow: 0 20px 45px rgba(37, 99, 235, 0.20);
+}
+
+
+/* =====================================================
+   RESPONSIVIDADE
+   ===================================================== */
+
+@media (max-width: 900px) {
+
+    .public-card-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 768px) {
+
+    .public-card-hero {
+        padding: 120px 20px 70px;
+    }
+
+    .public-card-hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .public-card-hero p {
+        font-size: 1rem;
+    }
+
+    .public-card-section {
+        padding: 50px 20px;
+    }
+
+    .public-card-section h2 {
+        font-size: 1.7rem;
+    }
+
+    .public-card-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .public-card-box {
+        padding: 25px;
+    }
+
+}
