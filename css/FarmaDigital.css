@@ -1,0 +1,155 @@
+/* =====================================================
+FARMA DIGITAL
+Estilos específicos da página
+Compatível com o tema claro/escuro do style.css
+===================================================== */
+
+/* =====================================================
+HERO ESPECÍFICO DA FARMA DIGITAL
+===================================================== */
+
+.farma-hero {
+    padding: 120px 20px 80px;
+    text-align: center;
+    background: linear-gradient(135deg, #eef4ff 0%, #f7fbff 100%);
+}
+
+.farma-hero-content {
+    max-width: 850px;
+    margin: auto;
+}
+
+.farma-hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #1a1a1a;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.farma-hero p {
+    font-size: 1.2rem;
+    color: #6B7C8C;
+}
+
+/* =====================================================
+CONTEÚDO DA FARMA DIGITAL
+===================================================== */
+
+.farma-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 60px 20px;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+
+
+}
+
+/* =====================================================
+CARDS DA FARMA DIGITAL
+===================================================== */
+
+.farma-card {
+    background: #fff;
+    border-radius: 25px;
+    padding: 35px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+    transition: 0.3s;
+}
+
+.farma-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 45px rgba(0, 123, 255, 0.15);
+}
+
+.farma-card h2 {
+    margin-bottom: 18px;
+    font-size: 1.4rem;
+    color: #007BFF;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.farma-card p {
+    color: #6B7C8C;
+    margin-bottom: 12px;
+}
+
+.farma-card ul {
+    padding-left: 20px;
+}
+
+.farma-card li {
+    margin-bottom: 10px;
+    color: #6B7C8C;
+}
+
+/* =====================================================
+TEMA ESCURO - FARMA DIGITAL
+===================================================== */
+
+body.dark-mode .farma-hero {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+}
+
+body.dark-mode .farma-hero h1 {
+    color: #ffffff;
+}
+
+body.dark-mode .farma-hero p {
+    color: #cbd5e1;
+}
+
+body.dark-mode .farma-container {
+    background: #0f172a;
+}
+
+body.dark-mode .farma-card {
+    background: #1e293b;
+    border: 1px solid #334155;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.20);
+}
+
+body.dark-mode .farma-card:hover {
+    box-shadow: 0 20px 45px rgba(37, 99, 235, 0.20);
+}
+
+body.dark-mode .farma-card h2 {
+    color: #60a5fa;
+}
+
+body.dark-mode .farma-card p,
+body.dark-mode .farma-card li {
+    color: #cbd5e1;
+}
+
+/* =====================================================
+RESPONSIVIDADE
+===================================================== */
+
+@media (max-width: 768px) {
+
+    .farma-hero {
+        padding: 120px 20px 70px;
+    }
+
+    .farma-hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .farma-hero p {
+        font-size: 1rem;
+    }
+
+    .farma-container {
+        grid-template-columns: 1fr;
+        padding: 50px 20px;
+    }
+
+    .farma-card {
+        padding: 28px 25px;
+    }
+
+
+}

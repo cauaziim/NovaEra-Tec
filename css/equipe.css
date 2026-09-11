@@ -1,0 +1,609 @@
+/* =====================================================
+   PÁGINA EQUIPE — estilos específicos desta página
+   Reaproveita o design system do style.css principal:
+   Roboto (corpo) + Montserrat (títulos), azul #007BFF
+   + roxo #7c3aed, cards brancos com sombra suave.
+   Navbar, footer, botões (.btn) e dark mode já vêm do
+   style.css principal — não duplicar aqui.
+========================================= */
+
+.logo,
+.logo:hover,
+.logo:visited,
+.logo:active {
+    text-decoration: none;
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+.team-hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    padding-top: 72px;
+    background: #f5f7fb;
+}
+
+/* Foto de fundo com overlay claro (mesmo padrão do .hero-overlay usado alhures) */
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+   background: linear-gradient(
+    90deg,
+    rgba(245, 247, 251, .96) 20%,
+    rgba(245, 247, 251, .82) 60%,
+    rgba(245, 247, 251, .96) 100%
+), url("../imagem-programacao.webp") no-repeat center center/cover;
+
+}
+
+/* Trecho de código decorativo — mantido, mas discreto sobre fundo claro */
+.team-hero::before {
+    content: '// NovaEra Code\nconst team = [\n  { name: "Bianca",  role: "Backend" },\n  { name: "Cauã",    role: "Database" },\n  { name: "Flavio",  role: "QA" },\n  { name: "Gustavo", role: "Fullstack" },\n  { name: "Vitor",   role: "Frontend" },\n];';
+    white-space: pre;
+    position: absolute;
+    right: 6%;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: 'Courier New', monospace;
+    font-size: .82rem;
+    line-height: 1.9;
+    color: rgba(0, 51, 255, 0.677);
+    pointer-events: none;
+    z-index: 0;
+    letter-spacing: .3px;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 640px;
+}
+
+.hero-tag {
+    display: inline-block;
+    font-size: .72rem;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: #ededed;
+    border: 1px solid rgba(0, 123, 255, 0.647);
+    border-radius: 50px;
+    padding: 6px 16px;
+    margin-bottom: 28px;
+    background: rgba(0, 123, 255, 0.827);
+}
+
+.hero-content h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(2.4rem, 5vw, 4rem);
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -1.5px;
+    color: #1a1a1a;
+    margin-bottom: 22px;
+}
+
+.hero-content h1 em {
+    font-style: normal;
+    background: linear-gradient(90deg, #007BFF, #7c3aed);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.hero-content p {
+    color: #6B7C8C;
+    font-size: 1.05rem;
+    max-width: 480px;
+    margin-bottom: 36px;
+}
+
+/* Reaproveita a assinatura visual do .btn-primary do site */
+.hero-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 30px;
+    background: linear-gradient(135deg, #007BFF, #0056b3);
+    color: #fff;
+    font-size: .9rem;
+    font-weight: 700;
+    letter-spacing: .4px;
+    text-decoration: none;
+    border-radius: 50px;
+    box-shadow: 0 10px 25px rgba(38, 0, 255, 0.862);
+    transition: transform .2s, box-shadow .2s;
+}
+
+.hero-btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 32px rgba(0, 123, 255, 0.792);
+}
+
+/* =========================================
+   INTRO
+========================================= */
+.team-intro {
+    padding: 80px 0;
+    background: #fff;
+    border-bottom: 1px solid #eef0f5;
+}
+
+.intro-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.section-mini {
+    display: inline-block;
+    font-size: .72rem;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: #007BFF;
+    margin-bottom: 16px;
+}
+
+.intro-left h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(1.6rem, 3vw, 2.4rem);
+    font-weight: 700;
+    line-height: 1.25;
+    letter-spacing: -.5px;
+    color: #1a1a1a;
+}
+
+.intro-right p {
+    color: #6B7C8C;
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+/* =========================================
+   SECTION HEADER (reutilizável)
+========================================= */
+.section-header {
+    text-align: center;
+    margin-bottom: 56px;
+}
+
+.section-header .section-mini {
+    display: block;
+}
+
+.section-header h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+    font-weight: 700;
+    letter-spacing: -.5px;
+    color: #1a1a1a;
+}
+
+/* =========================================
+   GRID DE EQUIPE
+========================================= */
+.team-section {
+    padding: 100px 0;
+    background: #f5f7fb;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 32px;
+}
+
+.team-card {
+    background: #fff;
+    border: 1px solid #eef0f5;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .06);
+    transition: transform .35s, box-shadow .35s;
+    position: relative;
+}
+
+.team-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 24px 50px rgba(0, 123, 255, .18);
+}
+
+/* Linha colorida no topo ao hover — assinatura mantida do arquivo original */
+.team-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+   background: linear-gradient(90deg, #007BFF, #0056b3);
+    opacity: 0;
+    transition: opacity .35s;
+}
+
+.team-card:hover::before {
+    opacity: 1;
+}
+
+.team-image {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    background: #eef4ff;
+}
+
+.team-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    transition: transform .5s;
+}
+
+.team-card:hover .team-image img {
+    transform: scale(1.06);
+}
+
+.team-content {
+    padding: 24px;
+}
+
+.role {
+    display: inline-block;
+    font-size: .72rem;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 50px;
+    background: #eef4ff;
+    color: #007BFF;
+    margin-bottom: 12px;
+}
+
+.team-content h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 10px;
+    letter-spacing: -.3px;
+}
+
+.team-content p {
+    font-size: .88rem;
+    color: #6B7C8C;
+    line-height: 1.7;
+    margin-bottom: 18px;
+}
+
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.skills span {
+    font-size: .72rem;
+    font-weight: 700;
+    letter-spacing: .6px;
+    padding: 5px 12px;
+    border-radius: 50px;
+    background: #f5f7fb;
+    border: 1px solid #eef0f5;
+    color: #007BFF;
+    transition: background .2s, border-color .2s;
+}
+
+.team-card:hover .skills span {
+    background: #eef4ff;
+    border-color: rgba(0, 123, 255, .3);
+}
+
+/* =========================================
+   ESTATÍSTICAS — mesmo padrão do .stats principal
+========================================= */
+.stats-section {
+    padding: 90px 0;
+    background: #fff;
+    border-top: 1px solid #eef0f5;
+    border-bottom: 1px solid #eef0f5;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    text-align: center;
+}
+
+.stat-card {
+    padding: 30px;
+    border-radius: 20px;
+    background: #f8fbff;
+    transition: transform .3s;
+}
+
+.stat-card:hover {
+    transform: translateY(-8px);
+}
+
+.stat-card h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.6rem;
+    font-weight: 800;
+    letter-spacing: -1px;
+    background: linear-gradient(135deg, #007BFF, #7c3aed);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 8px;
+}
+
+.stat-card p {
+    font-size: .82rem;
+    font-weight: 600;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: #6B7C8C;
+}
+
+/* =========================================
+   COMO TRABALHAMOS (WORKFLOW)
+========================================= */
+.workflow {
+    padding: 100px 0;
+    background: #f5f7fb;
+}
+
+.workflow-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    position: relative;
+}
+
+.workflow-grid::before {
+    content: '';
+    position: absolute;
+    top: 38px;
+    left: calc(12.5% + 20px);
+    right: calc(12.5% + 20px);
+    height: 1px;
+    background: linear-gradient(90deg, #007BFF, #7c3aed);
+    opacity: .25;
+    z-index: 0;
+}
+
+.workflow-card {
+    position: relative;
+    z-index: 1;
+    background: #fff;
+    border: 1px solid #eef0f5;
+    border-radius: 18px;
+    padding: 40px 28px;
+    text-align: center;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, .04);
+    transition: transform .3s, box-shadow .3s;
+}
+
+.workflow-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 44px rgba(0, 123, 255, .15);
+}
+
+.workflow-card > span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(0, 123, 255, .12), rgba(124, 58, 237, .12));
+    border: 1px solid rgba(0, 123, 255, .25);
+    font-size: .8rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: #007BFF;
+    margin-bottom: 20px;
+}
+
+.workflow-card h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 10px;
+    letter-spacing: -.2px;
+}
+
+.workflow-card p {
+    font-size: .85rem;
+    color: #6B7C8C;
+    line-height: 1.7;
+}
+
+/* =========================================
+   CTA
+========================================= */
+.cta-section {
+    padding: 100px 0;
+    background: #fff;
+}
+
+.cta-box {
+    background: #f8fbff;
+    border: 1px solid #eef0f5;
+    border-radius: 24px;
+    padding: 70px 60px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-box::before {
+    content: '';
+    position: absolute;
+    top: -80px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 400px;
+    height: 200px;
+    background: radial-gradient(ellipse, rgba(0, 123, 255, .14) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.cta-box h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(1.8rem, 3vw, 2.8rem);
+    font-weight: 800;
+    letter-spacing: -1px;
+    color: #1a1a1a;
+    margin-bottom: 16px;
+}
+
+.cta-box p {
+    color: #6B7C8C;
+    font-size: 1rem;
+    margin-bottom: 36px;
+}
+
+.cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 38px;
+    background: linear-gradient(135deg, #007BFF, #7c3aed);
+    color: #fff;
+    font-size: .95rem;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 50px;
+    box-shadow: 0 10px 28px rgba(0, 123, 255, .25);
+    transition: transform .2s, box-shadow .2s;
+}
+
+.cta-btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 36px rgba(0, 123, 255, .35);
+}
+
+/* =========================================
+   DARK MODE — segue o mesmo padrão do body.dark-mode
+   já usado no restante do site
+========================================= */
+body.dark-mode .team-hero {
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+}
+
+body.dark-mode .hero-overlay {
+    background:
+        linear-gradient(
+            90deg,
+            rgba(15, 23, 42, .95) 20%,
+            rgba(15, 23, 42, .8) 60%,
+            rgba(15, 23, 42, .95) 100%
+        ),
+        url("../imagem-programacao.webp") no-repeat center center/cover;
+}
+
+body.dark-mode .team-hero::before {
+    color: rgba(96, 165, 250, .12);
+}
+
+body.dark-mode .hero-content h1,
+body.dark-mode .intro-left h2,
+body.dark-mode .section-header h2,
+body.dark-mode .team-content h3,
+body.dark-mode .workflow-card h3,
+body.dark-mode .cta-box h2 {
+    color: #ffffff;
+}
+
+body.dark-mode .team-intro,
+body.dark-mode .stats-section,
+body.dark-mode .cta-section {
+    background: #0f172a;
+    border-color: #1f2937;
+}
+
+body.dark-mode .team-section,
+body.dark-mode .workflow {
+    background: #111827;
+}
+
+body.dark-mode .team-card,
+body.dark-mode .workflow-card,
+body.dark-mode .cta-box,
+body.dark-mode .stat-card {
+    background: #1e293b;
+    border-color: #334155;
+}
+
+body.dark-mode .team-image {
+    background: #111827;
+}
+
+body.dark-mode .role,
+body.dark-mode .skills span {
+    background: rgba(0, 123, 255, .12);
+    border-color: rgba(0, 123, 255, .3);
+    color: #60a5fa;
+}
+
+body.dark-mode .team-card:hover .skills span {
+    background: rgba(0, 123, 255, .2);
+}
+
+/* =========================================
+   RESPONSIVO — mesmos breakpoints do style.css principal
+========================================= */
+@media (max-width: 992px) {
+    .intro-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .workflow-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .workflow-grid::before {
+        display: none;
+    }
+
+    .team-hero::before {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cta-box {
+        padding: 44px 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .workflow-grid {
+        grid-template-columns: 1fr;
+    }
+}
