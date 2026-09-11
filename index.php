@@ -4,7 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< HEAD
     <title>NovaEra Code | Transformando ideias em soluções</title>
+=======
+    <title>NovaEra Code - Transformando ideias em soluções</title>
+>>>>>>> ccd4c4396dc63f26a1b5c6b6d55aeda5b1bb709c
 
     <link rel="stylesheet" href="css/style.css">
 
@@ -16,6 +20,7 @@
 
 <body>
 
+<<<<<<< HEAD
     <!-- =====================================================
          PRELOADER PREMIUM — NOVAERA CODE
          ===================================================== -->
@@ -56,6 +61,11 @@
      PRE-LOADING — NOVAERA CODE
      ===================================================== -->
 <!-- ===================== NAVBAR ===================== -->
+=======
+
+
+    <!-- ===================== NAVBAR ===================== -->
+>>>>>>> ccd4c4396dc63f26a1b5c6b6d55aeda5b1bb709c
     <nav class="navbar">
         <div class="nav-container">
 
@@ -108,7 +118,21 @@
 
         </div>
     </nav>
+<<<<<<< HEAD
 </div>
+=======
+    <div id="loader">
+        <div class="loader-glow"></div>
+        <div class="loader-content">
+            <img src="img/logonova.png" alt="NovaEra Code" class="loader-logo">
+            <div class="loader-spinner">
+                <span class="loader-ring loader-ring-outer"></span>
+                <span class="loader-ring loader-ring-inner"></span>
+            </div>
+            <span class="loader-text">NovaEra Code</span>
+        </div>
+    </div>
+>>>>>>> ccd4c4396dc63f26a1b5c6b6d55aeda5b1bb709c
 
     <!-- ===================== HERO ===================== -->
     <section class="hero">
@@ -163,6 +187,12 @@
                 </div>
             </div>
         </div>
+<<<<<<< HEAD
+=======
+        </div>
+
+        </div>
+>>>>>>> ccd4c4396dc63f26a1b5c6b6d55aeda5b1bb709c
     </section>
 
     <!-- ===================== STATS ===================== -->
@@ -382,7 +412,11 @@
                     <span>PHP</span>
                 </div>
                 <div class="tech-badge">
+<<<<<<< HEAD
                     <img src="https://raw.githubusercontent.com/devicons/devicon/7330accdbc47e2dc0c19789a48533c4a3c50fe58/icons/laravel/laravel-original.svg" alt="Laravel">
+=======
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-plain.svg" alt="Laravel">
+>>>>>>> ccd4c4396dc63f26a1b5c6b6d55aeda5b1bb709c
                     <span>Laravel</span>
                 </div>
                 <div class="tech-badge">
@@ -606,6 +640,10 @@
 
                         </p>
 
+<<<<<<< HEAD
+=======
+                        <a href="#">Ver projeto</a>
+>>>>>>> ccd4c4396dc63f26a1b5c6b6d55aeda5b1bb709c
                     </div>
 
                 </div>
@@ -625,7 +663,11 @@
                             controle de notas e dashboards.
                         </p>
 
+<<<<<<< HEAD
                         
+=======
+                        <a href="#">Ver projeto</a>
+>>>>>>> ccd4c4396dc63f26a1b5c6b6d55aeda5b1bb709c
                     </div>
 
                 </div>
@@ -645,6 +687,10 @@
                             controle de notas e dashboards.
                         </p>
 
+<<<<<<< HEAD
+=======
+                        <a href="#">Ver projeto</a>
+>>>>>>> ccd4c4396dc63f26a1b5c6b6d55aeda5b1bb709c
                     </div>
 
                 </div>
@@ -834,7 +880,10 @@
         </div>
     </footer>
 
+<<<<<<< HEAD
     <!-- <script src=../js/preloader.js></script> -->
+=======
+>>>>>>> ccd4c4396dc63f26a1b5c6b6d55aeda5b1bb709c
     <script src="js/script.js"></script>
 
 </body>

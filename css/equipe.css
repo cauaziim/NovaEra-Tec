@@ -42,6 +42,25 @@
 }
 
 /* Trecho de código decorativo — mantido, mas discreto sobre fundo claro */
+<<<<<<< HEAD
+=======
+.team-hero::before {
+    content: '// NovaEra Code\nconst team = [\n  { name: "Bianca",  role: "Backend" },\n  { name: "Cauã",    role: "Database" },\n  { name: "Flavio",  role: "QA" },\n  { name: "Gustavo", role: "Fullstack" },\n  { name: "Vitor",   role: "Frontend" },\n];';
+    white-space: pre;
+    position: absolute;
+    right: 6%;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: 'Courier New', monospace;
+    font-size: .82rem;
+    line-height: 1.9;
+    color: rgba(0, 51, 255, 0.677);
+    pointer-events: none;
+    z-index: 0;
+    letter-spacing: .3px;
+}
+
+>>>>>>> ccd4c4396dc63f26a1b5c6b6d55aeda5b1bb709c
 .hero-content {
     position: relative;
     z-index: 1;

@@ -13,6 +13,7 @@ HERO — SOBRE
 ===================================================== */
 
 .sobre-hero {
+<<<<<<< HEAD
     position: relative;
     min-height: 70vh;
     padding: 150px 20px 100px;
@@ -27,12 +28,31 @@ HERO — SOBRE
             #eef4ff 0%,
             #f7fbff 50%,
             #ffffff 100%);
+=======
+position: relative;
+min-height: 70vh;
+padding: 150px 20px 100px;
+display: flex;
+align-items: center;
+justify-content: center;
+text-align: center;
+overflow: hidden;
+
+background:
+    linear-gradient(
+        135deg,
+        #eef4ff 0%,
+        #f7fbff 50%,
+        #ffffff 100%
+    );
+>>>>>>> ccd4c4396dc63f26a1b5c6b6d55aeda5b1bb709c
 
 
 }
 
 .sobre-hero::before,
 .sobre-hero::after {
+<<<<<<< HEAD
     content: "";
     position: absolute;
     border-radius: 50%;
@@ -79,6 +99,54 @@ HERO — SOBRE
     color: #6B7C8C;
     font-size: 1.1rem;
     line-height: 1.8;
+=======
+content: "";
+position: absolute;
+border-radius: 50%;
+pointer-events: none;
+}
+
+.sobre-hero::before {
+width: 420px;
+height: 420px;
+top: -180px;
+left: -180px;
+background: rgba(0, 123, 255, 0.08);
+}
+
+.sobre-hero::after {
+width: 350px;
+height: 350px;
+right: -150px;
+bottom: -170px;
+background: rgba(124, 58, 237, 0.07);
+}
+
+.sobre-container {
+position: relative;
+z-index: 2;
+}
+
+.sobre-title {
+max-width: 900px;
+margin: 0 auto 20px;
+font-family: 'Montserrat', sans-serif;
+font-size: clamp(2.5rem, 6vw, 4.5rem);
+line-height: 1.15;
+font-weight: 700;
+}
+
+.sobre-title .highlight {
+color: #007BFF;
+}
+
+.sobre-subtitle {
+max-width: 750px;
+margin: 0 auto;
+color: #6B7C8C;
+font-size: 1.1rem;
+line-height: 1.8;
+>>>>>>> ccd4c4396dc63f26a1b5c6b6d55aeda5b1bb709c
 }
 
 /* =====================================================
@@ -86,6 +154,7 @@ INTRODUÇÃO
 ===================================================== */
 
 .sobre-intro {
+<<<<<<< HEAD
     padding: 100px 0;
     background: #ffffff;
 }
@@ -118,6 +187,40 @@ INTRODUÇÃO
 
 .sobre-intro-content p:last-child {
     margin-bottom: 0;
+=======
+padding: 100px 0;
+background: #ffffff;
+}
+
+.sobre-intro-grid {
+display: grid;
+grid-template-columns: 1fr 1fr;
+align-items: center;
+gap: 70px;
+}
+
+.sobre-intro-content h2 {
+font-family: 'Montserrat', sans-serif;
+font-size: clamp(2rem, 4vw, 3rem);
+line-height: 1.2;
+margin-bottom: 25px;
+color: #1a1a2e;
+}
+
+.sobre-intro-content h2 span {
+color: #007BFF;
+}
+
+.sobre-intro-content p {
+color: #6B7C8C;
+font-size: 1.05rem;
+line-height: 1.8;
+margin-bottom: 18px;
+}
+
+.sobre-intro-content p:last-child {
+margin-bottom: 0;
+>>>>>>> ccd4c4396dc63f26a1b5c6b6d55aeda5b1bb709c
 }
 
 /* =====================================================
@@ -125,6 +228,7 @@ BLOCO VISUAL DA INTRODUÇÃO
 ===================================================== */
 
 .sobre-visual {
+<<<<<<< HEAD
     position: relative;
     min-height: 420px;
     display: flex;
@@ -149,11 +253,40 @@ BLOCO VISUAL DA INTRODUÇÃO
 
     overflow: hidden;
     color: #ffffff;
+=======
+position: relative;
+min-height: 420px;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.sobre-visual-card {
+position: relative;
+width: min(100%, 420px);
+min-height: 350px;
+padding: 35px;
+border-radius: 30px;
+
+background:
+    linear-gradient(
+        145deg,
+        #0f172a,
+        #1e293b
+    );
+
+box-shadow:
+    0 30px 70px rgba(15, 23, 42, 0.22);
+
+overflow: hidden;
+color: #ffffff;
+>>>>>>> ccd4c4396dc63f26a1b5c6b6d55aeda5b1bb709c
 
 
 }
 
 .sobre-visual-card::before {
+<<<<<<< HEAD
     content: "";
     position: absolute;
     width: 220px;
@@ -197,11 +330,59 @@ BLOCO VISUAL DA INTRODUÇÃO
 
     color: #ffffff;
     font-size: 1.8rem;
+=======
+content: "";
+position: absolute;
+width: 220px;
+height: 220px;
+top: -90px;
+right: -70px;
+border-radius: 50%;
+background: rgba(0, 123, 255, 0.25);
+filter: blur(10px);
+}
+
+.sobre-visual-card::after {
+content: "";
+position: absolute;
+width: 180px;
+height: 180px;
+bottom: -100px;
+left: -60px;
+border-radius: 50%;
+background: rgba(124, 58, 237, 0.25);
+filter: blur(15px);
+}
+
+.sobre-visual-content {
+position: relative;
+z-index: 2;
+}
+
+.sobre-visual-icon {
+width: 70px;
+height: 70px;
+display: flex;
+align-items: center;
+justify-content: center;
+margin-bottom: 25px;
+
+border-radius: 20px;
+background: linear-gradient(
+    135deg,
+    #007BFF,
+    #7c3aed
+);
+
+color: #ffffff;
+font-size: 1.8rem;
+>>>>>>> ccd4c4396dc63f26a1b5c6b6d55aeda5b1bb709c
 
 
 }
 
 .sobre-visual-card h3 {
+<<<<<<< HEAD
     font-family: 'Montserrat', sans-serif;
     font-size: 1.7rem;
     margin-bottom: 15px;
@@ -210,6 +391,16 @@ BLOCO VISUAL DA INTRODUÇÃO
 .sobre-visual-card p {
     color: #cbd5e1;
     line-height: 1.7;
+=======
+font-family: 'Montserrat', sans-serif;
+font-size: 1.7rem;
+margin-bottom: 15px;
+}
+
+.sobre-visual-card p {
+color: #cbd5e1;
+line-height: 1.7;
+>>>>>>> ccd4c4396dc63f26a1b5c6b6d55aeda5b1bb709c
 }
 
 /* =====================================================
@@ -217,6 +408,7 @@ NÚMEROS / DIFERENCIAIS
 ===================================================== */
 
 .sobre-diferenciais {
+<<<<<<< HEAD
     padding: 100px 0;
     background: #f5f7fb;
 }
@@ -256,11 +448,53 @@ NÚMEROS / DIFERENCIAIS
     background: #eef4ff;
     color: #007BFF;
     font-size: 1.6rem;
+=======
+padding: 100px 0;
+background: #f5f7fb;
+}
+
+.sobre-diferenciais-grid {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 30px;
+}
+
+.sobre-diferencial {
+padding: 35px;
+background: #ffffff;
+border: 1px solid #eef0f5;
+border-radius: 24px;
+text-align: center;
+transition:
+transform 0.35s ease,
+box-shadow 0.35s ease;
+}
+
+.sobre-diferencial:hover {
+transform: translateY(-8px);
+box-shadow: 0 20px 45px rgba(0, 123, 255, 0.12);
+}
+
+.sobre-diferencial-icon {
+width: 65px;
+height: 65px;
+margin: 0 auto 20px;
+
+display: flex;
+align-items: center;
+justify-content: center;
+
+border-radius: 18px;
+background: #eef4ff;
+color: #007BFF;
+font-size: 1.6rem;
+>>>>>>> ccd4c4396dc63f26a1b5c6b6d55aeda5b1bb709c
 
 
 }
 
 .sobre-diferencial h3 {
+<<<<<<< HEAD
     margin-bottom: 12px;
     font-size: 1.25rem;
 }
@@ -268,6 +502,15 @@ NÚMEROS / DIFERENCIAIS
 .sobre-diferencial p {
     color: #6B7C8C;
     line-height: 1.7;
+=======
+margin-bottom: 12px;
+font-size: 1.25rem;
+}
+
+.sobre-diferencial p {
+color: #6B7C8C;
+line-height: 1.7;
+>>>>>>> ccd4c4396dc63f26a1b5c6b6d55aeda5b1bb709c
 }
 
 /* =====================================================
@@ -275,6 +518,7 @@ DARK MODE — SOBRE
 ===================================================== */
 
 body.dark-mode .sobre-hero {
+<<<<<<< HEAD
     background:
         radial-gradient(circle at 15% 20%,
             rgba(37, 99, 235, 0.12),
@@ -320,6 +564,57 @@ body.dark-mode .sobre-diferencial p {
 body.dark-mode .sobre-diferencial-icon {
     background: #172554;
     color: #60a5fa;
+=======
+background:
+radial-gradient(
+circle at 15% 20%,
+rgba(37, 99, 235, 0.12),
+transparent 35%
+),
+linear-gradient(
+135deg,
+#0f172a,
+#111827
+);
+}
+
+body.dark-mode .sobre-subtitle {
+color: #cbd5e1;
+}
+
+body.dark-mode .sobre-intro {
+background: #0f172a;
+}
+
+body.dark-mode .sobre-intro-content h2 {
+color: #ffffff;
+}
+
+body.dark-mode .sobre-intro-content p {
+color: #cbd5e1;
+}
+
+body.dark-mode .sobre-diferenciais {
+background: #111827;
+}
+
+body.dark-mode .sobre-diferencial {
+background: #1e293b;
+border-color: #334155;
+}
+
+body.dark-mode .sobre-diferencial h3 {
+color: #ffffff;
+}
+
+body.dark-mode .sobre-diferencial p {
+color: #cbd5e1;
+}
+
+body.dark-mode .sobre-diferencial-icon {
+background: #172554;
+color: #60a5fa;
+>>>>>>> ccd4c4396dc63f26a1b5c6b6d55aeda5b1bb709c
 }
 
 /* =====================================================
@@ -328,6 +623,7 @@ RESPONSIVIDADE
 
 @media (max-width: 992px) {
 
+<<<<<<< HEAD
     .sobre-intro-grid {
         grid-template-columns: 1fr;
         gap: 50px;
@@ -344,12 +640,31 @@ RESPONSIVIDADE
     .sobre-diferenciais-grid {
         grid-template-columns: repeat(2, 1fr);
     }
+=======
+.sobre-intro-grid {
+    grid-template-columns: 1fr;
+    gap: 50px;
+}
+
+.sobre-intro-content {
+    text-align: center;
+}
+
+.sobre-visual {
+    min-height: 380px;
+}
+
+.sobre-diferenciais-grid {
+    grid-template-columns: repeat(2, 1fr);
+}
+>>>>>>> ccd4c4396dc63f26a1b5c6b6d55aeda5b1bb709c
 
 
 }
 
 @media (max-width: 768px) {
 
+<<<<<<< HEAD
     .sobre-hero {
         min-height: auto;
         padding: 140px 20px 90px;
@@ -520,12 +835,49 @@ RESPONSIVIDADE
         }
 
     }
+=======
+.sobre-hero {
+    min-height: auto;
+    padding: 140px 20px 90px;
+}
+
+.sobre-title {
+    font-size: 2.6rem;
+}
+
+.sobre-subtitle {
+    font-size: 1rem;
+}
+
+.sobre-intro,
+.sobre-diferenciais {
+    padding: 80px 0;
+}
+
+.sobre-intro-content h2 {
+    font-size: 2rem;
+}
+
+.sobre-visual {
+    min-height: 330px;
+}
+
+.sobre-visual-card {
+    min-height: 300px;
+    padding: 30px;
+}
+
+.sobre-diferenciais-grid {
+    grid-template-columns: 1fr;
+}
+>>>>>>> ccd4c4396dc63f26a1b5c6b6d55aeda5b1bb709c
 
 
 }
 
 @media (max-width: 480px) {
 
+<<<<<<< HEAD
     .sobre-hero {
         padding-top: 125px;
         padding-bottom: 75px;
@@ -594,5 +946,32 @@ RESPONSIVIDADE
         font-size: 0.85rem;
         line-height: 1.5;
     }
+=======
+.sobre-hero {
+    padding-top: 125px;
+    padding-bottom: 75px;
+}
+
+.sobre-title {
+    font-size: 2.25rem;
+}
+
+.sobre-intro,
+.sobre-diferenciais {
+    padding: 70px 0;
+}
+
+.sobre-visual-card {
+    padding: 25px;
+    border-radius: 24px;
+}
+
+.sobre-visual-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 1.5rem;
+}
+
+>>>>>>> ccd4c4396dc63f26a1b5c6b6d55aeda5b1bb709c
 
 }

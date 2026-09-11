@@ -3,6 +3,7 @@ include_once("conexao.php");
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
+<<<<<<< HEAD
     $nome  = trim($_POST['nome'] ?? '');
     $email = trim($_POST['email'] ?? '');
     $senhaDigitada = $_POST['senha'] ?? '';
@@ -24,6 +25,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         "SELECT id FROM usuarios WHERE email = ? LIMIT 1"
     );
 
+=======
+    $nome  = $_POST['nome'];
+    $email = $_POST['email'];
+    $senha = password_hash($_POST['senha'], PASSWORD_DEFAULT);
+
+    // VERIFICA EMAIL
+    $check = $conn->prepare("SELECT id FROM usuarios WHERE email = ?");
+>>>>>>> ccd4c4396dc63f26a1b5c6b6d55aeda5b1bb709c
     $check->bind_param("s", $email);
     $check->execute();
 
@@ -31,6 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($resultado->num_rows > 0) {
 
+<<<<<<< HEAD
         header("Location: ../html/cadastro.html?erro=existente");
         exit();
 
@@ -57,6 +67,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         header("Location: ../html/cadastro.html?erro=database");
         exit();
+=======
+        echo "E-mail já cadastrado!";
+
+    } else {
+
+        $sql = $conn->prepare("
+            INSERT INTO usuarios(nome, email, senha)
+            VALUES (?, ?, ?)
+        ");
+
+        $sql->bind_param("sss", $nome, $email, $senha);
+
+        if ($sql->execute()) {
+        header("Location: ../html/login.html");
+        } else {
+            echo "Erro!";
+        }
+>>>>>>> ccd4c4396dc63f26a1b5c6b6d55aeda5b1bb709c
     }
 }
 ?>

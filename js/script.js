@@ -429,11 +429,16 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // ==========================================
+<<<<<<< HEAD
     // PRELOADER PREMIUM
+=======
+    // LOADER
+>>>>>>> ccd4c4396dc63f26a1b5c6b6d55aeda5b1bb709c
     // ==========================================
 
     function initLoader() {
 
+<<<<<<< HEAD
         const preloader = document.getElementById("preloader");
 
         if (!preloader) return;
@@ -508,6 +513,47 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
     }
+=======
+        const loader =
+            document.getElementById("loader");
+
+        if (!loader) return;
+
+        const hideLoader = () => {
+
+            loader.classList.add("hide");
+
+            // Tempo alinhado com a transição de 1s do CSS
+            // (deixa a saída suave em vez de sumir de repente).
+            setTimeout(() => {
+
+                loader.remove();
+
+            }, 1000);
+
+        };
+
+        // Se a página já terminou de carregar antes deste script
+        // rodar, o evento "load" nunca vai disparar e o loader
+        // ficaria preso cobrindo a tela para sempre.
+        if (document.readyState === "complete") {
+
+            hideLoader();
+
+        } else {
+
+            window.addEventListener("load", hideLoader);
+
+            // Rede de segurança: se algum recurso travar o "load"
+            // (imagem quebrada, script externo lento, etc.), o
+            // loader some de qualquer jeito depois de 6s.
+            setTimeout(hideLoader, 6000);
+
+        }
+
+    }
+
+>>>>>>> ccd4c4396dc63f26a1b5c6b6d55aeda5b1bb709c
     // ==========================================
     // INICIALIZAÇÃO
     // ==========================================
@@ -617,4 +663,10 @@ if(password && toggle){
 
     });
 
+<<<<<<< HEAD
 }
+=======
+}
+
+// login //
+>>>>>>> ccd4c4396dc63f26a1b5c6b6d55aeda5b1bb709c
