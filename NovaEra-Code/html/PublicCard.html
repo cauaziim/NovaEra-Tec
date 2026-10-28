@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Public Card | NovaEra Code</title>
+    <meta name="description" content="Public Card: cartão digital para tornar o transporte público mais acessível, econômico e inteligente.">
+    <meta name="theme-color" content="#f5f7fb">
+
+    <script>try{var t=localStorage.getItem("theme");if(t==="dark"||(!t&&matchMedia("(prefers-color-scheme: dark)").matches))document.documentElement.dataset.theme="dark"}catch(e){}</script>
+
+    <link rel="icon" type="image/webp" href="../img/opt/logo-mark.webp">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://images.unsplash.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..900&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/PublicCard.css">
+</head>
+
+<body class="project-page accent-public has-media-hero">
+
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+    <div id="preloader" class="preloader" role="status" aria-live="polite" aria-label="Carregando NovaEra Code">
+        <div class="preloader-inner">
+            <img class="preloader-logo" src="../img/opt/logo-mark.webp" alt="" width="64" height="64">
+            <div class="preloader-bar" aria-hidden="true">
+                <div class="preloader-bar-fill" id="preloaderFill"></div>
+            </div>
+            <div class="preloader-status">
+                <span id="preloaderStatus">Inicializando...</span>
+                <span id="preloaderPercent">0%</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===================== CABEÇALHO ===================== -->
+    <header class="site-header" data-header>
+        <div class="container nav">
+            <a href="../index.php" class="brand" aria-label="NovaEra Code — página inicial">
+                <span class="brand-mark"><img src="../img/opt/logo-mark.webp" alt="" width="40" height="40"></span>
+                <span class="brand-name">Nova<b>Era</b> Code</span>
+            </a>
+
+            <nav class="nav-menu" id="nav-menu" aria-label="Navegação principal">
+                <ul class="nav-list">
+                    <li><a href="../index.php" class="nav-link">Início</a></li>
+                    <li><a href="sobre.html" class="nav-link">Sobre</a></li>
+                    <li><a href="equipe.html" class="nav-link">Equipe</a></li>
+                    <li><a href="projetos.html" class="nav-link active" aria-current="page">Projetos</a></li>
+                    <li><a href="contato.html" class="nav-link">Contato</a></li>
+                </ul>
+                <a href="contato.html?assunto=Or%C3%A7amento#contact-form" class="btn btn-primary btn-sm nav-cta">Solicitar orçamento</a>
+            </nav>
+
+            <div class="nav-actions">
+                <button type="button" id="theme-toggle" class="icon-btn theme-toggle" aria-label="Ativar tema escuro">
+                    <i class="fas fa-moon" aria-hidden="true"></i>
+                </button>
+                <button type="button" class="icon-btn hamburger" aria-controls="nav-menu" aria-expanded="false" aria-label="Abrir menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main id="conteudo">
+
+        <!-- ===================== HERO ===================== -->
+        <section class="page-hero page-hero-media on-media" aria-labelledby="page-title">
+            <div class="media-bg" aria-hidden="true">
+                <img src="https://images.unsplash.com/photo-1517400508447-f8dd518b86db?auto=format&fit=crop&w=1600&q=65"
+                    srcset="https://images.unsplash.com/photo-1517400508447-f8dd518b86db?auto=format&fit=crop&w=800&q=65 800w, https://images.unsplash.com/photo-1517400508447-f8dd518b86db?auto=format&fit=crop&w=1600&q=65 1600w, https://images.unsplash.com/photo-1517400508447-f8dd518b86db?auto=format&fit=crop&w=2200&q=65 2200w"
+                    sizes="100vw" alt="" width="1600" height="1000" fetchpriority="high" data-parallax="10">
+            </div>
+            <div class="container project-hero-grid">
+                <div class="page-hero-inner">
+                    <nav class="breadcrumb" aria-label="Você está em">
+                        <ol>
+                            <li><a href="projetos.html">Projetos</a></li>
+                            <li aria-current="page">Public Card</li>
+                        </ol>
+                    </nav>
+                    <span class="eyebrow">Mobilidade Urbana Inteligente</span>
+                    <h1 id="page-title">Public Cards</h1>
+                    <p class="lead">
+                        Um cartão digital criado para tornar o transporte público mais acessível,
+                        econômico e inteligente para toda a população.
+                    </p>
+                    <div class="btn-row">
+                        <a href="contato.html?assunto=Informa%C3%A7%C3%B5es%20sobre%20o%20Public%20Card#contact-form" class="btn btn-primary">
+                            <i class="fas fa-envelope" aria-hidden="true"></i> Fale com a equipe
+                        </a>
+                        <a href="projetos.html" class="btn btn-secondary">
+                            <i class="fas fa-arrow-left" aria-hidden="true"></i> Voltar para projetos
+                        </a>
+                    </div>
+                </div>
+                <div class="project-logo-tile">
+                    <img src="../img/opt/public.webp" alt="Logotipo do Public Card" width="260" height="260">
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================== SOBRE ===================== -->
+        <section class="section" aria-labelledby="sobre-title">
+            <div class="container">
+                <div class="prose">
+                    <span class="eyebrow">Sobre o projeto</span>
+                    <h2 id="sobre-title">Sobre o Projeto</h2>
+                    <p>
+                        O Public Cards é uma solução desenvolvida pela NovaEra Tec com foco em mobilidade urbana e inclusão
+                        social.
+                    </p>
+                    <p>
+                        A proposta é oferecer à população um cartão único de transporte, permitindo acesso rápido a
+                        diferentes meios de locomoção com um único cadastro e pagamento mensal acessível.
+                    </p>
+                    <p>
+                        Com isso, o usuário ganha praticidade, economia e liberdade de deslocamento dentro da cidade.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================== TRANSPORTES ===================== -->
+        <section class="section section-alt" aria-labelledby="transportes-title">
+            <div class="container">
+                <div class="section-head">
+                    <span class="eyebrow">Integração</span>
+                    <h2 id="transportes-title">Transportes Integrados</h2>
+                </div>
+
+                <div class="grid grid-3">
+                    <article class="card feature-card" data-reveal>
+                        <span class="card-icon"><i class="fas fa-bus" aria-hidden="true"></i></span>
+                        <div><h3>Ônibus</h3><p>Linhas urbanas e intermunicipais.</p></div>
+                    </article>
+                    <article class="card feature-card" data-reveal>
+                        <span class="card-icon"><i class="fas fa-train-subway" aria-hidden="true"></i></span>
+                        <div><h3>Metrô</h3><p>Integração automática no cartão.</p></div>
+                    </article>
+                    <article class="card feature-card" data-reveal>
+                        <span class="card-icon"><i class="fas fa-train" aria-hidden="true"></i></span>
+                        <div><h3>Trem</h3><p>Conexão entre bairros e regiões.</p></div>
+                    </article>
+                    <article class="card feature-card" data-reveal>
+                        <span class="card-icon"><i class="fas fa-taxi" aria-hidden="true"></i></span>
+                        <div><h3>Táxis Credenciados</h3><p>Serviço complementar urbano.</p></div>
+                    </article>
+                    <article class="card feature-card" data-reveal>
+                        <span class="card-icon"><i class="fas fa-cable-car" aria-hidden="true"></i></span>
+                        <div><h3>Teleféricos</h3><p>Mobilidade em áreas especiais.</p></div>
+                    </article>
+                    <article class="card feature-card" data-reveal>
+                        <span class="card-icon"><i class="fas fa-bicycle" aria-hidden="true"></i></span>
+                        <div><h3>Novos Modais</h3><p>Expansão futura para bicicletas e vans urbanas.</p></div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================== FUNCIONALIDADES ===================== -->
+        <section class="section" aria-labelledby="funcionalidades-title">
+            <div class="container">
+                <div class="section-head">
+                    <span class="eyebrow">Plataforma</span>
+                    <h2 id="funcionalidades-title">Funcionalidades do Sistema</h2>
+                </div>
+
+                <div class="grid grid-3">
+                    <article class="card feature-card" data-reveal>
+                        <span class="card-icon"><i class="fas fa-id-card" aria-hidden="true"></i></span>
+                        <div><h3>Cadastro Online</h3><p>Cadastro rápido e digital pela plataforma.</p></div>
+                    </article>
+                    <article class="card feature-card" data-reveal>
+                        <span class="card-icon"><i class="fas fa-calendar-check" aria-hidden="true"></i></span>
+                        <div><h3>Pagamento Mensal</h3><p>Mensalidade fixa com renovação simplificada.</p></div>
+                    </article>
+                    <article class="card feature-card" data-reveal>
+                        <span class="card-icon"><i class="fas fa-qrcode" aria-hidden="true"></i></span>
+                        <div><h3>QR Code Digital</h3><p>Validação rápida pelo celular ou cartão físico.</p></div>
+                    </article>
+                    <article class="card feature-card" data-reveal>
+                        <span class="card-icon"><i class="fas fa-clock-rotate-left" aria-hidden="true"></i></span>
+                        <div><h3>Histórico de Viagens</h3><p>Consulta completa dos deslocamentos realizados.</p></div>
+                    </article>
+                    <article class="card feature-card" data-reveal>
+                        <span class="card-icon"><i class="fas fa-rotate" aria-hidden="true"></i></span>
+                        <div><h3>Recarga Automática</h3><p>Pagamento programado e renovação automática.</p></div>
+                    </article>
+                    <article class="card feature-card" data-reveal>
+                        <span class="card-icon"><i class="fas fa-headset" aria-hidden="true"></i></span>
+                        <div><h3>Suporte Digital</h3><p>Atendimento online direto pela plataforma.</p></div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================== BENEFÍCIOS / PROBLEMAS ===================== -->
+        <section class="section section-alt" aria-labelledby="impacto-title">
+            <div class="container">
+                <div class="section-head">
+                    <span class="eyebrow">Impacto</span>
+                    <h2 id="impacto-title">Por que o Public Cards importa</h2>
+                </div>
+
+                <div class="grid grid-2">
+                    <div class="panel" data-reveal>
+                        <h3>Benefícios para a População</h3>
+                        <ul class="check-list">
+                            <li>Redução do custo mensal com transporte</li>
+                            <li>Maior acessibilidade urbana</li>
+                            <li>Mais inclusão social</li>
+                            <li>Facilidade no deslocamento diário</li>
+                            <li>Menos burocracia no acesso ao transporte</li>
+                            <li>Mais praticidade com um único cartão integrado</li>
+                            <li>Economia para famílias e estudantes</li>
+                        </ul>
+                    </div>
+                    <div class="panel" data-reveal>
+                        <h3>Problemas que o Public Cards Resolve</h3>
+                        <ul class="problem-list">
+                            <li>Alto custo com transporte público</li>
+                            <li>Dificuldade de mobilidade diária</li>
+                            <li>Falta de acessibilidade</li>
+                            <li>Baixa integração entre modais urbanos</li>
+                            <li>Burocracia em benefícios sociais</li>
+                            <li>Dificuldade de deslocamento de famílias de baixa renda</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================== IMPACTO SOCIAL ===================== -->
+        <section class="section" aria-labelledby="social-title">
+            <div class="container">
+                <div class="cta-band on-ink">
+                    <div>
+                        <span class="eyebrow">Impacto social</span>
+                        <h2 id="social-title">O Public Cards vai além do transporte.</h2>
+                        <p>
+                            Ele promove inclusão, acessibilidade e qualidade de vida, conectando tecnologia com mobilidade
+                            urbana. A iniciativa contribui para cidades mais inteligentes, sustentáveis e acessíveis para
+                            todos os cidadãos.
+                        </p>
+                    </div>
+                    <div class="btn-row">
+                        <a href="projetos.html" class="btn btn-secondary btn-lg">
+                            <i class="fas fa-arrow-left" aria-hidden="true"></i> Voltar para projetos
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ===================== RODAPÉ ===================== -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="../index.php" class="brand" aria-label="NovaEra Code — página inicial">
+                        <span class="brand-mark"><img src="../img/opt/logo-mark.webp" alt="" width="40" height="40" loading="lazy"></span>
+                        <span class="brand-name">Nova<b>Era</b> Code</span>
+                    </a>
+                    <p>Transformando ideias em soluções digitais inovadoras.</p>
+                </div>
+
+                <nav class="footer-col" aria-labelledby="footer-nav">
+                    <h2 id="footer-nav">Navegação</h2>
+                    <ul>
+                        <li><a href="../index.php">Início</a></li>
+                        <li><a href="sobre.html">Sobre</a></li>
+                        <li><a href="equipe.html">Equipe</a></li>
+                        <li><a href="projetos.html">Projetos</a></li>
+                    </ul>
+                </nav>
+
+                <nav class="footer-col" aria-labelledby="footer-projetos">
+                    <h2 id="footer-projetos">Projetos</h2>
+                    <ul>
+                        <li><a href="Tempic.html">Tempic</a></li>
+                        <li><a href="FarmaDigital.html">Farma Digital</a></li>
+                        <li><a href="PublicCard.html">Public Card</a></li>
+                    </ul>
+                </nav>
+
+                <div class="footer-col footer-col-contact">
+                    <h2>Contato</h2>
+                    <ul>
+                        <li><a href="contato.html"><i class="fas fa-paper-plane" aria-hidden="true"></i> Fale com a equipe</a></li>
+                        <li><a href="mailto:contato@novaeracode.com"><i class="fas fa-envelope" aria-hidden="true"></i> contato@novaeracode.com</a></li>
+                        <li><a href="login.html"><i class="fas fa-user" aria-hidden="true"></i> Área do cliente</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© <span data-year>2026</span> NovaEra Code. Todos os direitos reservados.</p>
+                <p>Vídeos: Mixkit · Fotos: Unsplash · Clima: Open-Meteo</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js" defer></script>
+    <script src="../js/script.js" defer></script>
+    <script src="../js/motion.js" defer></script>
+
+</body>
+
+</html>
