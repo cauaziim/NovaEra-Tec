@@ -941,54 +941,59 @@ body.modal-open {
     background: var(--surface);
     border: 1px solid var(--border);
     border-radius: var(--radius-lg);
-    transition: border-color var(--dur) var(--ease), box-shadow var(--dur) var(--ease), transform var(--dur) var(--ease);
+    box-shadow: var(--highlight);
+    transition: border-color var(--dur) var(--ease), background-color var(--dur) var(--ease);
 }
 
 .card h3 {
-    font-size: var(--fs-xl);
+    font-size: var(--fs-lg);
+    letter-spacing: -0.015em;
 }
 
 .card p {
     color: var(--text-muted);
+    font-size: 0.9375rem;
+    line-height: 1.6;
 }
 
+/* Hover sutil: só borda e fundo, sem deslocamento */
 .card-hover:hover {
-    border-color: color-mix(in srgb, var(--brand) 40%, var(--border));
-    box-shadow: var(--shadow-md);
-    transform: translateY(-3px);
+    border-color: var(--border-strong);
+    background: var(--surface-2);
 }
 
 .card-icon {
     display: grid;
     place-items: center;
-    width: 48px;
-    height: 48px;
+    width: 36px;
+    height: 36px;
     flex: none;
-    border-radius: var(--radius-md);
-    background: var(--brand-soft);
-    color: var(--brand);
-    font-size: 1.15rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    background: var(--surface-2);
+    color: var(--text);
+    font-size: 0.9rem;
 }
 
 .chip {
     display: inline-flex;
     align-items: center;
     gap: 0.4rem;
-    padding: 0.3rem 0.7rem;
+    padding: 0.2rem 0.6rem;
     border: 1px solid var(--border);
     border-radius: var(--radius-pill);
-    background: var(--surface-2);
+    background: transparent;
     color: var(--text-muted);
     font-size: var(--fs-xs);
-    font-weight: 600;
-    line-height: 1.4;
+    font-weight: 500;
+    line-height: 1.5;
     white-space: nowrap;
 }
 
 .chip-brand {
-    border-color: transparent;
-    background: var(--brand-soft);
-    color: var(--brand);
+    border-color: var(--border);
+    background: var(--surface-2);
+    color: var(--text-muted);
 }
 
 .chip-list {
@@ -1004,21 +1009,22 @@ body.modal-open {
 
 .check-list li {
     position: relative;
-    padding-left: 1.9rem;
+    padding-left: 1.6rem;
     color: var(--text-muted);
+    font-size: 0.9375rem;
 }
 
+/* Marcador monocromático (máscara herda a cor do texto) */
 .check-list li::before {
     content: "";
     position: absolute;
     left: 0;
-    top: 0.2em;
-    width: 1.25rem;
-    height: 1.25rem;
-    border-radius: 50%;
-    background:
-        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='white' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 8.5l2.5 2.5L12 5.5'/%3E%3C/svg%3E") center / 0.8rem no-repeat,
-        var(--brand);
+    top: 0.3em;
+    width: 1rem;
+    height: 1rem;
+    background: var(--text);
+    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3.5 8.5l3 3L12.5 5'/%3E%3C/svg%3E") center / contain no-repeat;
+    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3.5 8.5l3 3L12.5 5'/%3E%3C/svg%3E") center / contain no-repeat;
 }
 
 /* Etapas de processo — linha de circuito conectando os nós */
@@ -1043,12 +1049,12 @@ body.modal-open {
     place-items: center;
     width: 44px;
     height: 44px;
-    border: 1.5px solid var(--brand);
+    border: 1px solid var(--border-strong);
     border-radius: 50%;
     background: var(--bg);
-    color: var(--brand);
+    color: var(--text);
     font-family: var(--font-mono);
-    font-size: var(--fs-sm);
+    font-size: var(--fs-xs);
     font-weight: 500;
     position: relative;
     z-index: 1;
@@ -1064,8 +1070,8 @@ body.modal-open {
     top: 22px;
     left: 52px;
     right: calc(-1 * clamp(1rem, 0.8rem + 1vw, 1.5rem) + 8px);
-    height: 1.5px;
-    background: linear-gradient(90deg, var(--brand), color-mix(in srgb, var(--brand) 20%, transparent));
+    height: 1px;
+    background: var(--border-strong);
 }
 
 .step:last-child::after {
@@ -1116,7 +1122,7 @@ body.modal-open {
         right: auto;
         width: 1.5px;
         height: auto;
-        background: linear-gradient(180deg, var(--brand), color-mix(in srgb, var(--brand) 20%, transparent));
+        background: var(--border-strong);
     }
 
     .step:last-child::after {
@@ -1615,83 +1621,6 @@ textarea.input {
     }
 }
 
-/* ---------- 12. PRELOADER ---------- */
-.preloader {
-    position: fixed;
-    inset: 0;
-    z-index: 3000;
-    display: grid;
-    place-items: center;
-    background: var(--bg);
-    transition: opacity 400ms var(--ease), visibility 0s linear 400ms;
-    /* Segurança: some sozinho caso o JavaScript falhe */
-    animation: preloader-failsafe 0s linear 6s forwards;
-}
-
-.preloader.preloader-hide {
-    opacity: 0;
-    visibility: hidden;
-}
-
-.preloader-inner {
-    display: grid;
-    justify-items: center;
-    gap: var(--space-4);
-    width: min(240px, 70vw);
-}
-
-.preloader-logo {
-    width: 64px;
-    height: 64px;
-    border-radius: 18px;
-    border: 1px solid var(--border);
-    background: #fff;
-    animation: pulse 1.6s var(--ease) infinite;
-}
-
-.preloader-bar {
-    width: 100%;
-    height: 3px;
-    overflow: hidden;
-    border-radius: 3px;
-    background: var(--border);
-}
-
-.preloader-bar-fill {
-    width: 0;
-    height: 100%;
-    background: linear-gradient(90deg, var(--accent), var(--brand));
-    transition: width 120ms linear;
-}
-
-.preloader-status {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    font-family: var(--font-mono);
-    font-size: var(--fs-xs);
-    color: var(--text-subtle);
-}
-
-@keyframes preloader-failsafe {
-    to {
-        opacity: 0;
-        visibility: hidden;
-    }
-}
-
-@keyframes pulse {
-    50% {
-        transform: scale(0.94);
-    }
-}
-
-@keyframes spin {
-    to {
-        transform: rotate(360deg);
-    }
-}
-
 /* ---------- 13. VOLTAR AO TOPO ---------- */
 .scroll-top-btn {
     position: fixed;
@@ -1728,8 +1657,9 @@ textarea.input {
 /* ---------- 14. REVEAL ---------- */
 .reveal {
     opacity: 0;
-    transform: translateY(18px);
-    transition: opacity 600ms var(--ease), transform 600ms var(--ease);
+    transform: translateY(8px);
+    transition: opacity 500ms var(--ease), transform 500ms var(--ease);
+    transition-delay: var(--reveal-delay, 0ms);
 }
 
 .reveal.show {
@@ -2030,7 +1960,7 @@ textarea.input {
 }
 
 .project-card:hover .project-media img {
-    transform: scale(1.04) rotate(-1.5deg);
+    transform: scale(1.02);
 }
 
 .project-body {
@@ -2513,21 +2443,18 @@ textarea.input {
 }
 
 /* Tipografia de cartaz */
+/* Títulos principais: caixa normal, peso 600, espaçamento negativo.
+   A segunda linha (em) recua para o cinza — hierarquia por contraste. */
 .display {
     font-family: var(--font-display);
-    font-stretch: 72%;
-    font-weight: 800;
-    line-height: 0.9;
-    letter-spacing: -0.01em;
-    text-transform: uppercase;
+    font-weight: 600;
+    line-height: 1.05;
+    letter-spacing: -0.035em;
 }
 
 .display em {
     font-style: normal;
-    color: transparent;
-    background: linear-gradient(100deg, #67e8f9, #3d8bff 55%, #7db2ff);
-    -webkit-background-clip: text;
-    background-clip: text;
+    color: var(--text-subtle);
 }
 
 .display .line {
@@ -2535,11 +2462,11 @@ textarea.input {
 }
 
 .section-head h2.display {
-    font-size: clamp(2.05rem, 1.05rem + 5vw, 5.75rem);
+    font-size: var(--fs-3xl);
 }
 
 .section-head:has(.display) {
-    max-width: 920px;
+    max-width: 680px;
 }
 
 .section-head.center h2.display {
@@ -2751,57 +2678,6 @@ textarea.input {
     }
 }
 
-/* ---------- FAIXA CINÉTICA ---------- */
-.kinetic {
-    overflow: hidden;
-    padding-block: clamp(1rem, 0.6rem + 1.5vw, 1.75rem);
-    background: var(--brand);
-    color: #fff;
-    border-block: 1px solid rgba(255, 255, 255, 0.12);
-}
-
-.kinetic-track {
-    display: flex;
-    width: max-content;
-    animation: kinetic 32s linear infinite;
-    will-change: transform;
-}
-
-.kinetic-group {
-    --kinetic-gap: clamp(1.25rem, 1rem + 1.5vw, 2.5rem);
-    display: flex;
-    align-items: center;
-    gap: var(--kinetic-gap);
-    padding-right: var(--kinetic-gap);
-}
-
-@keyframes kinetic {
-    to {
-        transform: translateX(-50%);
-    }
-}
-
-.kinetic-track span {
-    font-family: var(--font-display);
-    font-stretch: 72%;
-    font-size: clamp(2rem, 1.2rem + 3.6vw, 4.5rem);
-    font-weight: 800;
-    line-height: 1;
-    text-transform: uppercase;
-    white-space: nowrap;
-}
-
-.kinetic-group span:nth-of-type(2n) {
-    color: transparent;
-    -webkit-text-stroke: 1.5px #fff;
-}
-
-.kinetic-track i {
-    font-style: normal;
-    font-size: clamp(1.1rem, 0.8rem + 1vw, 1.8rem);
-    opacity: 0.7;
-}
-
 /* ---------- NÚMEROS (contagens reais do conteúdo do site) ---------- */
 .stats-grid {
     display: grid;
@@ -2873,7 +2749,7 @@ textarea.input {
 }
 
 .media-card:hover > img {
-    transform: scale(1.06);
+    transform: scale(1.02);
 }
 
 .media-card-index {
@@ -2970,7 +2846,7 @@ textarea.input {
 }
 
 .rail-card:hover .rail-media > img:not(.rail-logo) {
-    transform: scale(1.05);
+    transform: scale(1.02);
 }
 
 .rail-media::after {
@@ -3133,44 +3009,4 @@ textarea.input {
 .project-page .page-hero-media .eyebrow,
 .project-page .page-hero-media .highlight {
     color: color-mix(in srgb, var(--project-accent) 55%, #fff);
-}
-
-/* ---------- PARALLAX (controlado pelo motion.js) ---------- */
-[data-parallax] {
-    will-change: transform;
-}
-
-/* ---------- LENIS (rolagem suave) ---------- */
-html.lenis,
-html.lenis body {
-    height: auto;
-}
-
-.lenis.lenis-smooth {
-    scroll-behavior: auto !important;
-}
-
-.lenis.lenis-stopped {
-    overflow: hidden;
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .kinetic-track {
-        animation: none;
-        width: auto;
-        justify-content: center;
-    }
-
-    .kinetic-group {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    .kinetic-group[aria-hidden="true"] {
-        display: none;
-    }
-
-    .scroll-cue::after {
-        animation: none;
-    }
 }

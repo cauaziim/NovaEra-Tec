@@ -6,36 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <title>NovaEra Code | Transformando ideias em soluções digitais</title>
     <meta name="description" content="A NovaEra Code desenvolve sites, sistemas e aplicativos sob medida para empresas que desejam crescer no mundo digital.">
-    <meta name="theme-color" content="#f5f7fb">
+    <meta name="theme-color" content="#08080a">
 
-    <script>try{var t=localStorage.getItem("theme");if(t==="dark"||(!t&&matchMedia("(prefers-color-scheme: dark)").matches))document.documentElement.dataset.theme="dark"}catch(e){}</script>
+    <script>try{if(localStorage.getItem("theme")!=="light")document.documentElement.dataset.theme="dark"}catch(e){document.documentElement.dataset.theme="dark"}</script>
 
     <link rel="icon" type="image/webp" href="img/opt/logo-mark.webp">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://images.unsplash.com">
-    <link rel="preconnect" href="https://assets.mixkit.co">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..900&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body class="has-media-hero">
+<body>
 
     <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
-
-    <div id="preloader" class="preloader" role="status" aria-live="polite" aria-label="Carregando NovaEra Code">
-        <div class="preloader-inner">
-            <img class="preloader-logo" src="img/opt/logo-mark.webp" alt="" width="64" height="64">
-            <div class="preloader-bar" aria-hidden="true">
-                <div class="preloader-bar-fill" id="preloaderFill"></div>
-            </div>
-            <div class="preloader-status">
-                <span id="preloaderStatus">Inicializando...</span>
-                <span id="preloaderPercent">0%</span>
-            </div>
-        </div>
-    </div>
 
     <!-- ===================== CABEÇALHO ===================== -->
     <header class="site-header" data-header>
@@ -69,62 +55,138 @@
 
     <main id="conteudo">
 
-        <!-- ===================== HERO EM VÍDEO ===================== -->
-        <section class="hero-cine on-media" aria-labelledby="hero-title">
-            <div class="media-bg" aria-hidden="true">
-                <video data-src="https://assets.mixkit.co/videos/46635/46635-720.mp4" data-parallax="10"
-                    poster="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1600&q=60"
-                    muted loop playsinline preload="none"></video>
-            </div>
+        <!-- ===================== HERO ===================== -->
+        <section class="hero-x" aria-labelledby="hero-title">
+            <div class="hero-x-backdrop" aria-hidden="true"></div>
 
-            <div class="container hero-cine-inner">
-                <span class="eyebrow" data-fade-up>NovaEra Code · Software sob medida</span>
-                <h1 class="display hero-cine-title" id="hero-title" data-split>
-                    <span class="line">Transformando</span>
-                    <span class="line">ideias em</span>
-                    <span class="line"><em>soluções digitais</em></span>
+            <div class="container hero-x-inner">
+                <a class="announce" href="html/Tempic.html">
+                    <span class="announce-tag">Novo</span>
+                    <span>Tempic agora com controle automático da refrigeração</span>
+                    <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                </a>
+
+                <h1 class="display hero-x-title" id="hero-title">
+                    Transformando ideias <em>em soluções digitais.</em>
                 </h1>
-                <div class="hero-cine-foot" data-fade-up="0.5">
-                    <p>
-                        Desenvolvemos sistemas, sites e aplicações modernas para
-                        empresas que desejam crescer no mundo digital.
-                    </p>
-                    <div class="btn-row">
-                        <a href="html/projetos.html" class="btn btn-primary btn-lg">
-                            Ver projetos
-                            <i class="fas fa-arrow-right" aria-hidden="true"></i>
-                        </a>
-                        <a href="html/equipe.html" class="btn btn-secondary btn-lg">
-                            Nossa equipe
-                        </a>
-                    </div>
+
+                <p class="hero-x-sub">
+                    Desenvolvemos sistemas, sites e aplicações modernas para
+                    empresas que desejam crescer no mundo digital.
+                </p>
+
+                <div class="btn-row hero-x-actions">
+                    <a href="html/contato.html?assunto=Or%C3%A7amento#contact-form" class="btn btn-primary btn-lg">
+                        Solicitar orçamento
+                    </a>
+                    <a href="html/projetos.html" class="btn btn-secondary btn-lg">
+                        Ver projetos
+                        <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                    </a>
                 </div>
             </div>
 
-            <button type="button" class="icon-btn video-toggle" data-video-toggle aria-pressed="false" aria-label="Reproduzir vídeo de fundo">
-                <i class="fas fa-play" aria-hidden="true"></i>
-            </button>
-            <a href="#servicos" class="scroll-cue">Role</a>
+            <!-- Composição da interface real do Tempic (ilustrativa, com dados de demonstração) -->
+            <div class="container">
+                <figure class="product-shot">
+                    <div class="app-window" aria-hidden="true">
+                        <div class="app-titlebar">
+                            <span class="app-dots"><i></i><i></i><i></i></span>
+                            <span class="app-url">tempic · painel</span>
+                            <span class="app-live"><i></i> ao vivo</span>
+                        </div>
+
+                        <div class="app-body">
+                            <aside class="app-sidebar">
+                                <p class="app-label">Sensores</p>
+                                <ul>
+                                    <li class="is-active"><i class="fas fa-snowflake"></i><span>Freezer 1</span><b>-18,2°</b></li>
+                                    <li><i class="fas fa-warehouse"></i><span>Câmara fria</span><b>3,8°</b></li>
+                                    <li><i class="fas fa-truck"></i><span>Baú refrigerado</span><b>4,6°</b></li>
+                                    <li class="is-warn"><i class="fas fa-temperature-low"></i><span>Geladeira loja</span><b>7,6°</b></li>
+                                </ul>
+                                <p class="app-label">Iluminação</p>
+                                <ul>
+                                    <li><i class="fas fa-lightbulb"></i><span>Estacionamento</span><b class="app-on">acesa</b></li>
+                                </ul>
+                            </aside>
+
+                            <div class="app-main">
+                                <div class="app-head">
+                                    <div>
+                                        <p class="app-title">Freezer 1</p>
+                                        <p class="app-meta">Depósito · leitura a cada 5 s</p>
+                                    </div>
+                                    <span class="app-status">Normal</span>
+                                </div>
+
+                                <div class="app-reading">
+                                    <span class="app-temp">-18,2<small>°C</small></span>
+                                    <span class="app-range">Faixa segura −24 °C a −16 °C</span>
+                                </div>
+
+                                <svg class="app-chart" viewBox="0 0 600 160" preserveAspectRatio="none">
+                                    <rect class="app-band" x="0" y="20" width="600" height="120" />
+                                    <line class="app-limit" x1="0" y1="20" x2="600" y2="20" />
+                                    <line class="app-limit" x1="0" y1="140" x2="600" y2="140" />
+                                    <path class="app-area" d="M0 92 C40 84 70 60 110 54 S180 80 220 88 S290 64 330 50 S400 78 440 86 S510 60 550 52 L600 58 L600 160 L0 160 Z" />
+                                    <path class="app-line" d="M0 92 C40 84 70 60 110 54 S180 80 220 88 S290 64 330 50 S400 78 440 86 S510 60 550 52 L600 58" />
+                                </svg>
+
+                                <div class="app-controls">
+                                    <div class="app-control">
+                                        <span class="app-switch is-on"><i></i></span>
+                                        <div><p>Refrigeração</p><span>Ligada · automático</span></div>
+                                    </div>
+                                    <div class="app-control">
+                                        <span class="app-switch is-on"><i></i></span>
+                                        <div><p>Estacionamento</p><span>Programada 18:00–06:00</span></div>
+                                    </div>
+                                    <div class="app-control app-alert">
+                                        <i class="fas fa-bell"></i>
+                                        <div><p>Geladeira loja</p><span>Próxima do limite máximo</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <figcaption>
+                        Tempic, sistema IoT de monitoramento desenvolvido pela equipe — interface com dados de demonstração.
+                        <a href="html/tempic-app.html">Experimentar</a>
+                    </figcaption>
+                </figure>
+            </div>
         </section>
 
-        <!-- ===================== FAIXA CINÉTICA ===================== -->
-        <div class="kinetic" aria-hidden="true">
-            <div class="kinetic-track">
-                <div class="kinetic-group">
-                    <span>Sites</span><i>✦</i><span>Sistemas</span><i>✦</i><span>Aplicativos</span><i>✦</i><span>IoT</span><i>✦</i><span>APIs</span><i>✦</i><span>Dashboards</span><i>✦</i>
-                </div>
-                <div class="kinetic-group" aria-hidden="true">
-                    <span>Sites</span><i>✦</i><span>Sistemas</span><i>✦</i><span>Aplicativos</span><i>✦</i><span>IoT</span><i>✦</i><span>APIs</span><i>✦</i><span>Dashboards</span><i>✦</i>
-                </div>
+        <!-- ===================== STACK ===================== -->
+        <section class="stack-strip" aria-labelledby="stack-title">
+            <div class="container">
+                <h2 id="stack-title" class="stack-strip-title">Construímos com ferramentas consolidadas</h2>
+                <ul class="stack-logos">
+                    <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-plain.svg" alt="" width="22" height="22" loading="lazy">PHP</li>
+                    <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg" alt="" width="22" height="22" loading="lazy">Laravel</li>
+                    <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="" width="22" height="22" loading="lazy">JavaScript</li>
+                    <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="" width="22" height="22" loading="lazy">TypeScript</li>
+                    <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="" width="22" height="22" loading="lazy">React</li>
+                    <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" alt="" width="22" height="22" loading="lazy">Flutter</li>
+                    <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="" width="22" height="22" loading="lazy">Node.js</li>
+                    <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="" width="22" height="22" loading="lazy">MySQL</li>
+                    <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="" width="22" height="22" loading="lazy">Python</li>
+                    <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="" width="22" height="22" loading="lazy">Docker</li>
+                    <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="" width="22" height="22" loading="lazy">HTML5</li>
+                    <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="" width="22" height="22" loading="lazy">CSS3</li>
+                    <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dart/dart-original.svg" alt="" width="22" height="22" loading="lazy">Dart</li>
+                    <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="" width="22" height="22" loading="lazy">Git</li>
+                </ul>
             </div>
-        </div>
+        </section>
 
         <!-- ===================== SERVIÇOS ===================== -->
         <section class="section" id="servicos" aria-labelledby="servicos-title">
             <div class="container">
                 <div class="section-head">
                     <span class="eyebrow">O que fazemos</span>
-                    <h2 id="servicos-title" class="display" data-split><span class="line">Vamos criar algo</span><span class="line">incrível?</span></h2>
+                    <h2 id="servicos-title" class="display"><span class="line">Vamos criar algo</span><span class="line">incrível?</span></h2>
                     <p>Do site institucional ao sistema sob medida: tecnologia pensada para o seu negócio.</p>
                 </div>
 
@@ -160,10 +222,10 @@
         <!-- ===================== NÚMEROS ===================== -->
         <section class="section section-tight section-alt" aria-label="NovaEra Code em números">
             <div class="container stats-grid" data-stagger>
-                <div class="stat"><span class="stat-num" data-count="3">03</span><span class="stat-label">produtos no portfólio</span></div>
-                <div class="stat"><span class="stat-num" data-count="5">05</span><span class="stat-label">especialistas no time</span></div>
-                <div class="stat"><span class="stat-num" data-count="14">14</span><span class="stat-label">tecnologias no nosso stack</span></div>
-                <div class="stat"><span class="stat-num" data-count="4">04</span><span class="stat-label">etapas, do planejamento à entrega</span></div>
+                <div class="stat"><span class="stat-num">03</span><span class="stat-label">produtos no portfólio</span></div>
+                <div class="stat"><span class="stat-num">05</span><span class="stat-label">especialistas no time</span></div>
+                <div class="stat"><span class="stat-num">14</span><span class="stat-label">tecnologias no nosso stack</span></div>
+                <div class="stat"><span class="stat-num">04</span><span class="stat-label">etapas, do planejamento à entrega</span></div>
             </div>
         </section>
 
@@ -172,7 +234,7 @@
             <div class="container rail-head">
                 <div class="section-head">
                     <span class="eyebrow">Portfólio</span>
-                    <h2 id="projetos-title" class="display" data-split><span class="line">Projetos em</span><span class="line">destaque</span></h2>
+                    <h2 id="projetos-title" class="display"><span class="line">Projetos em</span><span class="line">destaque</span></h2>
                     <p>Conheça algumas soluções desenvolvidas pela NovaEra Code.</p>
                 </div>
                 <div class="rail-controls">
@@ -235,7 +297,7 @@
             <div class="container">
                 <div class="section-head">
                     <span class="eyebrow">Quem somos</span>
-                    <h2 id="dna-title" class="display" data-split><span class="line">Nosso DNA</span></h2>
+                    <h2 id="dna-title" class="display"><span class="line">Nosso DNA</span></h2>
                     <p>Missão, visão e os pilares que guiam nosso código.</p>
                 </div>
 
@@ -265,61 +327,12 @@
             </div>
         </section>
 
-        <!-- ===================== TECNOLOGIAS ===================== -->
-        <section class="section section-tight" aria-labelledby="tech-title">
-            <div class="container">
-                <div class="section-head center">
-                    <span class="eyebrow">Stack</span>
-                    <h2 id="tech-title">Tecnologias que dominamos</h2>
-                    <p>Ferramentas de ponta para construir soluções robustas e escaláveis.</p>
-                </div>
-            </div>
-
-            <div class="marquee">
-                <div class="marquee-track">
-                    <ul class="marquee-group">
-                        <li class="tech-badge"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-plain.svg" alt="" width="26" height="26">PHP</li>
-                        <li class="tech-badge"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg" alt="" width="26" height="26">Laravel</li>
-                        <li class="tech-badge"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="" width="26" height="26">JavaScript</li>
-                        <li class="tech-badge"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="" width="26" height="26">TypeScript</li>
-                        <li class="tech-badge"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="" width="26" height="26">React</li>
-                        <li class="tech-badge"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" alt="" width="26" height="26">Flutter</li>
-                        <li class="tech-badge"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dart/dart-original.svg" alt="" width="26" height="26">Dart</li>
-                        <li class="tech-badge"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="" width="26" height="26">Python</li>
-                        <li class="tech-badge"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="" width="26" height="26">MySQL</li>
-                        <li class="tech-badge"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="" width="26" height="26">CSS3</li>
-                        <li class="tech-badge"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="" width="26" height="26">HTML5</li>
-                        <li class="tech-badge"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="" width="26" height="26">Node.js</li>
-                        <li class="tech-badge"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="" width="26" height="26">Git</li>
-                        <li class="tech-badge"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="" width="26" height="26">Docker</li>
-                    </ul>
-                    <!-- Cópia para o loop contínuo (oculta de leitores de tela) -->
-                    <ul class="marquee-group" aria-hidden="true">
-                        <li class="tech-badge"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-plain.svg" alt="" width="26" height="26">PHP</li>
-                        <li class="tech-badge"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg" alt="" width="26" height="26">Laravel</li>
-                        <li class="tech-badge"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="" width="26" height="26">JavaScript</li>
-                        <li class="tech-badge"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="" width="26" height="26">TypeScript</li>
-                        <li class="tech-badge"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="" width="26" height="26">React</li>
-                        <li class="tech-badge"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" alt="" width="26" height="26">Flutter</li>
-                        <li class="tech-badge"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dart/dart-original.svg" alt="" width="26" height="26">Dart</li>
-                        <li class="tech-badge"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="" width="26" height="26">Python</li>
-                        <li class="tech-badge"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="" width="26" height="26">MySQL</li>
-                        <li class="tech-badge"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="" width="26" height="26">CSS3</li>
-                        <li class="tech-badge"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="" width="26" height="26">HTML5</li>
-                        <li class="tech-badge"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="" width="26" height="26">Node.js</li>
-                        <li class="tech-badge"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="" width="26" height="26">Git</li>
-                        <li class="tech-badge"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="" width="26" height="26">Docker</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
         <!-- ===================== PACOTES ===================== -->
         <section class="section section-alt" aria-labelledby="pacotes-title">
             <div class="container">
                 <div class="section-head center">
                     <span class="eyebrow">Investimento</span>
-                    <h2 id="pacotes-title" class="display" data-split><span class="line">Pacotes de</span><span class="line">Desenvolvimento</span></h2>
+                    <h2 id="pacotes-title" class="display"><span class="line">Pacotes de</span><span class="line">Desenvolvimento</span></h2>
                     <p>Escolha a solução ideal para o seu negócio.</p>
                 </div>
 
@@ -387,7 +400,7 @@
             </div>
             <div class="container cta-cine-inner">
                 <span class="eyebrow">Próximo passo</span>
-                <h2 id="cta-title" class="display" data-split><span class="line">Tem um projeto</span><span class="line"><em>em mente?</em></span></h2>
+                <h2 id="cta-title" class="display"><span class="line">Tem um projeto</span><span class="line"><em>em mente?</em></span></h2>
                 <p>Conte-nos sobre sua necessidade para conversarmos sobre o projeto.</p>
                 <div class="btn-row">
                     <a href="html/contato.html?assunto=Or%C3%A7amento#contact-form" class="btn btn-primary btn-lg">
@@ -454,12 +467,7 @@
             </div>
         </div>
     </footer>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js" defer></script>
     <script src="js/script.js" defer></script>
-    <script src="js/motion.js" defer></script>
 
 </body>
 

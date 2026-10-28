@@ -44,7 +44,7 @@
 .team-card:hover {
     border-color: color-mix(in srgb, var(--brand) 40%, var(--border));
     box-shadow: var(--shadow-md);
-    transform: translateY(-3px);
+    transform: none;
 }
 
 .team-photo {
@@ -62,7 +62,7 @@
 }
 
 .team-card:hover .team-photo img {
-    transform: scale(1.04);
+    transform: scale(1.02);
 }
 
 .team-body {

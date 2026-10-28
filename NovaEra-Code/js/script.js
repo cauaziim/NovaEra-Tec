@@ -140,6 +140,14 @@ document.addEventListener("DOMContentLoaded", () => {
     // ==========================================
 
     function initReveal() {
+        // Grupos [data-stagger]: cada filho entra com um pequeno atraso
+        document.querySelectorAll("[data-stagger]").forEach(group => {
+            Array.from(group.children).forEach((child, index) => {
+                child.setAttribute("data-reveal", "");
+                child.style.setProperty("--reveal-delay", `${Math.min(index, 6) * 60}ms`);
+            });
+        });
+
         const elements = document.querySelectorAll("[data-reveal]");
         if (!elements.length || reduceMotion || !("IntersectionObserver" in window)) return;
 
@@ -642,61 +650,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // ==========================================
-    // PRELOADER
-    // ==========================================
-
-    function initLoader() {
-        const preloader = document.getElementById("preloader");
-        if (!preloader) return;
-
-        const fill = document.getElementById("preloaderFill");
-        const percent = document.getElementById("preloaderPercent");
-        const status = document.getElementById("preloaderStatus");
-
-        const hide = () => {
-            preloader.classList.add("preloader-hide");
-            setTimeout(() => preloader.remove(), 450);
-        };
-
-        if (reduceMotion) {
-            if (document.readyState === "complete") hide();
-            else window.addEventListener("load", hide, { once: true });
-            return;
-        }
-
-        const messages = ["Inicializando...", "Carregando interface...", "Preparando experiência...", "Quase pronto..."];
-        let progress = 0;
-        let finished = false;
-        const startTime = performance.now();
-        const minimumDisplayTime = 300;
-
-        const update = () => {
-            if (finished) return;
-            progress = Math.min(progress + (progress < 70 ? 2.4 : progress < 90 ? 1.2 : 0.45), 99);
-            if (fill) fill.style.width = `${progress}%`;
-            if (percent) percent.textContent = `${Math.floor(progress)}%`;
-            if (status) status.textContent = messages[Math.min(Math.floor(progress / 25), messages.length - 1)];
-            requestAnimationFrame(update);
-        };
-
-        requestAnimationFrame(update);
-
-        const finish = () => {
-            const remaining = Math.max(0, minimumDisplayTime - (performance.now() - startTime));
-            setTimeout(() => {
-                finished = true;
-                if (fill) fill.style.width = "100%";
-                if (percent) percent.textContent = "100%";
-                if (status) status.textContent = "Tudo pronto.";
-                setTimeout(hide, 160);
-            }, remaining);
-        };
-
-        if (document.readyState === "complete") finish();
-        else window.addEventListener("load", finish, { once: true });
-    }
-
-    // ==========================================
     // INICIALIZAÇÃO
     // ==========================================
 
@@ -706,7 +659,6 @@ document.addEventListener("DOMContentLoaded", () => {
     initScrollTop();
     initReveal();
     initYear();
-    initLoader();
     initProjectFilters();
     initProjectModal();
     initInlineValidation();
