@@ -4,51 +4,55 @@
    Estilos exclusivos de cada página ficam em css/<pagina>.css
    ========================================================= */
 
-/* ---------- 1. TOKENS ---------- */
+/* ---------- 1. TOKENS ----------
+   Paleta neutra e restrita: o azul da marca aparece só em ações
+   (CTA principal, links, foco e estados ativos). O tema escuro é o
+   padrão; o claro fica disponível pelo botão de tema. */
 :root {
     color-scheme: light;
 
-    /* Tipografia */
-    --font-display: "Archivo", "Segoe UI", system-ui, -apple-system, sans-serif;
+    /* Tipografia — uma família para tudo, mono só para dados técnicos */
+    --font-display: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
     --font-body: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
     --font-mono: "JetBrains Mono", ui-monospace, "Cascadia Code", Consolas, monospace;
 
     --fs-xs: 0.75rem;
     --fs-sm: 0.875rem;
     --fs-base: 1rem;
-    --fs-lg: clamp(1.05rem, 1rem + 0.3vw, 1.2rem);
-    --fs-xl: clamp(1.2rem, 1.1rem + 0.5vw, 1.45rem);
-    --fs-2xl: clamp(1.45rem, 1.2rem + 1.1vw, 2rem);
-    --fs-3xl: clamp(1.85rem, 1.35rem + 2.2vw, 2.9rem);
-    --fs-4xl: clamp(2.2rem, 1.4rem + 3.8vw, 4.1rem);
+    --fs-lg: clamp(1.0625rem, 1rem + 0.25vw, 1.1875rem);
+    --fs-xl: clamp(1.125rem, 1.05rem + 0.35vw, 1.3125rem);
+    --fs-2xl: clamp(1.375rem, 1.2rem + 0.8vw, 1.75rem);
+    --fs-3xl: clamp(1.875rem, 1.45rem + 1.8vw, 2.75rem);
+    --fs-4xl: clamp(2.375rem, 1.6rem + 3.3vw, 4rem);
 
     /* Cores — tema claro */
-    --bg: #f5f7fb;
-    --bg-soft: #edf1f7;
+    --bg: #fafafa;
+    --bg-soft: #f4f4f5;
     --surface: #ffffff;
-    --surface-2: #f8fafc;
-    --border: #e1e7ef;
-    --border-strong: #c9d3e0;
-    --text: #0b1220;
-    --text-muted: #46526a;
-    --text-subtle: #5f6b80;
+    --surface-2: #f8f8f9;
+    --border: #e6e6e9;
+    --border-strong: #d4d4d8;
+    --text: #0a0a0b;
+    --text-muted: #52525b;
+    --text-subtle: #6b6b74;
 
-    --brand: #0a62e8;
-    --brand-strong: #074fbd;
-    --brand-soft: #e7f0ff;
+    --brand: #2563eb;
+    --brand-strong: #1d4ed8;
+    --brand-solid: #2563eb;
+    --brand-soft: rgba(37, 99, 235, 0.08);
     --brand-contrast: #ffffff;
-    --accent: #0ea5e9;
+    --accent: #2563eb;
 
-    --ink: #070b14;
-    --ink-2: #0e1525;
-    --ink-text: #e8eef9;
-    --ink-muted: #a3b0c6;
-    --ink-border: rgba(255, 255, 255, 0.1);
+    --ink: #0a0a0b;
+    --ink-2: #111113;
+    --ink-text: #ededef;
+    --ink-muted: #a1a1aa;
+    --ink-border: rgba(255, 255, 255, 0.09);
 
-    --success: #047857;
-    --success-soft: #e6f6ef;
+    --success: #15803d;
+    --success-soft: rgba(21, 128, 61, 0.08);
     --danger: #c62828;
-    --danger-soft: #fdecec;
+    --danger-soft: rgba(198, 40, 40, 0.08);
 
     /* Espaçamento */
     --space-1: 0.25rem;
@@ -59,60 +63,64 @@
     --space-6: 2rem;
     --space-7: 3rem;
     --space-8: 4rem;
-    --section-y: clamp(4rem, 3rem + 5vw, 7.5rem);
+    --section-y: clamp(5rem, 3.5rem + 5vw, 8rem);
     --gutter: clamp(1rem, 0.6rem + 2vw, 2rem);
-    --container: 1200px;
+    --container: 1120px;
 
     /* Forma */
-    --radius-sm: 8px;
-    --radius-md: 12px;
-    --radius-lg: 18px;
-    --radius-xl: 26px;
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --radius-lg: 14px;
+    --radius-xl: 20px;
     --radius-pill: 999px;
 
-    --shadow-sm: 0 1px 2px rgba(11, 18, 32, 0.06), 0 1px 1px rgba(11, 18, 32, 0.04);
-    --shadow-md: 0 8px 24px -8px rgba(11, 18, 32, 0.14), 0 2px 6px rgba(11, 18, 32, 0.05);
-    --shadow-lg: 0 24px 56px -16px rgba(11, 18, 32, 0.22), 0 4px 12px rgba(11, 18, 32, 0.06);
-    --ring: 0 0 0 3px rgba(10, 98, 232, 0.28);
+    --shadow-sm: 0 1px 2px rgba(10, 10, 11, 0.05);
+    --shadow-md: 0 4px 16px -6px rgba(10, 10, 11, 0.1), 0 1px 2px rgba(10, 10, 11, 0.04);
+    --shadow-lg: 0 24px 48px -20px rgba(10, 10, 11, 0.18), 0 2px 6px rgba(10, 10, 11, 0.04);
+    --highlight: inset 0 1px 0 rgba(255, 255, 255, 0.6);
+    --ring: 0 0 0 3px rgba(37, 99, 235, 0.25);
 
-    /* Movimento */
-    --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+    /* Movimento — curto e com desaceleração realista */
+    --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
     --dur-fast: 150ms;
-    --dur: 240ms;
+    --dur: 200ms;
 
-    --header-h: 72px;
+    --header-h: 64px;
 }
 
 :root[data-theme="dark"] {
     color-scheme: dark;
 
-    --bg: #070b14;
-    --bg-soft: #0b1120;
-    --surface: #0f1626;
-    --surface-2: #131c2f;
-    --border: #1d2840;
-    --border-strong: #2a3854;
-    --text: #e8eef9;
-    --text-muted: #a3b0c6;
-    --text-subtle: #8b98af;
+    --bg: #08080a;
+    --bg-soft: #0c0c0e;
+    --surface: #111113;
+    --surface-2: #161618;
+    --border: rgba(255, 255, 255, 0.08);
+    --border-strong: rgba(255, 255, 255, 0.14);
+    --text: #ededef;
+    --text-muted: #a1a1aa;
+    --text-subtle: #8a8a93;
 
-    --brand: #3d8bff;
-    --brand-strong: #6aa6ff;
-    --brand-soft: rgba(61, 139, 255, 0.14);
+    --brand: #6b9bff;
+    --brand-strong: #93b6ff;
+    --brand-solid: #2563eb;
+    --brand-soft: rgba(107, 155, 255, 0.1);
     --brand-contrast: #ffffff;
+    --accent: #6b9bff;
 
-    --ink: #0b1120;
-    --ink-2: #111a2d;
+    --ink: #0c0c0e;
+    --ink-2: #131315;
 
-    --success: #34d399;
-    --success-soft: rgba(52, 211, 153, 0.12);
+    --success: #4ade80;
+    --success-soft: rgba(74, 222, 128, 0.1);
     --danger: #f87171;
-    --danger-soft: rgba(248, 113, 113, 0.12);
+    --danger-soft: rgba(248, 113, 113, 0.1);
 
-    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
-    --shadow-md: 0 10px 28px -10px rgba(0, 0, 0, 0.6);
-    --shadow-lg: 0 28px 60px -18px rgba(0, 0, 0, 0.7);
-    --ring: 0 0 0 3px rgba(61, 139, 255, 0.35);
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.5);
+    --shadow-md: 0 8px 24px -10px rgba(0, 0, 0, 0.7);
+    --shadow-lg: 0 32px 64px -24px rgba(0, 0, 0, 0.8);
+    --highlight: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    --ring: 0 0 0 3px rgba(107, 155, 255, 0.3);
 }
 
 /* ---------- 2. BASE ---------- */
@@ -163,9 +171,10 @@ h4 {
     font-family: var(--font-display);
     font-weight: 600;
     line-height: 1.15;
-    letter-spacing: -0.025em;
+    letter-spacing: -0.022em;
     color: var(--text);
     text-wrap: balance;
+    font-feature-settings: "cv11", "ss01"; /* Inter: dígitos e "a" mais limpos */
 }
 
 p {
@@ -367,33 +376,25 @@ body.modal-open {
     color: var(--text-muted);
 }
 
+/* Títulos em dois tons: a segunda parte recua para o cinza.
+   A hierarquia vem do contraste, não de cor de destaque. */
 .highlight {
-    color: var(--brand);
+    color: var(--text-subtle);
 }
 
 /* ---------- 4. TIPOGRAFIA DE APOIO ---------- */
 
-/* Rótulo com "nó de circuito" — assinatura visual da marca */
+/* Rótulo de seção: discreto, em mono, sem cor de destaque */
 .eyebrow {
     display: inline-flex;
     align-items: center;
-    gap: 0.6rem;
+    gap: 0.5rem;
     font-family: var(--font-mono);
-    font-size: var(--fs-xs);
+    font-size: 0.75rem;
     font-weight: 500;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.04em;
     text-transform: uppercase;
-    color: var(--brand);
-}
-
-.eyebrow::before {
-    content: "";
-    width: 22px;
-    height: 8px;
-    flex: none;
-    background:
-        radial-gradient(circle at 4px 50%, transparent 2px, currentColor 2.2px, currentColor 3.6px, transparent 3.8px),
-        linear-gradient(currentColor, currentColor) 8px 50% / 14px 1.5px no-repeat;
+    color: var(--text-subtle);
 }
 
 /* ---------- 5. BOTÕES ---------- */
@@ -406,17 +407,18 @@ body.modal-open {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 0.6rem;
-    min-height: 48px;
-    padding: 0.75rem 1.35rem;
+    gap: 0.5rem;
+    min-height: 44px;
+    padding: 0.625rem 1.125rem;
     border: 1px solid var(--btn-border);
     border-radius: var(--radius-md);
     background: var(--btn-bg);
     color: var(--btn-fg);
     font-family: var(--font-body);
-    font-size: var(--fs-base);
-    font-weight: 600;
+    font-size: 0.9375rem;
+    font-weight: 500;
     line-height: 1.2;
+    letter-spacing: -0.005em;
     text-align: center;
     text-decoration: none;
     white-space: nowrap;
@@ -434,17 +436,19 @@ body.modal-open {
     transition: transform var(--dur) var(--ease);
 }
 
+/* Hover neutro: o botão escurece/clareia, não troca para a cor de destaque */
 .btn:hover {
-    border-color: var(--brand);
-    color: var(--brand);
+    --btn-bg: var(--surface-2);
+    border-color: var(--border-strong);
+    color: var(--text);
 }
 
 .btn:hover .fa-arrow-right {
-    transform: translateX(3px);
+    transform: translateX(2px);
 }
 
 .btn:active {
-    transform: translateY(1px);
+    transform: scale(0.985);
 }
 
 .btn:focus-visible {
@@ -452,28 +456,24 @@ body.modal-open {
     box-shadow: var(--ring);
 }
 
+/* Única cor de destaque do site: ação principal */
 .btn-primary {
-    --btn-bg: var(--brand);
+    --btn-bg: var(--brand-solid);
     --btn-fg: var(--brand-contrast);
-    --btn-border: var(--brand);
-    box-shadow: 0 6px 18px -6px rgba(10, 98, 232, 0.55);
+    --btn-border: var(--brand-solid);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.16), 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 .btn-primary:hover {
-    --btn-bg: var(--brand-strong);
-    --btn-border: var(--brand-strong);
+    --btn-bg: #1d55d6;
+    --btn-border: #1d55d6;
     color: var(--brand-contrast);
-    box-shadow: 0 10px 24px -8px rgba(10, 98, 232, 0.6);
-}
-
-:root[data-theme="dark"] .btn-primary:hover {
-    --btn-bg: #2f7cf0;
-    --btn-border: #2f7cf0;
 }
 
 .btn-secondary {
     --btn-bg: var(--surface);
     --btn-border: var(--border-strong);
+    box-shadow: var(--highlight);
 }
 
 .btn-ghost {
