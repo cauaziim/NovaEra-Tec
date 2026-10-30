@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Tempic | NovaEra Code</title>
+    <meta name="description" content="Tempic: sistema inteligente de monitoramento de temperatura em tempo real com tecnologia IoT.">
+    <link rel="canonical" href="https://novaeracode.com.br/html/Tempic.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="NovaEra Code">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:title" content="Tempic | NovaEra Code">
+    <meta property="og:description" content="Tempic: sistema inteligente de monitoramento de temperatura em tempo real com tecnologia IoT.">
+    <meta property="og:url" content="https://novaeracode.com.br/html/Tempic.html">
+    <meta property="og:image" content="https://novaeracode.com.br/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="theme-color" content="#fafafa">
+
+    <script>(function(r){function g(n){var m=document.cookie.match("(?:^|; )"+n+"=([^;]*)");if(m)try{return decodeURIComponent(m[1])}catch(e){}try{return sessionStorage.getItem(n)}catch(e){return null}}r.classList.add("js");var t=g("ne_theme");try{t=t||localStorage.getItem("theme");if(sessionStorage.getItem("ne-boot"))r.classList.add("no-preloader")}catch(e){}if(t==="dark"||(!t&&matchMedia("(prefers-color-scheme: dark)").matches))r.dataset.theme="dark";var p=g("ne_motion"),os=matchMedia("(prefers-reduced-motion: reduce)").matches,on=p==="on"||(p!=="off"&&!os);r.dataset.motion=on?"on":"off";if(on&&os)r.classList.add("motion-forced");if(on){r.classList.add("motion");setTimeout(function(){if(!window.__neMotion)r.classList.remove("motion")},3500)}})(document.documentElement)</script>
+
+    <link rel="icon" type="image/webp" href="../img/opt/logo-mark.webp">
+    <link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"></noscript>
+    <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"></noscript>
+    <link rel="stylesheet" href="../css/style.css?v=20261030.3">
+    <link rel="stylesheet" href="../css/Tempic.css?v=20261030.3">
+</head>
+
+<body class="project-page accent-tempic has-media-hero">
+
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+    <div id="preloader" class="preloader" role="progressbar" aria-label="Carregando NovaEra Code" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+        <div class="preloader-inner">
+            <div class="preloader-mark">
+                <svg class="preloader-ring" viewBox="0 0 84 84" aria-hidden="true">
+                    <circle class="preloader-ring-track" cx="42" cy="42" r="40" pathLength="100"></circle>
+                    <circle class="preloader-ring-fill" id="preloaderRing" cx="42" cy="42" r="40" pathLength="100"></circle>
+                </svg>
+                <img class="preloader-logo" src="../img/opt/logo-mark.webp" alt="" width="52" height="52">
+            </div>
+            <p class="preloader-brand" aria-hidden="true">Nova<b>Era</b> Code</p>
+            <div class="preloader-status" aria-hidden="true">
+                <span id="preloaderStatus">Inicializando</span>
+                <span id="preloaderPercent">0%</span>
+            </div>
+        </div>
+    </div>
+    <script src="../js/preloader.js?v=20261030.3" async></script>
+
+    <!-- ===================== CABEÇALHO ===================== -->
+    <header class="site-header" data-header>
+        <div class="container nav">
+            <a href="../index.php" class="brand" aria-label="NovaEra Code — página inicial">
+                <span class="brand-mark"><img src="../img/opt/logo-mark.webp" alt="" width="40" height="40"></span>
+                <span class="brand-name">Nova<b>Era</b> Code</span>
+            </a>
+
+            <nav class="nav-menu" id="nav-menu" aria-label="Navegação principal">
+                <ul class="nav-list">
+                    <li><a href="../index.php" class="nav-link">Início</a></li>
+                    <li><a href="sobre.html" class="nav-link">Sobre</a></li>
+                    <li><a href="equipe.html" class="nav-link">Equipe</a></li>
+                    <li><a href="projetos.html" class="nav-link active" aria-current="page">Projetos</a></li>
+                    <li><a href="contato.html" class="nav-link">Contato</a></li>
+                </ul>
+                <a href="contato.html?assunto=Or%C3%A7amento#contact-form" class="btn btn-primary btn-sm nav-cta">Solicitar orçamento</a>
+            </nav>
+
+            <div class="nav-actions">
+                <button type="button" id="theme-toggle" class="icon-btn theme-toggle" aria-label="Ativar tema escuro">
+                    <i class="fas fa-moon" aria-hidden="true"></i>
+                </button>
+                <button type="button" class="icon-btn hamburger" aria-controls="nav-menu" aria-expanded="false" aria-label="Abrir menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main id="conteudo">
+
+        <!-- ===================== HERO ===================== -->
+        <section class="page-hero page-hero-media on-media tempic-hero" id="inicio" aria-labelledby="page-title">
+            <div class="media-bg" aria-hidden="true">
+                <video data-src="https://assets.mixkit.co/videos/47051/47051-720.mp4" data-parallax="10"
+                    poster="../img/photos/photo-1581091226825-a6a2a5aee158-1600.webp" muted loop playsinline preload="none"></video>
+            </div>
+            <div class="container project-hero-grid tempic-hero-grid">
+                <div class="page-hero-inner">
+                    <nav class="breadcrumb" aria-label="Você está em">
+                        <ol>
+                            <li><a href="projetos.html">Projetos</a></li>
+                            <li aria-current="page">Tempic</li>
+                        </ol>
+                    </nav>
+                    <span class="eyebrow"><i class="fas fa-microchip" aria-hidden="true"></i> Sistema IoT · TCC SENAI 2026</span>
+                    <h1 id="page-title">
+                        Monitore e <span class="highlight">controle</span> a temperatura em tempo real
+                    </h1>
+                    <p class="lead">
+                        O Tempic monitora câmaras frias e veículos refrigerados, avisa quando a
+                        temperatura sai da faixa segura e permite ligar equipamentos e a iluminação à distância.
+                    </p>
+                    <div class="btn-row">
+                        <a href="tempic-app.html" target="_blank" rel="noopener" class="btn btn-primary btn-lg btn-tempic">
+                            <i class="fas fa-temperature-high" aria-hidden="true"></i> Acessar Tempic
+                        <span class="sr-only"> (abre em nova aba)</span></a>
+                        <a href="#como-funciona" class="btn btn-secondary btn-lg">
+                            <i class="fas fa-diagram-project" aria-hidden="true"></i> Como funciona
+                        </a>
+                    </div>
+                    <dl class="hero-stats">
+                        <div><dt>monitoramento contínuo</dt><dd>24/7</dd></div>
+                        <div><dt>da coleta ao painel (meta)</dt><dd>≤ 5 s</dd></div>
+                        <div><dt>microcontrolador</dt><dd>ESP32</dd></div>
+                    </dl>
+                </div>
+
+                <div class="monitor-card" role="region" aria-labelledby="monitorLocation">
+                    <div class="monitor-card-top">
+                        <span><i class="fas fa-circle" aria-hidden="true"></i> <span id="monitorLocation">São Paulo, SP</span></span>
+                        <strong id="monitorBadge">AO VIVO</strong>
+                    </div>
+                    <div class="monitor-reading">
+                        <span>Temperatura externa agora</span>
+                        <strong><span id="monitorTemperature">--</span><small>°C</small></strong>
+                    </div>
+                    <div class="monitor-chart" aria-hidden="true">
+                        <span style="height: 35%"></span><span style="height: 55%"></span><span style="height: 44%"></span><span style="height: 72%"></span><span style="height: 62%"></span><span style="height: 86%"></span><span style="height: 75%"></span>
+                    </div>
+                    <div class="monitor-meta">
+                        <span id="monitorUpdated">Buscando dados reais…</span>
+                        <span id="monitorTrend"></span>
+                    </div>
+
+                    <form class="monitor-search" id="monitorSearch" role="search">
+                        <label class="sr-only" for="monitorCity">Ver a temperatura de outra cidade</label>
+                        <input class="input" id="monitorCity" type="search" placeholder="Outra cidade (ex.: Mococa)" autocomplete="off" enterkeyhint="search" maxlength="80">
+                        <button class="icon-btn" type="submit" aria-label="Buscar cidade"><i class="fas fa-magnifying-glass" aria-hidden="true"></i></button>
+                        <button class="icon-btn" type="button" id="monitorLocate" aria-label="Usar minha localização" title="Usar minha localização"><i class="fas fa-location-crosshairs" aria-hidden="true"></i></button>
+                    </form>
+
+                    <p class="monitor-tag" id="monitorSource" role="status"><i class="fas fa-wifi" aria-hidden="true"></i> Conectando à API Open-Meteo…</p>
+
+                    <button class="icon-btn monitor-refresh" type="button" title="Atualizar leitura" aria-label="Atualizar leitura">
+                        <i class="fas fa-rotate" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+            <button type="button" class="icon-btn video-toggle" data-video-toggle aria-pressed="false" aria-label="Reproduzir vídeo de fundo">
+                <i class="fas fa-play" aria-hidden="true"></i>
+            </button>
+        </section>
+
+        <!-- ===================== SUB-NAVEGAÇÃO ===================== -->
+        <nav class="subnav" aria-label="Seções do Tempic">
+            <div class="container">
+                <ul>
+                    <li><a href="#problema">Problema</a></li>
+                    <li><a href="#como-funciona">Como funciona</a></li>
+                    <li><a href="#recursos">Recursos</a></li>
+                    <li><a href="#para-quem">Para quem</a></li>
+                    <li><a href="#comparativo">Comparativo</a></li>
+                    <li><a href="#demonstracao">Demonstração</a></li>
+                    <li><a href="#equipe">Equipe</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- ===================== PROBLEMA ===================== -->
+        <section class="section" id="problema" aria-labelledby="problema-title">
+            <div class="container split">
+                <div class="prose">
+                    <span class="eyebrow">O problema</span>
+                    <h2 id="problema-title">Quando o frio falha, a perda já aconteceu.</h2>
+                    <p>
+                        Alimentos e medicamentos precisam ficar dentro de faixas específicas de temperatura.
+                        Fora delas, perdem qualidade e podem se tornar impróprios para o consumo — prejuízo
+                        para quem vende e risco para quem consome.
+                    </p>
+                    <p>
+                        Soluções que apenas registram a temperatura deixam para o responsável a tarefa de
+                        perceber o problema e agir a tempo. Com verificações manuais, a falha só é notada
+                        depois que ocorreu.
+                    </p>
+                    <blockquote class="research-question">
+                        <span class="eyebrow">Pergunta de pesquisa</span>
+                        <p>Como um sistema IoT pode monitorar a temperatura de câmaras frias e veículos refrigerados em tempo real e, além disso, permitir que o responsável intervenha remotamente nos equipamentos?</p>
+                    </blockquote>
+                </div>
+
+                <div class="stack" data-stagger>
+                    <article class="card feature-card">
+                        <span class="card-icon"><i class="fas fa-sack-dollar" aria-hidden="true"></i></span>
+                        <div><h3>Prejuízo financeiro</h3><p>Produtos perecíveis descartados por uma falha térmica que ninguém viu.</p></div>
+                    </article>
+                    <article class="card feature-card">
+                        <span class="card-icon"><i class="fas fa-notes-medical" aria-hidden="true"></i></span>
+                        <div><h3>Risco sanitário</h3><p>Variações alteram características físicas e químicas dos produtos.</p></div>
+                    </article>
+                    <article class="card feature-card">
+                        <span class="card-icon"><i class="fas fa-clipboard-check" aria-hidden="true"></i></span>
+                        <div><h3>Dependência de alguém presente</h3><p>Sem acionamento remoto, corrigir o problema exige estar no local.</p></div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================== COMO FUNCIONA ===================== -->
+        <section class="section section-alt" id="como-funciona" aria-labelledby="arquitetura-title">
+            <div class="container">
+                <div class="section-head">
+                    <span class="eyebrow">Arquitetura</span>
+                    <h2 id="arquitetura-title">Do sensor ao celular do gestor</h2>
+                    <p>Cada integrante da equipe ficou responsável por uma camada do sistema.</p>
+                </div>
+
+                <ol class="flow" data-stagger>
+                    <li class="flow-node">
+                        <span class="flow-icon"><i class="fas fa-temperature-low" aria-hidden="true"></i></span>
+                        <h3>Sensores</h3>
+                        <p>Medem a temperatura da câmara fria, geladeira, freezer ou baú do veículo.</p>
+                    </li>
+                    <li class="flow-node">
+                        <span class="flow-icon"><i class="fas fa-microchip" aria-hidden="true"></i></span>
+                        <h3>ESP32</h3>
+                        <p>Lê os sensores e aciona os módulos relé dos equipamentos e da iluminação, via Wi-Fi.</p>
+                        <span class="chip">MQTT · HTTP</span>
+                    </li>
+                    <li class="flow-node">
+                        <span class="flow-icon"><i class="fab fa-node-js" aria-hidden="true"></i></span>
+                        <h3>API Node.js</h3>
+                        <p>Processa as leituras, aplica as regras de negócio e dispara os alertas.</p>
+                    </li>
+                    <li class="flow-node">
+                        <span class="flow-icon"><i class="fas fa-database" aria-hidden="true"></i></span>
+                        <h3>MySQL</h3>
+                        <p>Guarda o histórico de temperaturas, os eventos e a autenticação dos usuários.</p>
+                    </li>
+                    <li class="flow-node">
+                        <span class="flow-icon"><i class="fas fa-mobile-screen" aria-hidden="true"></i></span>
+                        <h3>App Flutter</h3>
+                        <p>O gestor acompanha leituras, recebe alertas e liga ou desliga equipamentos.</p>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- ===================== RECURSOS (REQUISITOS) ===================== -->
+        <section class="section" id="recursos" aria-labelledby="recursos-title">
+            <div class="container">
+                <div class="section-head">
+                    <span class="eyebrow">Requisitos funcionais</span>
+                    <h2 id="recursos-title">O que o <span class="highlight">Tempic</span> faz</h2>
+                    <p>Levantados nas disciplinas de Levantamento de Requisitos e Projetos — e todos disponíveis na demonstração web.</p>
+                </div>
+
+                <div class="grid grid-auto requirements" style="--min: 300px" data-stagger>
+                    <article class="card requirement">
+                        <span class="req-code">RF01</span>
+                        <span class="card-icon"><i class="fas fa-wave-square" aria-hidden="true"></i></span>
+                        <h3>Leitura em tempo real</h3>
+                        <p>Coleta da temperatura por sensores IoT, com intervalo de até 5 segundos até a tela.</p>
+                    </article>
+                    <article class="card requirement">
+                        <span class="req-code">RF02</span>
+                        <span class="card-icon"><i class="fas fa-power-off" aria-hidden="true"></i></span>
+                        <h3>Acionamento remoto</h3>
+                        <p>Liga e desliga geladeiras, freezers e câmaras — manualmente ou em modo automático.</p>
+                    </article>
+                    <article class="card requirement">
+                        <span class="req-code">RF03</span>
+                        <span class="card-icon"><i class="fas fa-lightbulb" aria-hidden="true"></i></span>
+                        <h3>Iluminação do estacionamento</h3>
+                        <p>Controle manual e programado por horário, inclusive em janelas que passam da meia-noite.</p>
+                    </article>
+                    <article class="card requirement">
+                        <span class="req-code">RF04</span>
+                        <span class="card-icon"><i class="fas fa-bell" aria-hidden="true"></i></span>
+                        <h3>Alertas</h3>
+                        <p>Notificação quando a temperatura ultrapassa o limite crítico definido para o equipamento.</p>
+                    </article>
+                    <article class="card requirement">
+                        <span class="req-code">RF05</span>
+                        <span class="card-icon"><i class="fas fa-file-lines" aria-hidden="true"></i></span>
+                        <h3>Histórico e relatórios</h3>
+                        <p>Consultas por 24 horas, 7 ou 30 dias, gráfico com a faixa segura e exportação em CSV.</p>
+                    </article>
+                    <article class="card requirement requirement-auto">
+                        <span class="req-code">Objetivo</span>
+                        <span class="card-icon"><i class="fas fa-robot" aria-hidden="true"></i></span>
+                        <h3>Controle automático</h3>
+                        <p>A refrigeração liga perto do limite máximo e desliga ao atingir o alvo, sem intervenção.</p>
+                    </article>
+                </div>
+
+                <div class="panel nfr" data-reveal>
+                    <h3>Requisitos não funcionais</h3>
+                    <ul class="check-list nfr-list">
+                        <li><strong>RNF01</strong> Interface responsiva e intuitiva, desenvolvida em Flutter.</li>
+                        <li><strong>RNF02</strong> No máximo 5 segundos entre a coleta pelo sensor e a exibição no painel.</li>
+                        <li><strong>RNF03</strong> Segurança dos dados com autenticação por login e senha.</li>
+                        <li><strong>RNF04</strong> Comunicação estável entre hardware e software via MQTT ou Wi-Fi.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================== PARA QUEM ===================== -->
+        <section class="section section-alt" id="para-quem" aria-labelledby="publico-title">
+            <div class="container">
+                <div class="section-head">
+                    <span class="eyebrow">Público-alvo</span>
+                    <h2 id="publico-title">Para quem armazena ou transporta frio</h2>
+                </div>
+                <div class="grid grid-4" data-stagger>
+                    <article class="media-card audience-card">
+                        <img src="../img/photos/photo-1604719312566-8912e9227c6a-700.webp" alt="" loading="lazy" width="700" height="875">
+                        <h3>Supermercados</h3>
+                        <p>Câmaras frias, expositores e a iluminação do estacionamento.</p>
+                    </article>
+                    <article class="media-card audience-card">
+                        <img src="../img/photos/photo-1586528116311-ad8dd3c8310d-700.webp" alt="" loading="lazy" width="700" height="875">
+                        <h3>Distribuidoras</h3>
+                        <p>Estoques refrigerados com histórico para auditoria.</p>
+                    </article>
+                    <article class="media-card audience-card">
+                        <img src="../img/photos/photo-1601584115197-04ecc0da31d7-700.webp" alt="" loading="lazy" width="700" height="875">
+                        <h3>Transporte refrigerado</h3>
+                        <p>Acompanhamento da carga durante todo o trajeto.</p>
+                    </article>
+                    <article class="media-card audience-card">
+                        <img src="../img/photos/photo-1631549916768-4119b2e5f926-700.webp" alt="" loading="lazy" width="700" height="875">
+                        <h3>Farmácias e laboratórios</h3>
+                        <p>Medicamentos e insumos sensíveis à temperatura.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================== COMPARATIVO ===================== -->
+        <section class="section" id="comparativo" aria-labelledby="comparativo-title">
+            <div class="container">
+                <div class="section-head">
+                    <span class="eyebrow">Estado da arte</span>
+                    <h2 id="comparativo-title">Monitorar não basta: é preciso <span class="highlight">agir</span></h2>
+                    <p>A maioria das soluções analisadas foca na leitura passiva dos dados. O diferencial do Tempic é unir monitoramento, alertas e automação de equipamentos e iluminação em uma única plataforma.</p>
+                </div>
+
+                <div class="table-wrap" data-reveal>
+                    <table class="compare-table">
+                        <caption class="sr-only">Comparação de recursos entre o Tempic e soluções concorrentes</caption>
+                        <thead>
+                            <tr>
+                                <th scope="col">Solução</th>
+                                <th scope="col">Monitoramento de temperatura</th>
+                                <th scope="col">Alertas automáticos</th>
+                                <th scope="col">Controle de equipamentos</th>
+                                <th scope="col">Controle de iluminação</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">SensorCloud</th>
+                                <td><i class="fas fa-check" aria-hidden="true"></i><span class="sr-only">Sim</span></td>
+                                <td><i class="fas fa-check" aria-hidden="true"></i><span class="sr-only">Sim</span></td>
+                                <td><i class="fas fa-minus" aria-hidden="true"></i><span class="sr-only">Não</span></td>
+                                <td><i class="fas fa-minus" aria-hidden="true"></i><span class="sr-only">Não</span></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Tive</th>
+                                <td><i class="fas fa-check" aria-hidden="true"></i><span class="sr-only">Sim</span></td>
+                                <td><i class="fas fa-check" aria-hidden="true"></i><span class="sr-only">Sim</span></td>
+                                <td><i class="fas fa-minus" aria-hidden="true"></i><span class="sr-only">Não</span></td>
+                                <td><i class="fas fa-minus" aria-hidden="true"></i><span class="sr-only">Não</span></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Elsys</th>
+                                <td><i class="fas fa-check" aria-hidden="true"></i><span class="sr-only">Sim</span></td>
+                                <td><i class="fas fa-check" aria-hidden="true"></i><span class="sr-only">Sim</span></td>
+                                <td><i class="fas fa-minus" aria-hidden="true"></i><span class="sr-only">Não</span></td>
+                                <td><i class="fas fa-minus" aria-hidden="true"></i><span class="sr-only">Não</span></td>
+                            </tr>
+                            <tr class="is-tempic">
+                                <th scope="row">Tempic</th>
+                                <td><i class="fas fa-check" aria-hidden="true"></i><span class="sr-only">Sim</span></td>
+                                <td><i class="fas fa-check" aria-hidden="true"></i><span class="sr-only">Sim</span></td>
+                                <td><i class="fas fa-check" aria-hidden="true"></i><span class="sr-only">Sim</span></td>
+                                <td><i class="fas fa-check" aria-hidden="true"></i><span class="sr-only">Sim</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class="table-note">Fonte: pesquisa de concorrência realizada pela equipe NovaEra Code para o TCC (2026).</p>
+            </div>
+        </section>
+
+        <!-- ===================== DEMONSTRAÇÃO ===================== -->
+        <section class="section section-alt" id="demonstracao" aria-labelledby="demo-title">
+            <div class="container split">
+                <div class="prose">
+                    <span class="eyebrow">Demonstração web</span>
+                    <h2 id="demo-title">Experimente o Tempic agora</h2>
+                    <p>
+                        A demonstração reproduz o funcionamento do sistema no navegador. Como ainda não há
+                        um ESP32 conectado, as leituras são simuladas — e reagem de verdade aos seus comandos:
+                        desligue a refrigeração e veja a temperatura subir até gerar um alerta.
+                    </p>
+                    <div class="btn-row">
+                        <a href="tempic-app.html" target="_blank" rel="noopener" class="btn btn-primary btn-lg btn-tempic">
+                            <i class="fas fa-play" aria-hidden="true"></i> Abrir demonstração
+                        <span class="sr-only"> (abre em nova aba)</span></a>
+                    </div>
+                </div>
+                <ol class="demo-steps panel" data-reveal>
+                    <li><strong>Crie sua conta</strong> e cadastre um sensor: câmara fria, geladeira, freezer ou veículo refrigerado.</li>
+                    <li><strong>Acompanhe as leituras</strong> a cada 5 segundos, com gráfico e faixa segura do equipamento.</li>
+                    <li><strong>Controle a refrigeração</strong> no modo automático ou manual.</li>
+                    <li><strong>Programe a iluminação</strong> do estacionamento por horário.</li>
+                    <li><strong>Registre o que está guardado</strong> em cada equipamento e veja validade e exposição fora da faixa.</li>
+                    <li><strong>Convide a equipe</strong>: o administrador configura, o membro acompanha e recebe os alertas.</li>
+                    <li><strong>Ative as notificações</strong> e exporte o histórico em CSV.</li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- ===================== EQUIPE ===================== -->
+        <section class="section" id="equipe" aria-labelledby="equipe-title">
+            <div class="container">
+                <div class="section-head">
+                    <span class="eyebrow">Equipe NovaEra Code</span>
+                    <h2 id="equipe-title">Quem construiu o Tempic</h2>
+                    <p>
+                        Trabalho de Conclusão de Curso do Técnico em Desenvolvimento de Sistemas —
+                        Centro de Treinamento SENAI de São João da Boa Vista, Mococa–SP, 2026.
+                    </p>
+                </div>
+
+                <ul class="tcc-team" data-stagger>
+                    <li><img src="../img/opt/bini.webp" alt="" width="96" height="96" loading="lazy"><strong>Bianca Letícia Bini</strong><span>Back-end</span></li>
+                    <li><img src="../img/opt/caua-mateus.webp" alt="" width="96" height="96" loading="lazy"><strong>Cauã Mateus dos Santos</strong><span>Banco de dados</span></li>
+                    <li><img src="../img/opt/flavio.webp" alt="" width="96" height="96" loading="lazy"><strong>Flávio Henrique Bueno Izidoro</strong><span>Documentação</span></li>
+                    <li><img src="../img/opt/gustavo.webp" alt="" width="96" height="96" loading="lazy"><strong>Gustavo Rodrigues Guidolim Pinho</strong><span>Full-stack</span></li>
+                    <li><img src="../img/opt/vitinn.webp" alt="" width="96" height="96" loading="lazy"><strong>Vitor Hugo Sabino</strong><span>Front-end</span></li>
+                </ul>
+
+                <p class="advisors">
+                    <i class="fas fa-graduation-cap" aria-hidden="true"></i>
+                    Orientação: Prof. Leonardo Oliveira Casellato, Prof. Ricardo Akira Harada e Prof. Wellinton Cardoso Teodoro.
+                </p>
+            </div>
+        </section>
+
+        <!-- ===================== CTA ===================== -->
+        <section class="section section-tight" id="contato" aria-labelledby="cta-title">
+            <div class="container">
+                <div class="cta-band on-ink">
+                    <div>
+                        <span class="eyebrow">Contato</span>
+                        <h2 id="cta-title">Quer levar o Tempic para o seu negócio?</h2>
+                        <p>Fale com a equipe para conhecer o projeto, tirar dúvidas ou acompanhar a evolução do sistema.</p>
+                    </div>
+                    <div class="btn-row">
+                        <a href="contato.html?assunto=Informa%C3%A7%C3%B5es%20sobre%20o%20Tempic#contact-form" class="btn btn-primary btn-lg">
+                            <i class="fas fa-envelope" aria-hidden="true"></i> Fale com a equipe
+                        </a>
+                        <a href="tempic-app.html" target="_blank" rel="noopener" class="btn btn-secondary btn-lg">
+                            <i class="fas fa-play" aria-hidden="true"></i> Abrir demonstração
+                        <span class="sr-only"> (abre em nova aba)</span></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ===================== RODAPÉ ===================== -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="../index.php" class="brand" aria-label="NovaEra Code — página inicial">
+                        <span class="brand-mark"><img src="../img/opt/logo-mark.webp" alt="" width="40" height="40" loading="lazy"></span>
+                        <span class="brand-name">Nova<b>Era</b> Code</span>
+                    </a>
+                    <p>Transformando ideias em soluções digitais inovadoras.</p>
+                </div>
+
+                <nav class="footer-col" aria-labelledby="footer-nav">
+                    <h2 id="footer-nav">Navegação</h2>
+                    <ul>
+                        <li><a href="../index.php">Início</a></li>
+                        <li><a href="sobre.html">Sobre</a></li>
+                        <li><a href="equipe.html">Equipe</a></li>
+                        <li><a href="projetos.html">Projetos</a></li>
+                    </ul>
+                </nav>
+
+                <nav class="footer-col" aria-labelledby="footer-projetos">
+                    <h2 id="footer-projetos">Projetos</h2>
+                    <ul>
+                        <li><a href="Tempic.html">Tempic</a></li>
+                        <li><a href="FarmaDigital.html">Farma Digital</a></li>
+                        <li><a href="PublicCard.html">Public Card</a></li>
+                    </ul>
+                </nav>
+
+                <div class="footer-col footer-col-contact">
+                    <h2>Contato</h2>
+                    <ul>
+                        <li><a href="contato.html"><i class="fas fa-paper-plane" aria-hidden="true"></i> Fale com a equipe</a></li>
+                        <li><a href="mailto:contato@novaeracode.com"><i class="fas fa-envelope" aria-hidden="true"></i> contato@novaeracode.com</a></li>
+                        <li><a href="login.html"><i class="fas fa-user" aria-hidden="true"></i> Área do cliente</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© <span data-year>2026</span> NovaEra Code. Todos os direitos reservados. · <a href="privacidade.html">Política de privacidade</a></p>
+                <p>Vídeos: Mixkit · Fotos: Unsplash · Clima: Open-Meteo</p>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js" defer></script>
+    <script src="../js/cookies.js?v=20261030.3" defer></script>
+    <script src="../js/script.js?v=20261030.3" defer></script>
+    <script src="../js/motion.js?v=20261030.3" defer></script>
+    <script src="../js/motion-check.js?v=20261030.3" defer></script>
+    <script src="../js/Tempic.js?v=20261030.3" defer></script>
+
+</body>
+
+</html>

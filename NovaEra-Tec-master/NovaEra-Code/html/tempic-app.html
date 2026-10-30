@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Tempic | Painel de monitoramento</title>
+  <meta name="description" content="Demonstração web do Tempic: monitoramento de temperatura em tempo real, alertas e controle remoto de refrigeração e iluminação.">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#070a0f">
+  <script>try{var t=localStorage.getItem("tempic-theme");if(t==="light")document.documentElement.dataset.theme="light"}catch(e){}</script>
+  <link rel="icon" type="image/webp" href="../img/opt/logo_tempic.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"></noscript>
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"></noscript>
+  <link rel="stylesheet" href="../css/tempic-app.css?v=20261030-1">
+</head>
+<body>
+  <a class="tp-skip" href="#tp-main">Pular para o conteúdo</a>
+
+  <!-- Carregamento inicial -->
+  <div class="tp-boot" id="tpBoot" role="status" aria-label="Carregando o Tempic">
+    <span class="tp-boot-ring" aria-hidden="true"></span>
+  </div>
+
+  <!-- ===================== ACESSO ===================== -->
+  <section class="tp-auth" id="tpAuth" hidden aria-labelledby="authTitle">
+    <div class="tp-auth-visual">
+      <a class="tp-brand" href="../html/Tempic.html">
+        <span class="tp-brand-mark"><img src="../img/opt/logo_tempic.webp" alt="" width="36" height="36"></span>
+        <span class="tp-brand-text"><strong>Tempic</strong><small>by NovaEra Code</small></span>
+      </a>
+      <div class="tp-auth-pitch">
+        <span class="tp-kicker"><span class="tp-live-dot" aria-hidden="true"></span> Demonstração ao vivo</span>
+        <h1 id="authTitle">A temperatura sob controle, <em>antes</em> do prejuízo.</h1>
+        <p>Monitore câmaras frias, freezers e veículos em tempo real, receba alertas e acione a refrigeração e a iluminação de qualquer lugar.</p>
+      </div>
+      <div class="tp-auth-preview" aria-hidden="true">
+        <div class="tp-auth-gauge" id="authGauge"></div>
+        <ul class="tp-auth-feed" id="authFeed"></ul>
+      </div>
+      <ul class="tp-auth-points">
+        <li><i class="fa-solid fa-bolt" aria-hidden="true"></i> Leitura a cada 5 s</li>
+        <li><i class="fa-solid fa-robot" aria-hidden="true"></i> Controle automático com histerese</li>
+        <li><i class="fa-solid fa-bell" aria-hidden="true"></i> Alertas e notificações</li>
+      </ul>
+    </div>
+
+    <div class="tp-auth-panel">
+      <div class="tp-auth-card">
+        <div class="tp-tabs" role="tablist" aria-label="Acesso">
+          <button type="button" role="tab" id="tabLogin" aria-controls="loginForm" aria-selected="true" data-auth-tab="login">Entrar</button>
+          <button type="button" role="tab" id="tabRegister" aria-controls="registerForm" aria-selected="false" data-auth-tab="register">Criar conta</button>
+          <span class="tp-tabs-ink" aria-hidden="true"></span>
+        </div>
+
+        <form id="loginForm" class="tp-form" role="tabpanel" aria-labelledby="tabLogin" novalidate>
+          <div class="tp-field">
+            <label for="login-email">E-mail</label>
+            <input id="login-email" name="email" type="email" autocomplete="username" maxlength="254" placeholder="voce@empresa.com" required>
+          </div>
+          <div class="tp-field">
+            <label for="login-password">Senha</label>
+            <div class="tp-input-wrap">
+              <input id="login-password" name="password" type="password" autocomplete="current-password" required>
+              <button type="button" class="tp-input-icon" data-reveal-password="login-password" aria-label="Mostrar senha"><i class="fa-regular fa-eye" aria-hidden="true"></i></button>
+            </div>
+          </div>
+          <p class="tp-form-error" id="loginError" role="alert" hidden></p>
+          <button type="submit" class="tp-btn tp-btn-primary tp-btn-block">Entrar</button>
+        </form>
+
+        <form id="registerForm" class="tp-form" role="tabpanel" aria-labelledby="tabRegister" hidden novalidate>
+          <div class="tp-field">
+            <label for="register-name">Nome completo</label>
+            <input id="register-name" name="name" type="text" autocomplete="name" minlength="2" maxlength="120" placeholder="Seu nome" required>
+          </div>
+          <div class="tp-field-row">
+            <div class="tp-field">
+              <label for="register-email">E-mail</label>
+              <input id="register-email" name="email" type="email" autocomplete="username" maxlength="254" placeholder="voce@empresa.com" required>
+            </div>
+            <div class="tp-field tp-field-sm">
+              <label for="register-age">Idade</label>
+              <input id="register-age" name="age" type="number" min="1" max="120" inputmode="numeric" placeholder="30" required>
+            </div>
+          </div>
+          <div class="tp-field-row">
+            <div class="tp-field">
+              <label for="register-password">Senha</label>
+              <input id="register-password" name="password" type="password" autocomplete="new-password" minlength="8" required>
+            </div>
+            <div class="tp-field">
+              <label for="register-password-confirmation">Confirmar senha</label>
+              <input id="register-password-confirmation" name="password_confirmation" type="password" autocomplete="new-password" minlength="8" required>
+            </div>
+          </div>
+          <details class="tp-invite-field" id="inviteField">
+            <summary><i class="fa-solid fa-ticket" aria-hidden="true"></i> Tenho um código de convite</summary>
+            <div class="tp-field">
+              <label for="register-invite">Código do convite</label>
+              <input id="register-invite" name="invite_code" type="text" autocomplete="off" autocapitalize="characters" spellcheck="false" maxlength="9" placeholder="ABCD-2345" aria-describedby="invitePreview">
+              <p class="tp-invite-preview" id="invitePreview" aria-live="polite">Sem código, você cria o seu próprio espaço e vira administrador.</p>
+            </div>
+          </details>
+          <p class="tp-form-error" id="registerError" role="alert" hidden></p>
+          <button type="submit" class="tp-btn tp-btn-primary tp-btn-block">Criar conta</button>
+        </form>
+
+        <div class="tp-divider"><span>ou</span></div>
+        <button type="button" class="tp-btn tp-btn-ghost tp-btn-block" data-action="demo-account">
+          <i class="fa-solid fa-flask" aria-hidden="true"></i> Explorar com uma conta temporária
+        </button>
+        <p class="tp-auth-note">Cria uma conta de teste com quatro sensores e dois circuitos de iluminação simulados. Nenhum hardware é necessário.</p>
+      </div>
+      <a class="tp-back-link" href="../html/Tempic.html"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Voltar para a página do Tempic</a>
+    </div>
+  </section>
+
+  <!-- ===================== APLICAÇÃO ===================== -->
+  <div class="tp-shell" id="tpShell" hidden>
+    <aside class="tp-sidebar" aria-label="Navegação do Tempic">
+      <a class="tp-brand" href="#/">
+        <span class="tp-brand-mark"><img src="../img/opt/logo_tempic.webp" alt="" width="36" height="36"></span>
+        <span class="tp-brand-text"><strong>Tempic</strong><small>by NovaEra Code</small></span>
+      </a>
+
+      <div class="tp-workspace" id="workspaceBadge"></div>
+
+      <nav class="tp-nav" aria-label="Seções">
+        <a href="#/" data-route="overview"><i class="fa-solid fa-gauge-high" aria-hidden="true"></i><span>Visão geral</span></a>
+        <a href="#/inventory" data-route="inventory"><i class="fa-solid fa-boxes-stacked" aria-hidden="true"></i><span>Inventário</span><b class="tp-count is-warn" data-inventory-count hidden></b></a>
+        <a href="#/lights" data-route="lights"><i class="fa-solid fa-lightbulb" aria-hidden="true"></i><span>Iluminação</span></a>
+        <a href="#/activity" data-route="activity"><i class="fa-solid fa-wave-square" aria-hidden="true"></i><span>Atividade</span><b class="tp-count" data-alert-count hidden></b></a>
+        <a href="#/admin" data-route="admin" data-requires="team.manage"><i class="fa-solid fa-user-shield" aria-hidden="true"></i><span>Administração</span></a>
+      </nav>
+
+      <div class="tp-side-section">
+        <div class="tp-side-title"><span>Sensores</span><button type="button" class="tp-icon-btn tp-icon-btn-sm" data-action="add-sensor" data-requires="sensors.manage" aria-label="Adicionar sensor" title="Adicionar sensor"><i class="fa-solid fa-plus" aria-hidden="true"></i></button></div>
+        <ul class="tp-side-sensors" id="sideSensors"></ul>
+      </div>
+
+      <div class="tp-side-footer">
+        <a class="tp-side-link" href="../html/Tempic.html"><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> Página do projeto</a>
+        <div class="tp-user">
+          <span class="tp-avatar" id="userAvatar" aria-hidden="true">?</span>
+          <span class="tp-user-text"><strong id="userName">—</strong><small id="userRole" class="tp-role-badge"></small></span>
+          <button type="button" class="tp-icon-btn tp-icon-btn-sm" data-action="logout" aria-label="Sair" title="Sair"><i class="fa-solid fa-arrow-right-from-bracket" aria-hidden="true"></i></button>
+        </div>
+      </div>
+    </aside>
+
+    <header class="tp-topbar">
+      <div class="tp-topbar-title">
+        <a class="tp-brand tp-brand-compact" href="#/" aria-label="Tempic — visão geral"><span class="tp-brand-mark"><img src="../img/opt/logo_tempic.webp" alt="" width="32" height="32"></span></a>
+        <h1 id="pageTitle">Visão geral</h1>
+      </div>
+      <div class="tp-topbar-actions">
+        <span class="tp-live" id="liveStatus" title="Intervalo de leitura: 5 segundos">
+          <span class="tp-live-dot" aria-hidden="true"></span><span id="liveText">conectando…</span>
+        </span>
+        <button type="button" class="tp-search" data-action="palette" aria-keyshortcuts="Control+K">
+          <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i><span>Buscar ou executar</span><kbd>Ctrl K</kbd>
+        </button>
+        <a class="tp-icon-btn" href="#/activity" aria-label="Alertas" title="Alertas"><i class="fa-regular fa-bell" aria-hidden="true"></i><b class="tp-dot-count" data-alert-count hidden></b></a>
+        <button type="button" class="tp-icon-btn" data-action="theme" aria-label="Alternar tema" title="Alternar tema"><i class="fa-solid fa-circle-half-stroke" aria-hidden="true"></i></button>
+      </div>
+    </header>
+
+    <div class="tp-preview-bar" id="previewBar" role="status" hidden>
+      <i class="fa-solid fa-eye" aria-hidden="true"></i>
+      <span>Prévia: você está vendo o painel <strong>como um membro</strong> vê. Nada mudou no seu acesso.</span>
+      <button type="button" class="tp-btn tp-btn-sm" data-action="end-preview">Sair da prévia</button>
+    </div>
+
+    <main class="tp-main" id="tp-main" tabindex="-1"></main>
+
+    <nav class="tp-bottom-nav" aria-label="Seções">
+      <a href="#/" data-route="overview"><i class="fa-solid fa-gauge-high" aria-hidden="true"></i><span>Geral</span></a>
+      <a href="#/inventory" data-route="inventory"><i class="fa-solid fa-boxes-stacked" aria-hidden="true"></i><span>Estoque</span></a>
+      <a href="#/lights" data-route="lights"><i class="fa-solid fa-lightbulb" aria-hidden="true"></i><span>Luzes</span></a>
+      <a href="#/activity" data-route="activity"><i class="fa-solid fa-wave-square" aria-hidden="true"></i><span>Atividade</span><b class="tp-dot-count" data-alert-count hidden></b></a>
+      <a href="#/admin" data-route="admin" data-requires="team.manage"><i class="fa-solid fa-user-shield" aria-hidden="true"></i><span>Admin</span></a>
+      <button type="button" data-action="palette"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i><span>Buscar</span></button>
+    </nav>
+  </div>
+
+  <!-- Camadas: modal, paleta de comandos e avisos -->
+  <div class="tp-layer" id="tpModal" hidden></div>
+  <div class="tp-layer tp-palette-layer" id="tpPalette" hidden>
+    <div class="tp-palette" role="dialog" aria-modal="true" aria-label="Paleta de comandos">
+      <div class="tp-palette-input">
+        <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+        <input id="paletteInput" type="text" placeholder="Buscar sensor, página ou ação…" autocomplete="off" role="combobox" aria-expanded="true" aria-controls="paletteList" aria-autocomplete="list">
+        <kbd>Esc</kbd>
+      </div>
+      <ul class="tp-palette-list" id="paletteList" role="listbox" aria-label="Resultados"></ul>
+    </div>
+  </div>
+  <div class="tp-toasts" id="tpToasts" aria-live="polite" aria-atomic="false"></div>
+
+  <script src="../js/tempic-app.js?v=20261030-1" defer></script>
+</body>
+</html>

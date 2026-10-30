@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+Disallow: /php/
+Disallow: /tests/
+Disallow: /data/
+Disallow: /database/
+Disallow: /html/login.html
+Disallow: /html/cadastro.html
+
+Sitemap: https://novaeracode.com.br/sitemap.xml

@@ -1,0 +1,7 @@
+/php/config.local.php
+
+# Banco interno do Tempic (contas e senhas): nao versionar
+/data/*.sqlite
+/data/*.sqlite-journal
+/data/*.sqlite-wal
+/data/*.sqlite-shm

@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TempIC | Web App</title>
+  <link rel="icon" type="image/webp" href="../img/opt/logo_tempic.webp">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/tempic-app.css?v=20261028-1" />
+</head>
+<body class="tempic-app">
+  <div class="tempic-shell">
+    <div class="tempic-container">
+      <header class="tempic-topbar">
+        <div class="tempic-brand">
+          <img class="tempic-logo" src="../img/opt/logo_tempic.webp" alt="Logo TempIC" />
+          <div>
+            <strong>TempIC</strong>
+            <small>Monitoramento inteligente</small>
+          </div>
+        </div>
+        <div class="tempic-user-badge">
+          <i class="fa-solid fa-user"></i>
+          <span id="userBadgeText">Visitante</span>
+          <button class="logout-btn" type="button" data-action="logout" hidden> Sair</button>
+        </div>
+      </header>
+
+      <section id="screen-splash" class="tempic-screen tempic-splash active">
+        <div class="splash-content">
+          <div class="splash-identity">
+            <img class="brand-mark" src="../img/opt/logo_tempic.webp" alt="Logo TempIC" />
+            <div>
+              <span class="splash-kicker">NovaEra Code · IoT</span>
+              <h1>Sistema IoT de<br>monitoramento de temperatura</h1>
+            </div>
+          </div>
+          <p class="splash-copy">Acompanhe seus sensores, receba alertas e mantenha seus ambientes sob controle.</p>
+          <div class="tempic-actions">
+            <button class="tempic-btn primary" data-action="go-login">Entrar</button>
+            <button class="tempic-btn secondary" data-action="go-register">Cadastrar</button>
+          </div>
+        </div>
+      </section>
+
+      <section id="screen-login" class="tempic-screen">
+        <div class="tempic-auth">
+          <div class="auth-icon"><i class="fa-solid fa-lock" aria-hidden="true"></i></div>
+          <h2>Entrar</h2>
+          <p class="auth-subtitle">Acesse sua conta TempIC</p>
+          <form id="loginForm" class="tempic-form">
+            <div class="tempic-field">
+              <label for="login-email">E-mail</label>
+              <input id="login-email" name="email" type="email" autocomplete="email" maxlength="254" placeholder="seu@email.com" required />
+            </div>
+            <div class="tempic-field">
+              <label for="login-password">Senha</label>
+              <input id="login-password" name="password" type="password" autocomplete="current-password" required />
+            </div>
+            <p id="loginMessage" class="form-message" role="alert" hidden></p>
+            <div class="tempic-meta"><button class="text-button" type="button" data-action="forgot-password">Esqueceu a senha?</button></div>
+            <button type="submit" class="tempic-btn primary">Entrar</button>
+          </form>
+          <div class="tempic-meta">Não tem uma conta? <a href="#" data-action="go-register">Cadastre-se</a></div>
+        </div>
+      </section>
+
+      <section id="screen-register" class="tempic-screen">
+        <div class="tempic-auth">
+          <div class="auth-icon register-icon"><i class="fa-regular fa-user" aria-hidden="true"></i></div>
+          <h2>Cadastrar</h2>
+          <p class="auth-subtitle">Crie sua conta TempIC</p>
+          <form id="registerForm" class="tempic-form">
+            <div class="tempic-field">
+              <label for="register-name">Nome completo</label>
+              <input id="register-name" name="name" type="text" autocomplete="name" maxlength="120" placeholder="Seu nome" required />
+            </div>
+            <div class="tempic-field">
+              <label for="register-email">E-mail</label>
+              <input id="register-email" name="email" type="email" autocomplete="email" maxlength="254" placeholder="seu@email.com" required />
+            </div>
+            <div class="inline">
+              <div class="tempic-field">
+                <label for="register-password">Senha</label>
+                <input id="register-password" name="password" type="password" autocomplete="new-password" minlength="8" required />
+              </div>
+              <div class="tempic-field">
+                <label for="register-password-confirmation">Confirmar senha</label>
+                <input id="register-password-confirmation" name="password_confirmation" type="password" autocomplete="new-password" minlength="8" required />
+              </div>
+              <div class="tempic-field">
+                <label for="register-age">Idade</label>
+                <input id="register-age" name="age" type="number" min="1" max="120" inputmode="numeric" placeholder="30" required />
+              </div>
+            </div>
+            <p id="registerMessage" class="form-message" role="alert" hidden></p>
+            <button type="submit" class="tempic-btn primary">Cadastrar</button>
+          </form>
+          <div class="tempic-meta">Já possui uma conta? <a href="#" data-action="go-login">Entrar</a></div>
+        </div>
+      </section>
+
+      <section id="screen-home" class="tempic-screen">
+        <div class="home-screen">
+          <div class="screen-heading">
+            <h2>Meus Sensores</h2>
+            <button class="icon-button" type="button" aria-label="Ver alertas" title="Ver alertas" data-action="open-alerts">
+              <i class="fa-regular fa-bell" aria-hidden="true"></i>
+            </button>
+          </div>
+          <div id="homeEmptyState" class="tempic-empty" hidden>
+            <div class="empty-illustration"><i class="fa-solid fa-box-open" aria-hidden="true"></i></div>
+            <h3>Nenhum sensor cadastrado</h3>
+            <p>Adicione um sensor para acompanhar a temperatura do seu ambiente.</p>
+          </div>
+          <div id="sensorList" class="home-sensor-list" hidden></div>
+
+
+          <button class="add-sensor-fab" type="button" data-action="add-sensor" aria-label="Adicionar sensor" title="Adicionar sensor">
+            <i class="fa-solid fa-plus" aria-hidden="true"></i>
+          </button>
+
+          <!-- RF03: iluminação do estacionamento -->
+          <section class="lights-section" aria-labelledby="lightsTitle">
+            <div class="screen-heading">
+              <h2 id="lightsTitle">Iluminação do estacionamento</h2>
+              <button class="icon-button" type="button" data-action="add-light" aria-label="Adicionar circuito de iluminação" title="Adicionar circuito de iluminação">
+                <i class="fa-regular fa-lightbulb" aria-hidden="true"></i>
+              </button>
+            </div>
+            <form id="lightForm" class="light-form" hidden>
+              <label class="sr-only" for="light-name">Nome do circuito</label>
+              <input id="light-name" name="name" type="text" maxlength="80" placeholder="Ex.: Estacionamento frontal" required />
+              <button type="submit" class="tempic-btn primary">Adicionar</button>
+              <button type="button" class="tempic-btn secondary" data-action="cancel-light">Cancelar</button>
+            </form>
+            <p id="lightsEmpty" class="empty-note">Nenhum circuito de iluminação cadastrado. Use o botão <i class="fa-regular fa-lightbulb" aria-hidden="true"></i> para adicionar.</p>
+            <div id="lightList" class="light-list"></div>
+            <p id="lightMessage" class="form-message" role="status" hidden></p>
+          </section>
+        </div>
+      </section>
+
+      <section id="screen-add-sensor" class="tempic-screen">
+        <div class="tempic-auth">
+          <div class="screen-heading">
+            <button class="icon-button" type="button" data-action="back-home" aria-label="Voltar"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i></button>
+            <h2>Adicionar Sensor</h2>
+          </div>
+          <p class="auth-subtitle">Selecione o tipo de sensor</p>
+          <div id="sensorTypeGrid" class="tempic-type-grid"></div>
+          <div class="tempic-meta"><a href="#" data-action="back-home">Voltar para Meus Sensores</a></div>
+        </div>
+      </section>
+
+      <section id="screen-configure" class="tempic-screen">
+        <div class="tempic-auth">
+          <div class="screen-heading">
+            <button class="icon-button" type="button" data-action="back-home" aria-label="Voltar"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i></button>
+            <h2>Configurar Sensor</h2>
+          </div>
+          <p class="auth-subtitle">Preencha as informações do ambiente</p>
+          <form id="sensorConfigForm" class="tempic-form">
+            <div class="tempic-field">
+              <label for="sensor-local">Local</label>
+              <input id="sensor-local" type="text" placeholder="Geladeira da Cozinha" required />
+            </div>
+            <div class="tempic-field">
+              <label for="sensor-wifi">Rede Wi‑Fi</label>
+              <input id="sensor-wifi" type="text" placeholder="Selecione ou digite a rede" required />
+            </div>
+            <div class="tempic-field">
+              <label for="sensor-password">Senha da Rede Wi‑Fi</label>
+              <input id="sensor-password" type="password" autocomplete="new-password" required />
+            </div>
+            <div class="tempic-field">
+              <label for="sensor-name">Nome do Sensor</label>
+              <input id="sensor-name" type="text" placeholder="Geladeira da Cozinha" required />
+            </div>
+            <p class="demo-notice">No modo demonstração, a senha do Wi-Fi não é enviada nem armazenada. Nenhum hardware está conectado.</p>
+            <p id="sensorMessage" class="form-message" role="alert" hidden></p>
+            <button type="submit" class="tempic-btn primary">Salvar e Conectar</button>
+            <button type="button" class="tempic-btn secondary" data-action="back-home">Cancelar</button>
+          </form>
+        </div>
+      </section>
+
+      <section id="screen-detail" class="tempic-screen">
+        <div class="detail-screen">
+          <div class="detail-heading">
+            <button class="icon-button" type="button" data-action="back-home" aria-label="Voltar"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i></button>
+            <div>
+              <h2 id="detailTitle">Detalhes do Sensor</h2>
+              <span id="detailSource" class="detail-source">Modo demonstração</span>
+            </div>
+            <button class="icon-button" type="button" data-action="open-adjustment" aria-label="Ajustar temperatura" title="Ajustar temperatura"><i class="fa-solid fa-sliders" aria-hidden="true"></i></button>
+          </div>
+          <div id="alertBox" class="alert-box" hidden></div>
+          <div id="panel-summary" class="dashboard-view summary-view">
+            <div class="detail-card temperature-card">
+              <div class="summary-label">Temperatura atual</div>
+              <div id="detailCurrent" class="summary-value">—</div>
+              <div id="detailStatus" class="sensor-status">Normal</div>
+              <div class="limit-pair">
+                <div><span>Mínima</span><strong id="detailMin">—</strong></div>
+                <div><span>Máxima</span><strong id="detailMax">—</strong></div>
+              </div>
+            </div>
+            <div class="detail-card sensor-info-card">
+              <div class="card-heading"><h3>Sensor</h3><span class="demo-notice"><i class="fa-solid fa-flask" aria-hidden="true"></i> Simulação</span></div>
+              <div class="tempic-info-list">
+                <div class="info-row"><span>Local</span><strong id="detailLocation">—</strong></div>
+                <div class="info-row"><span>Tipo</span><strong id="detailType">—</strong></div>
+                <div class="info-row"><span>Conexão</span><strong id="detailOnlineStatus">—</strong></div>
+                <div class="info-row"><span>Temperatura alvo</span><strong id="detailTarget">—</strong></div>
+              </div>
+              <button class="tempic-btn secondary adjust-open" type="button" data-action="open-adjustment">Ajustar Temperatura</button>
+
+              <!-- RF02 + controle automático -->
+              <div class="equipment-control">
+                <div class="card-heading"><h3>Refrigeração</h3><span id="equipmentState" class="sensor-status">—</span></div>
+                <button id="equipmentSwitch" class="tempic-switch" type="button" role="switch" aria-checked="false" aria-labelledby="equipmentSwitchLabel" data-action="toggle-equipment">
+                  <span class="switch-track" aria-hidden="true"><span class="switch-thumb"></span></span>
+                  <span id="equipmentSwitchLabel">Equipamento de refrigeração</span>
+                </button>
+                <div class="segmented" role="radiogroup" aria-label="Modo de controle da refrigeração">
+                  <button type="button" role="radio" aria-checked="true" data-mode="auto"><i class="fa-solid fa-robot" aria-hidden="true"></i> Automático</button>
+                  <button type="button" role="radio" aria-checked="false" data-mode="manual"><i class="fa-solid fa-hand-pointer" aria-hidden="true"></i> Manual</button>
+                </div>
+                <p id="equipmentHint" class="equipment-hint"></p>
+                <p id="equipmentMessage" class="form-message" role="status" hidden></p>
+              </div>
+              <div class="monitored-items">
+                <div class="card-heading"><h3>Itens Monitorados</h3></div>
+                <div class="monitored-item">
+                  <span><i class="fa-solid fa-temperature-half" aria-hidden="true"></i> Temperatura</span>
+                  <strong id="detailMonitoredStatus">Normal</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="panel-chart" class="dashboard-view chart-view" hidden>
+            <div class="tempic-toolbar chart-toolbar">
+              <h3>Temperatura ao longo do tempo</h3>
+              <div class="filter-group">
+                <button class="filter-btn" data-range="24h">24 horas</button>
+                <button class="filter-btn active" data-range="7d">7 dias</button>
+                <button class="filter-btn" data-range="30d">30 dias</button>
+              </div>
+            </div>
+            <div class="tempic-panel"><div class="chart-box"><canvas id="sensorChart" width="900" height="260"></canvas></div></div>
+            <div class="summary-strip">
+              <div class="summary-item"><div class="summary-label">Mínima</div><div id="summaryMin" class="summary-value">—</div></div>
+              <div class="summary-item"><div class="summary-label">Máxima</div><div id="summaryMax" class="summary-value">—</div></div>
+              <div class="summary-item"><div class="summary-label">Média</div><div id="summaryAverage" class="summary-value">—</div></div>
+            </div>
+          </div>
+
+          <div id="panel-history" class="tempic-panel dashboard-view" hidden>
+            <div class="card-heading"><h3>Histórico</h3>
+              <button class="tempic-btn secondary export-btn" type="button" data-action="export-csv"><i class="fa-solid fa-file-arrow-down" aria-hidden="true"></i> Exportar relatório (CSV)</button>
+              <div class="filter-group compact-filters">
+                <button class="filter-btn" data-range="24h">24 h</button>
+                <button class="filter-btn active" data-range="7d">7 d</button>
+                <button class="filter-btn" data-range="30d">30 d</button>
+              </div>
+            </div>
+            <div class="table-scroll">
+              <table class="history-table"><thead><tr><th>Data e hora</th><th>Temperatura</th><th>Status</th></tr></thead><tbody id="historyRows"></tbody></table>
+            </div>
+            <p id="historyEmpty" class="empty-note" hidden>Nenhuma leitura neste período.</p>
+          </div>
+
+          <div id="panel-alerts" class="tempic-panel dashboard-view" hidden>
+            <div class="card-heading"><h3>Alertas</h3>
+              <button class="tempic-btn secondary" type="button" id="notifyButton" data-action="enable-notifications"><i class="fa-regular fa-bell" aria-hidden="true"></i> Ativar notificações</button>
+            </div>
+            <p id="notifyMessage" class="form-message" role="status" hidden></p>
+            <div id="alertList" class="alert-list"></div>
+            <p id="alertsEmpty" class="empty-note" hidden>Nenhum alerta registrado para este sensor.</p>
+
+            <div class="card-heading events-heading"><h3>Registro de acionamentos</h3></div>
+            <div id="eventList" class="alert-list"></div>
+            <p id="eventsEmpty" class="empty-note" hidden>Nenhum acionamento registrado para este sensor.</p>
+          </div>
+
+          <nav class="dashboard-tabs" role="tablist" aria-label="Navegação do sensor">
+            <button type="button" class="dashboard-tab active" data-panel="summary" role="tab" aria-selected="true"><i class="fa-solid fa-house" aria-hidden="true"></i><span>Resumo</span></button>
+            <button type="button" class="dashboard-tab" data-panel="chart" role="tab" aria-selected="false"><i class="fa-solid fa-chart-column" aria-hidden="true"></i><span>Gráficos</span></button>
+            <button type="button" class="dashboard-tab" data-panel="history" role="tab" aria-selected="false"><i class="fa-regular fa-clock" aria-hidden="true"></i><span>Histórico</span></button>
+            <button type="button" class="dashboard-tab" data-panel="alerts" role="tab" aria-selected="false"><i class="fa-regular fa-bell" aria-hidden="true"></i><span>Alertas</span></button>
+          </nav>
+
+          <div id="targetDialog" class="adjustment-backdrop" hidden>
+            <section class="adjustment-panel" role="dialog" aria-modal="true" aria-labelledby="adjustmentTitle">
+              <div class="adjustment-grip"></div>
+              <div class="card-heading"><h2 id="adjustmentTitle">Ajustar Temperatura</h2><button class="icon-button" type="button" data-action="close-adjustment" aria-label="Fechar"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button></div>
+              <div class="summary-label">Alvo</div>
+              <div class="target-row">
+                <button type="button" class="stepper-button" data-target-action="decrease" aria-label="Diminuir temperatura">−</button>
+                <div class="target-value" id="targetValue">4 °C</div>
+                <button type="button" class="stepper-button" data-target-action="increase" aria-label="Aumentar temperatura">+</button>
+              </div>
+              <label class="target-slider-label" id="targetRangeLabel" for="targetSlider">Faixa recomendada: 2 °C a 8 °C</label>
+              <input id="targetSlider" class="target-slider" type="range" min="2" max="8" step="0.5" value="4" />
+              <p id="targetMessage" class="form-message" role="status" hidden></p>
+              <button class="tempic-btn primary" type="button" data-action="confirm-target">Confirmar</button>
+            </section>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <script src="../js/tempic-app.js?v=20261028-1"></script>
+</body>
+</html>

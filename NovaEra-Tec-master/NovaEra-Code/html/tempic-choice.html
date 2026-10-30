@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Tempic | Acesso</title>
+  <meta name="description" content="Escolha como acessar o Tempic: painel web ou aplicativo.">
+  <meta name="theme-color" content="#070a0f">
+  <script>try{if(localStorage.getItem("tempic-theme")==="light")document.documentElement.dataset.theme="light"}catch(e){}</script>
+  <link rel="icon" type="image/webp" href="../img/opt/logo_tempic.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"></noscript>
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"></noscript>
+  <link rel="stylesheet" href="../css/tempic-app.css?v=20261030-1">
+  <style>
+    .tp-choice {
+      display: grid;
+      place-items: center;
+      min-height: 100vh;
+      padding: 1.5rem;
+      background:
+        radial-gradient(50% 40% at 50% 0%, var(--tp-accent-soft), transparent 70%),
+        var(--tp-bg);
+    }
+
+    .tp-choice-card {
+      display: grid;
+      justify-items: center;
+      gap: 1.2rem;
+      width: min(620px, 100%);
+      padding: clamp(1.5rem, 1rem + 2vw, 2.5rem);
+      border: 1px solid var(--tp-border);
+      border-radius: var(--tp-radius-lg);
+      background: var(--tp-surface);
+      box-shadow: var(--tp-shadow);
+      text-align: center;
+      animation: tp-rise 500ms var(--tp-ease) both;
+    }
+
+    .tp-choice-card .tp-brand-mark {
+      width: 64px;
+      height: 64px;
+      border-radius: 18px;
+    }
+
+    .tp-choice-card h1 {
+      font-size: clamp(1.6rem, 1.2rem + 1.5vw, 2.2rem);
+      letter-spacing: -0.03em;
+    }
+
+    .tp-choice-card > p {
+      max-width: 34rem;
+      color: var(--tp-muted);
+    }
+
+    .tp-choice-options {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.8rem;
+      width: 100%;
+      margin-top: 0.4rem;
+    }
+
+    .tp-choice-option {
+      display: grid;
+      justify-items: start;
+      gap: 0.35rem;
+      padding: 1.1rem;
+      border: 1px solid var(--tp-border-strong);
+      border-radius: var(--tp-radius);
+      background: var(--tp-surface-2);
+      text-align: left;
+      text-decoration: none;
+      transition: border-color 200ms, transform 200ms var(--tp-ease), background-color 200ms;
+    }
+
+    .tp-choice-option:hover {
+      border-color: var(--tp-accent);
+      background: var(--tp-accent-soft);
+      transform: translateY(-3px);
+    }
+
+    .tp-choice-option i {
+      display: grid;
+      place-items: center;
+      width: 40px;
+      height: 40px;
+      margin-bottom: 0.3rem;
+      border-radius: 11px;
+      background: var(--tp-surface-3);
+      color: var(--tp-accent);
+    }
+
+    .tp-choice-option.is-primary {
+      border-color: color-mix(in srgb, var(--tp-accent) 50%, transparent);
+    }
+
+    .tp-choice-option.is-primary i {
+      background: var(--tp-accent);
+      color: var(--tp-on-accent);
+    }
+
+    .tp-choice-option small {
+      color: var(--tp-muted);
+      font-size: 0.82rem;
+    }
+
+    .tp-choice-option.is-soon {
+      border-style: dashed;
+      cursor: default;
+      opacity: 0.7;
+    }
+
+    .tp-choice-option.is-soon:hover {
+      border-color: var(--tp-border-strong);
+      background: var(--tp-surface-2);
+      transform: none;
+    }
+
+    .tp-soon-badge {
+      margin-left: 0.35rem;
+      padding: 0.1rem 0.5rem;
+      border-radius: 999px;
+      background: var(--tp-warn-soft);
+      color: var(--tp-warn);
+      font: 600 0.66rem var(--tp-mono);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      vertical-align: middle;
+    }
+
+    @media (max-width: 560px) {
+      .tp-choice-options {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="tp-choice">
+    <div class="tp-choice-card">
+      <span class="tp-brand-mark"><img src="../img/opt/logo_tempic.webp" alt="" width="64" height="64"></span>
+      <span class="tp-kicker"><span class="tp-live-dot" aria-hidden="true"></span> Monitoramento inteligente</span>
+      <h1>Como você quer acessar o Tempic?</h1>
+      <p>O painel web roda direto no navegador, com sensores simulados, e funciona no computador e no celular. O aplicativo desktop ainda está em desenvolvimento.</p>
+      <div class="tp-choice-options">
+        <a class="tp-choice-option is-primary" href="tempic-app.html">
+          <i class="fa-solid fa-gauge-high" aria-hidden="true"></i>
+          <strong>Abrir o painel web</strong>
+          <small>Disponível · funciona em qualquer navegador</small>
+        </a>
+        <!-- Sem link de propósito: só vira botão quando o executável existir -->
+        <div class="tp-choice-option is-soon" aria-disabled="true">
+          <i class="fa-solid fa-desktop" aria-hidden="true"></i>
+          <strong>Aplicativo desktop <span class="tp-soon-badge">Em breve</span></strong>
+          <small>Versão para Windows em desenvolvimento. Por enquanto, use o painel web.</small>
+        </div>
+      </div>
+      <a class="tp-back-link" href="Tempic.html"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Voltar para a página do Tempic</a>
+    </div>
+  </main>
+</body>
+</html>
