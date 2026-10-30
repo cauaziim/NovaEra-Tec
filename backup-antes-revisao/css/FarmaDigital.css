@@ -1,0 +1,14 @@
+/* =========================================================
+   PÁGINA FARMA DIGITAL
+   Usa os componentes de projeto do style.css; aqui ficam apenas
+   os ajustes próprios da página (o acento roxo vem de .accent-farma).
+   ========================================================= */
+.accent-farma .cta-band::before {
+    background:
+        radial-gradient(circle at 100% 0%, rgba(124, 58, 237, 0.4), transparent 45%),
+        radial-gradient(circle at 0% 100%, rgba(167, 139, 250, 0.16), transparent 40%);
+}
+
+.accent-farma .cta-band .eyebrow {
+    color: #c4b5fd;
+}

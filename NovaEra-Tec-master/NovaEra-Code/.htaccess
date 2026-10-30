@@ -1,0 +1,54 @@
+# NovaEra Code — configuração do Apache
+# Tudo dentro de <IfModule>: se um módulo não existir no servidor, a regra
+# é ignorada em vez de derrubar o site com erro 500.
+
+Options -Indexes
+DirectoryIndex index.php index.html
+
+# Página de erro (caminho a partir da raiz do domínio)
+ErrorDocument 404 /404.php
+
+# Arquivos que não devem ser acessados pelo navegador
+<FilesMatch "(^\.|\.(md|log|sql|sqlite|db|ini|example\.php)$|^config\.local\.php$|^composer\.(json|lock)$)">
+    Require all denied
+</FilesMatch>
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Força HTTPS (não afeta o localhost)
+    RewriteCond %{HTTPS} !=on
+    RewriteCond %{HTTP:X-Forwarded-Proto} !https
+    RewriteCond %{HTTP_HOST} !^(localhost|127\.0\.0\.1)(:\d+)?$ [NC]
+    RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+    # Testes, dados do simulador e scripts SQL não ficam públicos
+    RewriteRule ^(tests|data|database)(/|$) - [F,L]
+</IfModule>
+
+<IfModule mod_headers.c>
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set X-Frame-Options "SAMEORIGIN"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    Header always set Permissions-Policy "camera=(), microphone=(), payment=(), geolocation=(self)"
+    Header always set Strict-Transport-Security "max-age=31536000" "expr=%{HTTPS} == 'on'"
+</IfModule>
+
+# Compressão
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/css text/plain text/xml application/javascript application/json image/svg+xml
+</IfModule>
+
+# Cache dos arquivos estáticos (HTML sempre revalidado)
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresDefault "access plus 1 hour"
+    ExpiresByType text/html "access plus 0 seconds"
+    ExpiresByType text/css "access plus 7 days"
+    ExpiresByType application/javascript "access plus 7 days"
+    ExpiresByType image/webp "access plus 30 days"
+    ExpiresByType image/png "access plus 30 days"
+    ExpiresByType image/jpeg "access plus 30 days"
+    ExpiresByType image/svg+xml "access plus 30 days"
+    ExpiresByType video/mp4 "access plus 30 days"
+</IfModule>

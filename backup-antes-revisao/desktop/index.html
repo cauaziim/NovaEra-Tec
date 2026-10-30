@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TempIC Desktop</title>
+  <link rel="icon" type="image/webp" href="../img/opt/logo_tempic.webp">
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #071b2b, #0f2d3d 50%, #0b1d2d);
+      color: #eef9ff;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: grid;
+      place-items: center;
+    }
+    .desktop-box {
+      width: min(720px, calc(100% - 32px));
+      background: rgba(13, 28, 38, 0.8);
+      border: 1px solid rgba(137, 196, 227, 0.2);
+      border-radius: 24px;
+      padding: 28px;
+      box-shadow: 0 30px 80px rgba(0,0,0,0.25);
+    }
+    .desktop-box h1 { margin-top: 0; }
+    .desktop-box p { color: #cfe8f7; }
+    .desktop-box code {
+      display: block;
+      margin-top: 16px;
+      background: rgba(255,255,255,0.03);
+      padding: 16px;
+      border-radius: 12px;
+      border: 1px solid rgba(137,196,227,0.16);
+      overflow: auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="desktop-box">
+    <h1>TempIC Desktop</h1>
+    <p>Versão desktop preparada para empacotamento futuro em Windows.</p>
+    <p>Use Electron ou Tauri para transformar esta estrutura em um executável instalável.</p>
+    <code>
+      npm install
+      npm run build
+      npm run package
+    </code>
+  </div>
+</body>
+</html>

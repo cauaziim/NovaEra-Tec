@@ -1,0 +1,110 @@
+/* =========================================================
+   PÁGINA EQUIPE
+   ========================================================= */
+.team-intro {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+    align-items: end;
+    gap: clamp(1.5rem, 1rem + 3vw, 4rem);
+}
+
+.team-intro .section-head {
+    margin-bottom: 0;
+}
+
+@media (max-width: 859px) {
+    .team-intro {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+/* Desktop: 3 cards na primeira linha e 2 centralizados na segunda */
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: clamp(1rem, 0.8rem + 1vw, 1.5rem);
+}
+
+.team-card {
+    grid-column: span 2;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    background: var(--surface);
+    transition: border-color var(--dur) var(--ease), box-shadow var(--dur) var(--ease), transform var(--dur) var(--ease);
+}
+
+.team-card:nth-child(4) {
+    grid-column: 2 / span 2;
+}
+
+.team-card:hover {
+    border-color: color-mix(in srgb, var(--brand) 40%, var(--border));
+    box-shadow: var(--shadow-md);
+    transform: none;
+}
+
+.team-photo {
+    aspect-ratio: 4 / 3.4;
+    overflow: hidden;
+    background: var(--bg-soft);
+}
+
+.team-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 20%;
+    transition: transform 500ms var(--ease);
+}
+
+.team-card:hover .team-photo img {
+    transform: scale(1.02);
+}
+
+.team-body {
+    display: grid;
+    align-content: start;
+    justify-items: start;
+    gap: var(--space-3);
+    flex: 1;
+    padding: clamp(1.25rem, 1rem + 1vw, 1.75rem);
+}
+
+.team-body h3 {
+    font-size: var(--fs-xl);
+}
+
+.team-body p {
+    color: var(--text-muted);
+}
+
+@media (max-width: 1023px) {
+    .team-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .team-card,
+    .team-card:nth-child(4) {
+        grid-column: auto;
+    }
+
+    .team-card:last-child {
+        grid-column: 1 / -1;
+        width: calc(50% - clamp(0.5rem, 0.4rem + 0.5vw, 0.75rem));
+        justify-self: center;
+    }
+}
+
+@media (max-width: 599px) {
+    .team-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .team-card:last-child {
+        width: 100%;
+    }
+}

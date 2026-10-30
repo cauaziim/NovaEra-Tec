@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Contato | NovaEra Code</title>
+    <meta name="description" content="Fale com a NovaEra Code. Envie os detalhes do seu projeto e converse com nossa equipe.">
+    <meta name="theme-color" content="#f5f7fb">
+
+    <script>try{var t=localStorage.getItem("theme");if(t==="dark"||(!t&&matchMedia("(prefers-color-scheme: dark)").matches))document.documentElement.dataset.theme="dark"}catch(e){}</script>
+
+    <link rel="icon" type="image/webp" href="../img/opt/logo-mark.webp">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..900&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/contato.css">
+</head>
+
+<body class="has-media-hero">
+
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+    <div id="preloader" class="preloader" role="status" aria-live="polite" aria-label="Carregando NovaEra Code">
+        <div class="preloader-inner">
+            <img class="preloader-logo" src="../img/opt/logo-mark.webp" alt="" width="64" height="64">
+            <div class="preloader-bar" aria-hidden="true">
+                <div class="preloader-bar-fill" id="preloaderFill"></div>
+            </div>
+            <div class="preloader-status">
+                <span id="preloaderStatus">Inicializando...</span>
+                <span id="preloaderPercent">0%</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===================== CABEÇALHO ===================== -->
+    <header class="site-header" data-header>
+        <div class="container nav">
+            <a href="../index.php" class="brand" aria-label="NovaEra Code — página inicial">
+                <span class="brand-mark"><img src="../img/opt/logo-mark.webp" alt="" width="40" height="40"></span>
+                <span class="brand-name">Nova<b>Era</b> Code</span>
+            </a>
+
+            <nav class="nav-menu" id="nav-menu" aria-label="Navegação principal">
+                <ul class="nav-list">
+                    <li><a href="../index.php" class="nav-link">Início</a></li>
+                    <li><a href="sobre.html" class="nav-link">Sobre</a></li>
+                    <li><a href="equipe.html" class="nav-link">Equipe</a></li>
+                    <li><a href="projetos.html" class="nav-link">Projetos</a></li>
+                    <li><a href="contato.html" class="nav-link active" aria-current="page">Contato</a></li>
+                </ul>
+                <a href="contato.html?assunto=Or%C3%A7amento#contact-form" class="btn btn-primary btn-sm nav-cta">Solicitar orçamento</a>
+            </nav>
+
+            <div class="nav-actions">
+                <button type="button" id="theme-toggle" class="icon-btn theme-toggle" aria-label="Ativar tema escuro">
+                    <i class="fas fa-moon" aria-hidden="true"></i>
+                </button>
+                <button type="button" class="icon-btn hamburger" aria-controls="nav-menu" aria-expanded="false" aria-label="Abrir menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main id="conteudo">
+
+        <!-- ===================== HERO ===================== -->
+        <section class="page-hero page-hero-media on-media contact-hero" aria-labelledby="page-title">
+            <div class="media-bg" aria-hidden="true">
+                <img src="../img/photos/photo-1550751827-4bd374c3f58b-1600.webp"
+                    srcset="../img/photos/photo-1550751827-4bd374c3f58b-800.webp 800w, ../img/photos/photo-1550751827-4bd374c3f58b-1600.webp 1600w, ../img/photos/photo-1550751827-4bd374c3f58b-2200.webp 2200w"
+                    sizes="100vw" alt="" width="1600" height="1000" fetchpriority="high" data-parallax="10">
+            </div>
+            <div class="container">
+                <div class="page-hero-inner">
+                    <span class="eyebrow">Contato</span>
+                    <h1 id="page-title">Fale com a gente</h1>
+                    <p class="lead">Tem um projeto em mente? Envie os detalhes e fale com nossa equipe.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================== FORMULÁRIO + INFORMAÇÕES ===================== -->
+        <section class="section contact-section" aria-label="Formulário de contato">
+            <div class="container contact-layout">
+
+                <form class="contact-form panel" id="contact-form" data-endpoint="../php/contato-api.php" data-validate novalidate>
+                    <div class="contact-form-head">
+                        <h2>Envie sua mensagem</h2>
+                        <p class="text-muted">Campos marcados com <span aria-hidden="true">*</span><span class="sr-only">asterisco</span> são obrigatórios.</p>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="field">
+                            <label for="nome">Nome <span aria-hidden="true">*</span></label>
+                            <input class="input" type="text" id="nome" name="nome" placeholder="Seu nome completo" autocomplete="name" minlength="2" required>
+                        </div>
+
+                        <div class="field">
+                            <label for="email">E-mail <span aria-hidden="true">*</span></label>
+                            <input class="input" type="email" id="email" name="email" placeholder="seu@email.com" autocomplete="email" inputmode="email" required>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label for="assunto">Assunto <span class="optional">(opcional)</span></label>
+                        <input class="input" type="text" id="assunto" name="assunto" placeholder="Ex: Orçamento para sistema web" minlength="3">
+                    </div>
+
+                    <div class="field">
+                        <label for="mensagem">Mensagem <span aria-hidden="true">*</span></label>
+                        <textarea class="input" id="mensagem" name="mensagem" placeholder="Descreva seu projeto ou dúvida..." minlength="10" required></textarea>
+                    </div>
+
+                    <!-- Campo armadilha contra robôs: invisível e ignorado por pessoas -->
+                    <div class="hp-field" aria-hidden="true">
+                        <label for="website">Não preencha este campo</label>
+                        <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+                    </div>
+
+                    <div class="contact-submit">
+                        <button type="submit" class="btn btn-primary btn-lg">
+                            <i class="fas fa-paper-plane" aria-hidden="true"></i>
+                            Enviar mensagem
+                        </button>
+                        <p class="contact-form-note">
+                            <i class="fas fa-lock" aria-hidden="true"></i>
+                            Sua mensagem é enviada direto para a equipe NovaEra Code e usada apenas para responder ao seu contato.
+                        </p>
+                    </div>
+
+                    <p class="alert contact-form-status" id="contact-form-status" role="status" aria-live="polite"></p>
+                </form>
+
+                <aside class="contact-aside" aria-label="Informações de contato">
+                    <div class="status-card">
+                        <span class="status-dot">Disponível para projetos</span>
+                        <p>Envie uma descrição do que você precisa para iniciar a conversa.</p>
+                    </div>
+
+                    <div class="info-card">
+                        <span class="card-icon"><i class="fas fa-envelope" aria-hidden="true"></i></span>
+                        <div>
+                            <strong>E-mail</strong>
+                            <a href="mailto:contato@novaeracode.com" data-contact-email>contato@novaeracode.com</a>
+                        </div>
+                    </div>
+
+                    <div class="info-card">
+                        <span class="card-icon"><i class="fas fa-clock" aria-hidden="true"></i></span>
+                        <div>
+                            <strong>Horário</strong>
+                            <span>Seg – Sex, 9h às 18h</span>
+                        </div>
+                    </div>
+                </aside>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- ===================== RODAPÉ ===================== -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="../index.php" class="brand" aria-label="NovaEra Code — página inicial">
+                        <span class="brand-mark"><img src="../img/opt/logo-mark.webp" alt="" width="40" height="40" loading="lazy"></span>
+                        <span class="brand-name">Nova<b>Era</b> Code</span>
+                    </a>
+                    <p>Transformando ideias em soluções digitais inovadoras.</p>
+                </div>
+
+                <nav class="footer-col" aria-labelledby="footer-nav">
+                    <h2 id="footer-nav">Navegação</h2>
+                    <ul>
+                        <li><a href="../index.php">Início</a></li>
+                        <li><a href="sobre.html">Sobre</a></li>
+                        <li><a href="equipe.html">Equipe</a></li>
+                        <li><a href="projetos.html">Projetos</a></li>
+                    </ul>
+                </nav>
+
+                <nav class="footer-col" aria-labelledby="footer-projetos">
+                    <h2 id="footer-projetos">Projetos</h2>
+                    <ul>
+                        <li><a href="Tempic.html">Tempic</a></li>
+                        <li><a href="FarmaDigital.html">Farma Digital</a></li>
+                        <li><a href="PublicCard.html">Public Card</a></li>
+                    </ul>
+                </nav>
+
+                <div class="footer-col footer-col-contact">
+                    <h2>Contato</h2>
+                    <ul>
+                        <li><a href="contato.html"><i class="fas fa-paper-plane" aria-hidden="true"></i> Fale com a equipe</a></li>
+                        <li><a href="mailto:contato@novaeracode.com"><i class="fas fa-envelope" aria-hidden="true"></i> contato@novaeracode.com</a></li>
+                        <li><a href="login.html"><i class="fas fa-user" aria-hidden="true"></i> Área do cliente</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© <span data-year>2026</span> NovaEra Code. Todos os direitos reservados.</p>
+                <p>Vídeos: Mixkit · Fotos: Unsplash · Clima: Open-Meteo</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js" defer></script>
+    <script src="../js/script.js" defer></script>
+    <script src="../js/motion.js" defer></script>
+
+</body>
+
+</html>

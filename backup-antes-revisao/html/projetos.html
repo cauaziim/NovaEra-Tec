@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Projetos | NovaEra Code</title>
+    <meta name="description" content="Conheça os projetos desenvolvidos pela NovaEra Code: Tempic, Farma Digital e Public Card.">
+    <meta name="theme-color" content="#f5f7fb">
+
+    <script>try{var t=localStorage.getItem("theme");if(t==="dark"||(!t&&matchMedia("(prefers-color-scheme: dark)").matches))document.documentElement.dataset.theme="dark"}catch(e){}</script>
+
+    <link rel="icon" type="image/webp" href="../img/opt/logo-mark.webp">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..900&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+
+</head>
+
+<body class="has-media-hero">
+
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+    <div id="preloader" class="preloader" role="status" aria-live="polite" aria-label="Carregando NovaEra Code">
+        <div class="preloader-inner">
+            <img class="preloader-logo" src="../img/opt/logo-mark.webp" alt="" width="64" height="64">
+            <div class="preloader-bar" aria-hidden="true">
+                <div class="preloader-bar-fill" id="preloaderFill"></div>
+            </div>
+            <div class="preloader-status">
+                <span id="preloaderStatus">Inicializando...</span>
+                <span id="preloaderPercent">0%</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===================== CABEÇALHO ===================== -->
+    <header class="site-header" data-header>
+        <div class="container nav">
+            <a href="../index.php" class="brand" aria-label="NovaEra Code — página inicial">
+                <span class="brand-mark"><img src="../img/opt/logo-mark.webp" alt="" width="40" height="40"></span>
+                <span class="brand-name">Nova<b>Era</b> Code</span>
+            </a>
+
+            <nav class="nav-menu" id="nav-menu" aria-label="Navegação principal">
+                <ul class="nav-list">
+                    <li><a href="../index.php" class="nav-link">Início</a></li>
+                    <li><a href="sobre.html" class="nav-link">Sobre</a></li>
+                    <li><a href="equipe.html" class="nav-link">Equipe</a></li>
+                    <li><a href="projetos.html" class="nav-link active" aria-current="page">Projetos</a></li>
+                    <li><a href="contato.html" class="nav-link">Contato</a></li>
+                </ul>
+                <a href="contato.html?assunto=Or%C3%A7amento#contact-form" class="btn btn-primary btn-sm nav-cta">Solicitar orçamento</a>
+            </nav>
+
+            <div class="nav-actions">
+                <button type="button" id="theme-toggle" class="icon-btn theme-toggle" aria-label="Ativar tema escuro">
+                    <i class="fas fa-moon" aria-hidden="true"></i>
+                </button>
+                <button type="button" class="icon-btn hamburger" aria-controls="nav-menu" aria-expanded="false" aria-label="Abrir menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main id="conteudo">
+
+        <!-- ===================== HERO ===================== -->
+        <section class="page-hero page-hero-media on-media" aria-labelledby="page-title">
+            <div class="media-bg" aria-hidden="true">
+                <img src="../img/photos/photo-1518770660439-4636190af475-1600.webp"
+                    srcset="../img/photos/photo-1518770660439-4636190af475-800.webp 800w, ../img/photos/photo-1518770660439-4636190af475-1600.webp 1600w, ../img/photos/photo-1518770660439-4636190af475-2200.webp 2200w"
+                    sizes="100vw" alt="" width="1600" height="1000" fetchpriority="high" data-parallax="10">
+            </div>
+            <div class="container">
+                <div class="page-hero-inner">
+                    <span class="eyebrow">Portfólio</span>
+                    <h1 id="page-title">Nossos <span class="highlight">Projetos</span></h1>
+                    <p class="lead">
+                        Conheça algumas soluções desenvolvidas pela NovaEra Code
+                        com foco em inovação, tecnologia e performance.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================== LISTA ===================== -->
+        <section class="section" aria-labelledby="lista-title">
+            <div class="container">
+                <h2 id="lista-title" class="sr-only">Lista de projetos</h2>
+
+                <div class="project-toolbar">
+                    <div class="project-filters" role="group" aria-label="Filtrar projetos por categoria">
+                        <button type="button" class="project-filter active" data-filter="all" aria-pressed="true">Todos</button>
+                        <button type="button" class="project-filter" data-filter="iot" aria-pressed="false">IoT</button>
+                        <button type="button" class="project-filter" data-filter="aplicativo" aria-pressed="false">Aplicativos</button>
+                        <button type="button" class="project-filter" data-filter="plataforma" aria-pressed="false">Plataformas</button>
+                    </div>
+                    <p class="project-results" aria-live="polite">3 projetos encontrados</p>
+                </div>
+
+                <div class="grid grid-3 projects-grid">
+
+                    <article class="card card-hover project-card accent-tempic" data-category="iot aplicativo"
+                        data-title="Tempic"
+                        data-description="Sistema IoT que monitora câmaras frias e veículos refrigerados em tempo real, com alertas e acionamento remoto de equipamentos e da iluminação."
+                        data-image="../img/opt/logo_tempic.webp">
+                        <div class="project-media">
+                            <img src="../img/opt/logo_tempic.webp" alt="Logotipo do Tempic" width="180" height="180" loading="lazy">
+                        </div>
+                        <div class="project-body">
+                            <ul class="chip-list" aria-label="Categorias">
+                                <li class="chip chip-brand">IoT</li>
+                                <li class="chip chip-brand">Aplicativo</li>
+                            </ul>
+                            <h3>Tempic</h3>
+                            <p>
+                                Sistema IoT que monitora câmaras frias e veículos refrigerados em tempo real, com alertas e acionamento remoto de equipamentos e da iluminação.
+                            </p>
+                            <div class="project-actions">
+                                <a href="Tempic.html" class="btn btn-primary btn-sm project-page-link">
+                                    Explorar projeto <span class="sr-only">Tempic</span>
+                                    <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                                </a>
+                                <button type="button" class="btn btn-ghost btn-sm project-info-button">Ver detalhes <span class="sr-only">do Tempic</span></button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="card card-hover project-card accent-farma" data-category="aplicativo"
+                        data-title="Farma Digital"
+                        data-description="Aplicativo criado para facilitar o acesso da população aos medicamentos fornecidos pela prefeitura."
+                        data-image="../img/opt/farma_digital.webp">
+                        <div class="project-media">
+                            <img src="../img/opt/farma_digital.webp" alt="Logotipo do Farma Digital" width="180" height="180" loading="lazy">
+                        </div>
+                        <div class="project-body">
+                            <ul class="chip-list" aria-label="Categorias">
+                                <li class="chip chip-brand">Aplicativo</li>
+                            </ul>
+                            <h3>Farma Digital</h3>
+                            <p>
+                                Aplicativo criado para facilitar o acesso da população
+                                aos medicamentos fornecidos pela prefeitura.
+                            </p>
+                            <div class="project-actions">
+                                <a href="FarmaDigital.html" class="btn btn-primary btn-sm project-page-link">
+                                    Explorar projeto <span class="sr-only">Farma Digital</span>
+                                    <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                                </a>
+                                <button type="button" class="btn btn-ghost btn-sm project-info-button">Ver detalhes <span class="sr-only">do Farma Digital</span></button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="card card-hover project-card accent-public" data-category="plataforma"
+                        data-title="Public Card"
+                        data-description="Plataforma digital desenvolvida para modernizar serviços, organização de dados e atendimento digital."
+                        data-image="../img/opt/public.webp">
+                        <div class="project-media">
+                            <img src="../img/opt/public.webp" alt="Logotipo do Public Card" width="180" height="180" loading="lazy">
+                        </div>
+                        <div class="project-body">
+                            <ul class="chip-list" aria-label="Categorias">
+                                <li class="chip chip-brand">Plataforma</li>
+                            </ul>
+                            <h3>Public Card</h3>
+                            <p>
+                                Plataforma digital desenvolvida para modernizar serviços,
+                                organização de dados e atendimento digital.
+                            </p>
+                            <div class="project-actions">
+                                <a href="PublicCard.html" class="btn btn-primary btn-sm project-page-link">
+                                    Explorar projeto <span class="sr-only">Public Card</span>
+                                    <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                                </a>
+                                <button type="button" class="btn btn-ghost btn-sm project-info-button">Ver detalhes <span class="sr-only">do Public Card</span></button>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================== CTA ===================== -->
+        <section class="section section-tight" aria-labelledby="cta-title">
+            <div class="container">
+                <div class="cta-band on-ink">
+                    <div>
+                        <span class="eyebrow">Seu projeto aqui</span>
+                        <h2 id="cta-title">Tem uma ideia para o próximo projeto?</h2>
+                        <p>Conte-nos o que você precisa e vamos conversar sobre a melhor solução.</p>
+                    </div>
+                    <div class="btn-row">
+                        <a href="contato.html?assunto=Or%C3%A7amento#contact-form" class="btn btn-primary btn-lg">
+                            <i class="fas fa-envelope" aria-hidden="true"></i>
+                            Solicitar orçamento
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================== MODAL DE DETALHES ===================== -->
+        <div class="modal project-modal" id="project-modal" role="dialog" aria-modal="true"
+            aria-labelledby="project-modal-title" aria-hidden="true">
+            <div class="modal-backdrop" data-modal-close></div>
+            <div class="modal-dialog">
+                <button type="button" class="icon-btn modal-close" data-modal-close aria-label="Fechar detalhes">
+                    <i class="fas fa-xmark" aria-hidden="true"></i>
+                </button>
+                <img class="project-modal-image" alt="" width="120" height="120">
+                <h2 id="project-modal-title"></h2>
+                <p class="project-modal-description"></p>
+                <div class="btn-row">
+                    <a href="#" class="btn btn-primary project-modal-link">Explorar projeto <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                    <button type="button" class="btn btn-secondary" data-modal-close>Fechar</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- ===================== RODAPÉ ===================== -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="../index.php" class="brand" aria-label="NovaEra Code — página inicial">
+                        <span class="brand-mark"><img src="../img/opt/logo-mark.webp" alt="" width="40" height="40" loading="lazy"></span>
+                        <span class="brand-name">Nova<b>Era</b> Code</span>
+                    </a>
+                    <p>Transformando ideias em soluções digitais inovadoras.</p>
+                </div>
+
+                <nav class="footer-col" aria-labelledby="footer-nav">
+                    <h2 id="footer-nav">Navegação</h2>
+                    <ul>
+                        <li><a href="../index.php">Início</a></li>
+                        <li><a href="sobre.html">Sobre</a></li>
+                        <li><a href="equipe.html">Equipe</a></li>
+                        <li><a href="projetos.html">Projetos</a></li>
+                    </ul>
+                </nav>
+
+                <nav class="footer-col" aria-labelledby="footer-projetos">
+                    <h2 id="footer-projetos">Projetos</h2>
+                    <ul>
+                        <li><a href="Tempic.html">Tempic</a></li>
+                        <li><a href="FarmaDigital.html">Farma Digital</a></li>
+                        <li><a href="PublicCard.html">Public Card</a></li>
+                    </ul>
+                </nav>
+
+                <div class="footer-col footer-col-contact">
+                    <h2>Contato</h2>
+                    <ul>
+                        <li><a href="contato.html"><i class="fas fa-paper-plane" aria-hidden="true"></i> Fale com a equipe</a></li>
+                        <li><a href="mailto:contato@novaeracode.com"><i class="fas fa-envelope" aria-hidden="true"></i> contato@novaeracode.com</a></li>
+                        <li><a href="login.html"><i class="fas fa-user" aria-hidden="true"></i> Área do cliente</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© <span data-year>2026</span> NovaEra Code. Todos os direitos reservados.</p>
+                <p>Vídeos: Mixkit · Fotos: Unsplash · Clima: Open-Meteo</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js" defer></script>
+    <script src="../js/script.js" defer></script>
+    <script src="../js/motion.js" defer></script>
+
+</body>
+
+</html>

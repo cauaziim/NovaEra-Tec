@@ -1,0 +1,37 @@
+/* =========================================================
+   PÁGINA PUBLIC CARD
+   Usa os componentes de projeto do style.css; aqui ficam apenas
+   os ajustes próprios da página (o acento verde vem de .accent-public).
+   ========================================================= */
+.accent-public .cta-band::before {
+    background:
+        radial-gradient(circle at 100% 0%, rgba(14, 143, 79, 0.4), transparent 45%),
+        radial-gradient(circle at 0% 100%, rgba(52, 211, 153, 0.14), transparent 40%);
+}
+
+.accent-public .cta-band .eyebrow {
+    color: #6ee7b7;
+}
+
+/* Problemas resolvidos: marcador neutro, distinto da lista de benefícios */
+.problem-list {
+    display: grid;
+    gap: var(--space-3);
+}
+
+.problem-list li {
+    position: relative;
+    padding-left: 1.9rem;
+    color: var(--text-muted);
+}
+
+.problem-list li::before {
+    content: "";
+    position: absolute;
+    left: 0.25rem;
+    top: 0.55em;
+    width: 0.75rem;
+    height: 0.75rem;
+    border: 2px solid var(--text-subtle);
+    border-radius: 50%;
+}
