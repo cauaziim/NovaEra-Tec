@@ -1,0 +1,227 @@
+/* =========================================================
+   LOGIN E CADASTRO (html/login.html e html/cadastro.html)
+   ========================================================= */
+.auth-body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    min-height: 100dvh;
+}
+
+.auth-header {
+    position: absolute;
+    inset: 0 0 auto;
+    z-index: 10;
+    padding-top: env(safe-area-inset-top);
+}
+
+.auth-body main {
+    display: flex;
+    flex: 1;
+}
+
+.auth-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    flex: 1;
+}
+
+/* Painel da marca */
+.auth-banner {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    padding: calc(var(--header-h) + 3rem) clamp(2rem, 1rem + 4vw, 5rem) clamp(2.5rem, 2rem + 3vw, 5rem);
+    background: var(--ink);
+    color: var(--ink-muted);
+    overflow: hidden;
+    isolation: isolate;
+}
+
+.auth-banner::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background:
+        radial-gradient(circle at 90% 10%, rgba(61, 139, 255, 0.45), transparent 45%),
+        radial-gradient(circle at 0% 100%, rgba(14, 165, 233, 0.2), transparent 40%);
+}
+
+.auth-banner::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 48px 48px;
+    -webkit-mask-image: linear-gradient(180deg, #000, transparent 85%);
+    mask-image: linear-gradient(180deg, #000, transparent 85%);
+}
+
+.auth-banner-inner {
+    display: grid;
+    gap: var(--space-4);
+    max-width: 30rem;
+}
+
+.auth-banner .eyebrow {
+    color: #7db2ff;
+}
+
+.auth-banner h1 {
+    color: #fff;
+    font-size: var(--fs-4xl);
+    font-weight: 700;
+}
+
+.auth-banner p {
+    font-size: var(--fs-lg);
+}
+
+.auth-features {
+    display: grid;
+    gap: var(--space-3);
+    margin-top: var(--space-4);
+}
+
+.auth-features li {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    color: var(--ink-text);
+}
+
+.auth-features i {
+    display: grid;
+    place-items: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    background: rgba(61, 139, 255, 0.16);
+    color: #7db2ff;
+    font-size: 0.9rem;
+}
+
+/* No layout de duas colunas, o cabeçalho fica sobre o painel escuro */
+@media (min-width: 900px) {
+    .auth-header .brand,
+    .auth-header .brand-name {
+        color: #fff;
+    }
+}
+
+/* Formulário */
+.auth-panel {
+    display: grid;
+    place-items: center;
+    padding: calc(var(--header-h) + 2rem) var(--gutter) 3rem;
+}
+
+.auth-card {
+    display: grid;
+    gap: var(--space-5);
+    width: min(100%, 420px);
+}
+
+.auth-head {
+    display: grid;
+    gap: var(--space-2);
+}
+
+.auth-head h2 {
+    font-size: var(--fs-3xl);
+}
+
+.auth-head p {
+    color: var(--text-muted);
+}
+
+.auth-options {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-2) var(--space-4);
+    font-size: var(--fs-sm);
+}
+
+.auth-options a {
+    font-weight: 500;
+}
+
+.auth-switch {
+    padding-top: var(--space-5);
+    border-top: 1px solid var(--border);
+    color: var(--text-muted);
+    text-align: center;
+}
+
+.auth-switch a {
+    font-weight: 600;
+}
+
+/* Medidor de força da senha */
+.password-strength {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 6px;
+}
+
+.password-strength span {
+    height: 4px;
+    border-radius: 4px;
+    background: var(--border);
+    transition: background-color var(--dur) var(--ease);
+}
+
+.password-strength[data-score="0"] span:nth-child(-n + 1),
+.password-strength[data-score="1"] span:nth-child(-n + 1) {
+    background: var(--danger);
+}
+
+.password-strength[data-score="2"] span:nth-child(-n + 2) {
+    background: #d97706;
+}
+
+.password-strength[data-score="3"] span:nth-child(-n + 3) {
+    background: #65a30d;
+}
+
+.password-strength[data-score="4"] span {
+    background: var(--success);
+}
+
+@media (max-width: 899px) {
+    .auth-layout {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .auth-banner {
+        display: none;
+    }
+
+    .auth-header {
+        position: static;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .auth-panel {
+        padding-top: clamp(2rem, 1rem + 5vw, 4rem);
+        place-items: start center;
+    }
+}
+
+@media (max-width: 479px) {
+    .auth-header .btn-ghost {
+        padding-inline: 0.5rem;
+        font-size: 0;
+        gap: 0;
+    }
+
+    .auth-header .btn-ghost i {
+        font-size: 1rem;
+    }
+}

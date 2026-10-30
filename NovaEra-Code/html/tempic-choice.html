@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TempIC | Acesso</title>
+  <link rel="icon" type="image/webp" href="../img/opt/logo_tempic.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-start: #dff5fc;
+      --bg-end: #a9d9e8;
+      --card: rgba(255, 255, 255, 0.94);
+      --card-border: rgba(26, 91, 116, 0.18);
+      --cyan: #087ea8;
+      --cyan-strong: #075d80;
+      --text: #123448;
+      --muted: #557487;
+      --dark: #ffffff;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: 'Roboto', sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(255, 255, 255, 0.72), transparent 32%),
+        linear-gradient(135deg, var(--bg-start) 0%, var(--bg-end) 52%, #7ebdce 100%);
+      color: var(--text);
+      display: grid;
+      place-items: center;
+      padding: 28px;
+    }
+
+    .choice-box {
+      width: min(640px, 100%);
+      background: var(--card);
+      border: 1px solid var(--card-border);
+      border-radius: 28px;
+      box-shadow: 0 28px 80px rgba(20, 73, 94, 0.24);
+      padding: 42px 34px 28px;
+      backdrop-filter: blur(12px);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .choice-box::before {
+      content: "";
+      position: absolute;
+      inset: -30% auto auto -12%;
+      width: 240px;
+      height: 240px;
+      background: radial-gradient(circle, rgba(8, 126, 168, 0.12), transparent 70%);
+      pointer-events: none;
+    }
+
+    .choice-brand {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 18px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .tempic-mark {
+      width: 64px;
+      height: 64px;
+      border-radius: 18px;
+      object-fit: cover;
+      background: #ffffff;
+      box-shadow: 0 12px 28px rgba(22, 172, 214, 0.35);
+    }
+
+    .brand-text {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      letter-spacing: -0.05em;
+    }
+
+    .brand-text .span {
+      color: var(--cyan-strong);
+    }
+
+    .choice-box p {
+      margin: 0 0 28px;
+      color: var(--muted);
+      font-size: 1.05rem;
+      letter-spacing: 0.01em;
+      position: relative;
+      z-index: 1;
+    }
+
+    .choice-kicker {
+      margin: 0 0 8px;
+      color: var(--cyan);
+      font: 700 0.7rem/1 'Montserrat', sans-serif;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      position: relative;
+      z-index: 1;
+    }
+
+    .choice-actions {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .choice-actions a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      min-height: 62px;
+      padding: 18px 22px;
+      border-radius: 16px;
+      text-decoration: none;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .choice-actions a span:last-child {
+      line-height: 1.2;
+    }
+
+    .choice-actions a:hover {
+      transform: translateY(-2px);
+    }
+
+    .choice-actions a.primary {
+      background: linear-gradient(135deg, #0a8eb8, #075d80);
+      color: #ffffff;
+      box-shadow: 0 14px 30px rgba(7, 93, 128, 0.24);
+    }
+
+    .choice-actions a.secondary {
+      background: #ffffff;
+      border: 1px solid var(--card-border);
+      color: var(--text);
+    }
+
+    .choice-actions a.secondary:hover {
+      border-color: rgba(8, 126, 168, 0.55);
+      box-shadow: 0 12px 26px rgba(20, 73, 94, 0.15);
+    }
+
+    .choice-note {
+      margin: 22px 0 0;
+      color: #6a8795;
+      font-size: 0.78rem;
+      letter-spacing: 0.02em;
+      position: relative;
+      z-index: 1;
+    }
+
+    @media (max-width: 560px) {
+      body { padding: 18px; }
+      .choice-box { padding: 28px 20px 22px; }
+      .choice-brand { gap: 10px; }
+      .tempic-mark { width: 52px; height: 52px; border-radius: 14px; }
+      .choice-actions { grid-template-columns: 1fr; }
+      .choice-actions a { font-size: 0.9rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="choice-box">
+    <div class="choice-brand">
+      <img class="tempic-mark" src="../img/opt/logo_tempic.webp" alt="Logo TempIC" />
+      <div class="brand-text">Temp<span class="span">IC</span></div>
+    </div>
+    <div class="choice-kicker">Monitoramento inteligente</div>
+    <p>Como deseja acessar?</p>
+
+    <div class="choice-actions">
+      <a class="primary" href="../desktop/index.html">
+        <span>BAIXAR APLICATIVO</span>
+      </a>
+      <a class="secondary" href="tempic-app.html">
+        <span>WEB APP</span>
+      </a>
+    </div>
+    <div class="choice-note">Acompanhe seus sensores de temperatura em um só lugar.</div>
+  </div>
+</body>
+</html>
